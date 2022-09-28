@@ -180,11 +180,54 @@ module.exports = {
 		fontFamily: {
 			array: ["Array", "sans-serif"],
 			clash: ["Clash Grotesk", "sans-serif"],
-			cabinet: ["Cabinet Grotesk", "sans-serif"]
+			cabinet: ["Cabinet Grotesk", "sans-serif"],
+			source: ["Source Code Pro", "monospace"]
+		},
+		container: {
+			center: true
+		},
+		borderRadius: {
+			none: "0",
+			sm: "0.125rem",
+			DEFAULT: "0.25rem",
+			DEFAULT: "4px",
+			md: "0.375rem",
+			lg: "0.5rem",
+			full: "9999px",
+			large: "12px",
+			xl: "22px"
+		},
+		extend: {
+			backgroundImage: {
+				"nav-gradient":
+					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);"
+			}
+		}
+	},
+	corePlugins: {
+		container: false
+	},
+	plugins: [
+		function ({ addComponents }) {
+			addComponents({
+				".container": {
+					"@screen sm": {
+						margin: "0 0px"
+					},
+					"@screen md": {
+						margin: "0 0px"
+					},
+					"@screen lg": {
+						margin: "0 00px"
+					},
+					"@screen xl": {
+						maxWidth: "1780px",
+						margin: "0 0"
+					}
+				}
+			})
 		},
         
-		extend: {}
-	},
-	plugins: [],
+	],
 	darkMode: "class"
 }
