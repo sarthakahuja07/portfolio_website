@@ -7,3 +7,62 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+.hover-underline-animation {
+	position: relative;
+}
+
+.hover-underline-animation:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+.customShadow {
+	text-shadow: 0px 4px 30px rgba(255, 255, 255, 0.5);
+}
+
+.helloButton {
+	filter: drop-shadow(0px 2.82464px 21.1848px rgba(255, 255, 255, 0.5));
+	position: relative;
+	z-index: 1;
+	border-radius: 2.82464px;
+	padding: 8px 40px 17px 35px;
+}
+
+.helloButton::after {
+	content: "";
+	position: absolute;
+	left: 5px;
+	top: 7px;
+	width: calc(100% - 5px);
+	height: calc(100% - 9px);
+	background-color: #070707;
+	border: 0.706161px solid #ffffff;
+	z-index: -2;
+	border-radius: 2.82464px;
+    transition: 300ms all;
+}
+.helloButton::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: calc(100% - 5px);
+	height: calc(100% - 9px);
+	background-color: #ffffff;
+	z-index: -1;
+	border-radius: 2.82464px;
+    transition: 300ms all;
+}

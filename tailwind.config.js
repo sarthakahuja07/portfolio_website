@@ -6,10 +6,11 @@ module.exports = {
 	],
 	theme: {
 		screens: {
-			sm: "390px",
-			md: "744px",
-			lg: "1440px",
-			xl: "1920px"
+			sm: "640px",
+			md: "720px",
+			lg: "1024px",
+			xl: "1280px",
+			xxl: "1536px"
 		},
 		fontSize: {
 			phoneSm: [
@@ -165,6 +166,20 @@ module.exports = {
 					lineHeight: "165px",
 					fontWeight: "600"
 				}
+			],
+			hello: [
+				"19.86px",
+				{
+					lineHeight: "23px",
+					fontWeight: "500"
+				}
+			],
+			hellolg: [
+				"28.13px",
+				{
+					lineHeight: "32px",
+					fontWeight: "500"
+				}
 			]
 		},
 		colors: {
@@ -175,7 +190,8 @@ module.exports = {
 			grey: "#636262",
 			yellow: "#f8d41c",
 			green: "#53e37c",
-			red: "#e35353"
+			red: "#e35353",
+			black: "#070707"
 		},
 		fontFamily: {
 			array: ["Array", "sans-serif"],
@@ -189,18 +205,26 @@ module.exports = {
 		borderRadius: {
 			none: "0",
 			sm: "0.125rem",
+			hello: "2.82px",
 			DEFAULT: "0.25rem",
 			DEFAULT: "4px",
 			md: "0.375rem",
 			lg: "0.5rem",
 			full: "9999px",
+			full: "9999px",
+			lg: "10px",
 			large: "12px",
-			xl: "22px"
+			xl: "22px",
+			terminal: "20px"
 		},
 		extend: {
 			backgroundImage: {
 				"nav-gradient":
-					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);"
+					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
+				"line-gradient":
+					"linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #FFFEFE 100%);",
+				"line-gradient2":
+					"linear-gradient(270deg, #FFFEFE 0%, rgba(0, 0, 0, 0) 100%);"
 			}
 		}
 	},
@@ -211,23 +235,31 @@ module.exports = {
 		function ({ addComponents }) {
 			addComponents({
 				".container": {
+					// maxWidth: "100%",
+					padding: "0 35px",
 					"@screen sm": {
-						margin: "0 0px"
+						// maxWidth: "640px"
+						margin: "0 70px"
 					},
 					"@screen md": {
-						margin: "0 0px"
+						// maxWidth: "768px"
 					},
 					"@screen lg": {
-						margin: "0 00px"
+						// width: "100%",
+						maxWidth: "1720px",
+						padding: "0 70px"
 					},
 					"@screen xl": {
-						maxWidth: "1780px",
-						margin: "0 0"
+						maxWidth: "1440px",
+						margin: "0 70px"
+					},
+					"@screen xxl": {
+						maxWidth: "1830px",
+						margin: "0 70px"
 					}
 				}
 			})
-		},
-        
+		}
 	],
 	darkMode: "class"
 }

@@ -8,18 +8,18 @@ interface Props {}
 const Navbar = (props: Props) => {
 	return (
 		<>
-			<div className="fixed w-[100%] top-0 ">
-				<div className="container mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 ">
+			<div className="fixed w-[100%] top-0 z-10">
+				<div className="container mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5">
 					<nav className="w-auto mt-6 sm:mt-9 lg:mt-11 col-start-1 col-span-4 sm:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-3 xl:col-span-8 py-10 pr-20 pl-6 rounded-xl border-[0.5px] border-[#636262] border-solid bg-nav-gradient hidden lg:block">
 						<div className="flex flex-row justify-between ">
 							<div>
 								<Link href="/">
 									<a>
-										<p className="font-source text-phoneXxl md:text-md inline-flex items-baseline">
+										<p className="font-source text-phoneXxl md:text-md inline-flex items-baseline ">
 											&lt;
 											<span className="inline-flex items-baseline [&>span]:self-center self-center">
 												<Image
-													className="self-center hidden"
+													className="self-center"
 													src={logo}
 													alt="logo"
 													width={15}
