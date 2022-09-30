@@ -180,6 +180,20 @@ module.exports = {
 					lineHeight: "32px",
 					fontWeight: "500"
 				}
+			],
+			code: [
+				"10px",
+				{
+					lineHeight: "13px",
+					fontWeight: "400"
+				}
+			],
+			codeLg: [
+				"14px",
+				{
+					lineHeight: "18px",
+					fontWeight: "400"
+				}
 			]
 		},
 		colors: {
@@ -191,7 +205,13 @@ module.exports = {
 			yellow: "#f8d41c",
 			green: "#53e37c",
 			red: "#e35353",
-			black: "#070707"
+			black: "#070707",
+			codeYellow: "#FF9F0A",
+			codeGreen: "#09F755",
+			codeBlue: "#64D2FF",
+			codePurple: "#BF5AF2",
+			codeComment: "#8E8E93",
+			transparent: "transparent"
 		},
 		fontFamily: {
 			array: ["Array", "sans-serif"],

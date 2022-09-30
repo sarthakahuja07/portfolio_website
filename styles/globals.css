@@ -52,7 +52,7 @@
 	border: 0.706161px solid #ffffff;
 	z-index: -2;
 	border-radius: 2.82464px;
-    transition: 300ms all;
+	transition: 300ms all;
 }
 .helloButton::before {
 	content: "";
@@ -64,5 +64,46 @@
 	background-color: #ffffff;
 	z-index: -1;
 	border-radius: 2.82464px;
-    transition: 300ms all;
+	transition: 300ms all;
+}
+.codeTextArea {
+	border: 0;
+}
+.codeTextArea:focus {
+	outline: none;
+}
+#code.hide + i {
+	display: none;
+}
+
+#code {
+	caret-color: transparent;
+}
+#code.hide {
+	caret-color: white;
+}
+
+.cursor {
+	position: relative;
+}
+.cursor i {
+	position: absolute;
+	width: 8px;
+	height: 3px;
+	background-color: white;
+	left: 0px;
+	top: calc(50% - 8px);
+	animation-name: blink;
+	animation-duration: 800ms;
+	animation-iteration-count: infinite;
+	opacity: 1;
+}
+
+@keyframes blink {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
