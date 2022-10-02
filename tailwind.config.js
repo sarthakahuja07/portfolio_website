@@ -12,6 +12,12 @@ module.exports = {
 			xl: "1280px",
 			xxl: "1536px"
 		},
+		textShadow: {
+			default: "0 2px 0 #000",
+			navItem: "0px -4px 0px #09F755",
+			h2: "0 0 3px #FF0000, 0 0 5px #0000FF",
+			h1: "0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)"
+		},
 		fontSize: {
 			phoneSm: [
 				"9.22px",
@@ -135,14 +141,14 @@ module.exports = {
 			"5xl": [
 				"68.66px",
 				{
-					lineHeight: "85px",
+					lineHeight: "48px",
 					fontWeight: "500"
 				}
 			],
 			"6xl": [
 				"68.66px",
 				{
-					lineHeight: "84px",
+					lineHeight: "48px",
 					fontWeight: "600"
 				}
 			],
@@ -205,6 +211,7 @@ module.exports = {
 			yellow: "#f8d41c",
 			green: "#53e37c",
 			red: "#e35353",
+			error: "#FF453A",
 			black: "#070707",
 			codeYellow: "#FF9F0A",
 			codeGreen: "#09F755",
@@ -240,11 +247,20 @@ module.exports = {
 		extend: {
 			backgroundImage: {
 				"nav-gradient":
-					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
+					"linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%)",
 				"line-gradient":
 					"linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #FFFEFE 100%);",
 				"line-gradient2":
-					"linear-gradient(270deg, #FFFEFE 0%, rgba(0, 0, 0, 0) 100%);"
+					"linear-gradient(270deg, #FFFEFE 0%, rgba(0, 0, 0, 0) 100%);",
+				// "hero-pattern": "url('../public/images/hero-bg.png')",
+				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')"
+			},
+			dropShadow: {
+				menuItem: " 0px -3px 0px #09F755;",
+				"4xl": [
+					"0 35px 35px rgba(0, 0, 0, 0.25)",
+					"0 45px 65px rgba(0, 0, 0, 0.15)"
+				]
 			}
 		}
 	},
@@ -252,30 +268,31 @@ module.exports = {
 		container: false
 	},
 	plugins: [
+		require("tailwindcss-textshadow"),
 		function ({ addComponents }) {
 			addComponents({
 				".container": {
-					// maxWidth: "100%",
 					padding: "0 35px",
 					"@screen sm": {
 						// maxWidth: "640px"
-						margin: "0 70px"
+						// margin: "0 70px"
 					},
 					"@screen md": {
 						// maxWidth: "768px"
+						padding: "0 70px"
 					},
 					"@screen lg": {
 						// width: "100%",
-						maxWidth: "1720px",
+						// maxWidth: "1720px",
 						padding: "0 70px"
 					},
 					"@screen xl": {
 						maxWidth: "1440px",
-						margin: "0 70px"
+						padding: "0 70px"
 					},
 					"@screen xxl": {
-						maxWidth: "1830px",
-						margin: "0 70px"
+						maxWidth: "1920px",
+						padding: "0 70px"
 					}
 				}
 			})

@@ -40,6 +40,9 @@
 	border-radius: 2.82464px;
 	padding: 8px 40px 17px 35px;
 }
+.helloButton:hover {
+	filter: none;
+}
 
 .helloButton::after {
 	content: "";
@@ -66,6 +69,22 @@
 	border-radius: 2.82464px;
 	transition: 300ms all;
 }
+
+.terminal::after {
+	position: absolute;
+	top: -2px;
+	bottom: -2px;
+	left: -2px;
+	right: -2px;
+	background: linear-gradient(
+		309.02deg,
+		#545454 2.35%,
+		rgba(84, 84, 84, 0) 100%
+	);
+	content: "";
+	z-index: -1;
+	border-radius: 20px;
+}
 .codeTextArea {
 	border: 0;
 }
@@ -74,6 +93,10 @@
 }
 #code.hide + i {
 	display: none;
+}
+
+#code.error::placeholder {
+	color: #ff453a;
 }
 
 #code {
@@ -92,7 +115,7 @@
 	height: 3px;
 	background-color: white;
 	left: 0px;
-	top: calc(50% - 8px);
+	top: calc(100% - 8px);
 	animation-name: blink;
 	animation-duration: 800ms;
 	animation-iteration-count: infinite;
