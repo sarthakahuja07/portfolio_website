@@ -122,6 +122,18 @@
 	opacity: 1;
 }
 
+.experienceHeading::after {
+	/*  make a circle  */
+	content: "";
+	position: absolute;
+	top: 5;
+	left: -16px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: white;
+}
+
 @keyframes blink {
 	from {
 		opacity: 1;

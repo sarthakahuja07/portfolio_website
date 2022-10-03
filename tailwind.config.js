@@ -15,7 +15,8 @@ module.exports = {
 		textShadow: {
 			default: "0 2px 0 #000",
 			navItem: "0px -4px 0px #09F755",
-			h2: "0 0 3px #FF0000, 0 0 5px #0000FF",
+			h2: "0px 2.25641px 16.9231px rgba(255, 255, 255, 0.5)",
+			h3: "0px 3.12381px 43.7333px rgba(255, 255, 255, 0.5)",
 			h1: "0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)"
 		},
 		fontSize: {
@@ -244,6 +245,9 @@ module.exports = {
 			xl: "22px",
 			terminal: "20px"
 		},
+		linearBorderGradients: (theme) => ({
+			colors: theme("colors")
+		}),
 		extend: {
 			backgroundImage: {
 				"nav-gradient":
@@ -252,6 +256,10 @@ module.exports = {
 					"linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #FFFEFE 100%);",
 				"line-gradient2":
 					"linear-gradient(270deg, #FFFEFE 0%, rgba(0, 0, 0, 0) 100%);",
+				"experience-line":
+					"linear-gradient(180deg,rgba(0, 0, 0, 0) 0%,#ffffff 17.19%,#ffffff 81.77%,rgba(0, 0, 0, 0) 100%);",
+				"experience-line-horizontal":
+					"linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #FFFFFF 13.02%, #FFFFFF 88.54%, rgba(0, 0, 0, 0) 100%);",
 				// "hero-pattern": "url('../public/images/hero-bg.png')",
 				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')"
 			},
@@ -269,6 +277,8 @@ module.exports = {
 	},
 	plugins: [
 		require("tailwindcss-textshadow"),
+		require("tailwindcss-border-gradients")(),
+
 		function ({ addComponents }) {
 			addComponents({
 				".container": {
