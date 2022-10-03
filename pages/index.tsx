@@ -6,12 +6,13 @@ import styles from "../styles/Home.module.css"
 import { Footer } from "../components/Footer"
 import Contact from "../components/Contact"
 import Hero from "../components/Hero"
+import About from "../components/About"
 
 const Home: NextPage = () => {
 	return (
 		<div>
 			<Navbar />
-			<div className="w-full h-screen bg-hero-pattern absolute">
+			<div className="w-full h-screen bg-hero-pattern absolute bg-center bg-cover bg-no-repeat">
 				<div className="backdrop-blur-[100px] absolute w-full">
 					<Head>
 						<title>Sarthak Portfolio</title>
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
 					{/* TODO: fix the mt based on each screen size */}
 					<div className="mt-[124px] md:mt-[130px] lg:mt-[136px]"></div>
 					<Hero />
-
+					<About />
 					<Contact />
 
 					<Footer />

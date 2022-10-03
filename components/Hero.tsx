@@ -37,8 +37,8 @@ function Hero({}: Props): ReactElement {
 
 	return (
 		<div>
-			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5  mb-20 sm:mb-9 md:mb-[64px] xl:mb-[216px] xxl:mb-[204px ">
-				<div className="col-start-1 lg:col-start-2 xl:col-start-2 xxl:col-start-2 col-span-4 md:col-span-12 xl:col-span-5 xxl:col-span-5  sm:w-[480px] mt-11 sm:mt-20 lg:mt-[104px] xl:mt-[158px] xxl:mt-[194px] relative">
+			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5  mb-20 sm:mb-9 md:mb-[64px] xl:mb-[216px] xxl:mb-[204px] ">
+				<div className="col-start-1 lg:col-start-2 xl:col-start-2 xxl:col-start-2 col-span-4 md:col-span-12 xl:col-span-5 xxl:col-span-5  sm:w-[480px] mt-11 sm:mt-20 lg:mt-[104px]  xxl:mt-[194px] relative">
 					<div className="absolute top-[-54px] left-[201px]">
 						<Image
 							className="self-center"
@@ -88,7 +88,7 @@ function Hero({}: Props): ReactElement {
 					</div>
 				</div>
 
-				<div className=" col-span-4 mx-auto col-start-1 md:col-span-12  xl:col-span-5 xl:col-start-8 w-[240px] h-[264px] sm:w-[430px] sm:h-[372px] mt-[92px] sm:mt-[64px] md:mt-[100px] xl:mt-[196px] xxl:mt-[172px] xl:mx-0 bg-[#000] rounded-terminal relative terminal">
+				<div className=" col-span-4 mx-auto col-start-1 md:col-span-12  xl:col-span-5 xl:col-start-8 w-[240px] h-[264px] sm:w-[430px] sm:h-[372px] mt-[92px] sm:mt-[64px] md:mt-[100px] xxl:mt-[172px] xl:mx-0 bg-[#000] rounded-terminal relative terminal">
 					<div className="bg-[#1F1F22] sm:h-[58px] h-[32px] w-[full] opacity-50 rounded-[20px] rounded-b-[0px]"></div>
 					<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#E35353] rounded-full absolute sm:top-6 sm:left-6 top-[12px] left-5  "></div>
 					<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5  bg-[#53E37C] rounded-full absolute sm:top-6 sm:left-10 top-[12px] left-[36px] xl:left-[46px]"></div>
