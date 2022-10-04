@@ -2,9 +2,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import LinkedIn from "../public/images/linkedin.svg"
-import mail from "../public/images/mail.png"
-import twitter from "../public/images/twitter.png"
-import github from "../public/images/github.png"
+import Twitter from "../public/images/twitter.svg"
+import Mail from "../public/images/mail.svg"
+import GitHub from "../public/images/github.svg"
 import React, { ReactElement } from "react"
 import Experience from "./Experience"
 
@@ -16,9 +16,9 @@ function About({}: Props): ReactElement {
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 active flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
 				<div className="sm:w-[568px] md:w-[580px] xl:w-[520px] xxl:w-[580px] mb-[32px] sm:mb-[46px] lg:mb-[50px] xl:mb-0">
 					<p className="font-clash text-4xl md:text-7xl xl:text-8xl sm:text-7xl text-shadow-h2 mb-1 sm:mb-2">
-						about
+						About
 					</p>
-					<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm mb-2 sm:mb-4 xl:mb-[28px] xxl:mb-[36px]">
+					<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm mb-3 sm:mb-4 xl:mb-[28px] xxl:mb-[36px]">
 						I am a third-year student at Manipal University Jaipur
 						pursuing B.Tech in Information Technology, programming
 						since freshman year of college.
@@ -26,40 +26,22 @@ function About({}: Props): ReactElement {
 					<div className="flex flex-row items-center justify-between w-[192px] sm:w-[212px] md:w-[216px] xl:w-[224px] ">
 						<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 							<a className="hover:scale-110 duration-300">
-								<LinkedIn className="w-[31px] h-[31px]" />
+								<LinkedIn className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 							</a>
 						</Link>
-						<Link href="https://twitter.com/sarthakahuja07">
+						<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 							<a className="hover:scale-110 duration-300">
-								<Image
-									className="self-center"
-									src={twitter}
-									alt="twitter"
-									width={28.4}
-									height={23.1}
-								/>
+								<Twitter className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 							</a>
 						</Link>
-						<Link href="https://github.com/sarthakahuja07">
+						<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 							<a className="hover:scale-110 duration-300">
-								<Image
-									className="self-center"
-									src={github}
-									alt="github"
-									width={30.7}
-									height={30.7}
-								/>
+								<GitHub className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 							</a>
 						</Link>
-						<Link href="mailto:sarthak.ahuja0007@gmail.com">
+						<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 							<a className="hover:scale-110 duration-300">
-								<Image
-									className="self-center"
-									src={mail}
-									alt="mail"
-									width={32.1}
-									height={26}
-								/>
+								<Mail className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 							</a>
 						</Link>
 					</div>

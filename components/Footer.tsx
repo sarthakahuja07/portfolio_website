@@ -12,7 +12,6 @@ export const Footer = (props: Props) => {
 		<>
 			<div className="flex flex-row items-center ">
 				<div className="flex-1 h-[0.5px] bg-line-gradient2 mr-2"></div>
-
 				<Image
 					className="self-center"
 					src={star}
@@ -26,39 +25,24 @@ export const Footer = (props: Props) => {
 				<p className="mb-0 sm:mb-[6] md:mb-2 lg:mb-3 font-clash xl:text-3xsm sm:text-4xsm text-phoneSm ">
 					made with ❤️
 				</p>
-				{/* <p className="font-source text-phoneXxl md:text-md inline-flex items-baseline">
-					<span className="inline-flex items-baseline [&>span]:self-center self-center">
-						<Image
-							className="self-center hidden"
-							src={paint}
-							alt="logo"
-							width={26}
-							height={26}
-						/>
-					</span>
-					<span className="font-clash xl:text-3xsm sm:text-4xsm text-phoneSm ">Akhilesh & Shaz . </span>
-                    <span className="inline-flex items-baseline [&>span]:self-center self-center">
-						<Image
-							className="self-center hidden"
-							src={computer}
-							alt="logo"
-							width={26}
-							height={26}
-						/>
-					</span>
-					<span className="font-clash xl:text-3xsm sm:text-4xsm text-phoneSm ">Sarthak</span>
-				</p> */}{" "}
 				<p className="font-clash xl:text-3xsm sm:text-4xsm text-phoneSm ">
 					Designed by{" "}
 					<Link href="https://akhileshsaurabh.com/ ">
-						<a className="hover-underline-animation cursor-pointer after:bg-active">Akhilesh</a>
+						<a className="hover-underline-animation cursor-pointer after:bg-active">
+							Akhilesh
+						</a>
 					</Link>{" "}
-					& <Link href="https://www.shahrozahmad.com/ "> 
-                    <a className="hover-underline-animation cursor-pointer after:bg-active">Shaz</a>
-                    </Link>{" "}
+					&{" "}
+					<Link href="https://www.shahrozahmad.com/ ">
+						<a className="hover-underline-animation cursor-pointer after:bg-active">
+							Shaz
+						</a>
+					</Link>{" "}
 					&nbsp; &nbsp;| &nbsp;&nbsp;Developed by &nbsp;
 					<Link href="https://www.linkedin.com/in/sarthak-ahuja07/ ">
-                    <a className="hover-underline-animation cursor-pointer after:bg-active">Sarthak Ahuja</a>
+						<a className="hover-underline-animation cursor-pointer after:bg-active">
+							Sarthak Ahuja
+						</a>
 					</Link>
 				</p>
 			</div>

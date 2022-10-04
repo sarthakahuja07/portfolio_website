@@ -5,10 +5,9 @@ import hands from "../images/hands.png"
 import Link from "next/link"
 import LinkedIn from "../public/images/linkedin.svg"
 import Twitter from "../public/images/twitter.svg"
-import mail from "../public/images/mail.png"
-import twitter from "../public/images/twitter.png"
-import github from "../public/images/github.png"
-import copy from "../public/images/copy.png"
+import Mail from "../public/images/mail.svg"
+import GitHub from "../public/images/github.svg"
+import Copy from "../public/images/copy.svg"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 
 interface Props {}
@@ -39,41 +38,22 @@ function Contact({}: Props): ReactElement {
 						<div className="flex flex-row items-center justify-evenly  mb-4">
 							<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 								<a className="hover:scale-110 duration-300">
-									<LinkedIn className="w-[31px] h-[31px]" />
+									<LinkedIn className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 								</a>
 							</Link>
 							<Link href="https://twitter.com/sarthakahuja07">
 								<a className="hover:scale-110 duration-300">
-									<Twitter className="w-[31px] h-[31px]" />
+									<Twitter className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 								</a>
 							</Link>
-							<Image
-								className="self-center"
-								src={twitter}
-								alt="twitter"
-								width={28.4}
-								height={23.1}
-							/>
-							<Link href="https://github.com/sarthakahuja07">
+							<Link href="https://twitter.com/sarthakahuja07">
 								<a className="hover:scale-110 duration-300">
-									<Image
-										className="self-center"
-										src={github}
-										alt="github"
-										width={30.7}
-										height={30.7}
-									/>
+									<GitHub className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 								</a>
 							</Link>
-							<Link href="mailto:sarthak.ahuja0007@gmail.com">
+							<Link href="https://twitter.com/sarthakahuja07">
 								<a className="hover:scale-110 duration-300">
-									<Image
-										className="self-center"
-										src={mail}
-										alt="mail"
-										width={32.1}
-										height={26}
-									/>
+									<Mail className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 								</a>
 							</Link>
 						</div>
@@ -82,13 +62,7 @@ function Contact({}: Props): ReactElement {
 								sarthak.ahuja0007@gmail.com
 							</span>
 							<CopyToClipboard text="sarthak.ahuja0007@gmail.com">
-								<Image
-									className="self-center cursor-pointer"
-									src={copy}
-									alt="copy-button"
-									width={13.2}
-									height={17.6}
-								/>
+								<Copy className="w-[10px] h-[13.3px] sl:w-[13.2px] xl:h-[17.6px] cursor-pointer" />
 							</CopyToClipboard>
 						</div>
 					</div>
