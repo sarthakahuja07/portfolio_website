@@ -17,7 +17,8 @@ module.exports = {
 			navItem: "0px -4px 0px #09F755",
 			h2: "0px 2.25641px 16.9231px rgba(255, 255, 255, 0.5)",
 			h3: "0px 3.12381px 43.7333px rgba(255, 255, 255, 0.5)",
-			h1: "0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)"
+			h1: "0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)",
+			work: "0px 4px 30px rgba(255, 255, 255, 0.5);"
 		},
 		fontSize: {
 			phoneSm: [
@@ -201,6 +202,27 @@ module.exports = {
 					lineHeight: "18px",
 					fontWeight: "400"
 				}
+			],
+			number: [
+				"68.66px",
+				{
+					lineHeight: "84px",
+					fontWeight: "600"
+				}
+			],
+			numberMd: [
+				"107.29px",
+				{
+					lineHeight: "132px",
+					fontWeight: "600"
+				}
+			],
+			numberLg: [
+				"134.11px",
+				{
+					lineHeight: "165px",
+					fontWeight: "600"
+				}
 			]
 		},
 		colors: {
@@ -240,6 +262,7 @@ module.exports = {
 			lg: "0.5rem",
 			full: "9999px",
 			full: "9999px",
+			"work-card": "8.63404px",
 			lg: "10px",
 			large: "12px",
 			xl: "22px",
@@ -261,7 +284,9 @@ module.exports = {
 				"experience-line-horizontal":
 					"linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #FFFFFF 13.02%, #FFFFFF 88.54%, rgba(0, 0, 0, 0) 100%);",
 				// "hero-pattern": "url('../public/images/hero-bg.png')",
-				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')"
+				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')",
+				"work-card-gradient":
+					" linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);"
 			},
 			dropShadow: {
 				menuItem: " 0px -3px 0px #09F755;",

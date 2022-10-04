@@ -80,11 +80,15 @@ function Hero({}: Props): ReactElement {
 						</p>
 					</div>
 					<div>
-						<button className="helloButton hover:before:bg-black hover:after:bg-white hover:text-white text-black hover:after:border-black transition-all duration-300 ">
-							<p className="font-array text-hello  sm:text-hellolg ">
-								Say Hello!
-							</p>
-						</button>
+						<Link href="mailto:sarthak.ahuja0007@gmail.com?subject=Hey%20There! 👋">
+							<a>
+								<button className="helloButton hover:before:bg-black hover:after:bg-white hover:text-white text-black hover:after:border-black transition-all duration-300 ">
+									<p className="font-array text-hello  sm:text-hellolg ">
+										Say Hello!
+									</p>
+								</button>
+							</a>
+						</Link>
 					</div>
 				</div>
 

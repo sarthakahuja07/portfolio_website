@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer"
 import Contact from "../components/Contact"
 import Hero from "../components/Hero"
 import About from "../components/About"
+import Work from '../components/Work';
 
 const Home: NextPage = () => {
 	return (
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
 					<div className="mt-[124px] md:mt-[130px] lg:mt-[136px]"></div>
 					<Hero />
 					<About />
+                    <Work />
 					<Contact />
 
 					<Footer />
