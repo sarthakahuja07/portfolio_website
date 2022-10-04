@@ -241,7 +241,8 @@ module.exports = {
 			codeBlue: "#64D2FF",
 			codePurple: "#BF5AF2",
 			codeComment: "#8E8E93",
-			transparent: "transparent"
+			transparent: "transparent",
+			"nav-border": "rgba(255, 255, 255, 0.05)"
 		},
 		fontFamily: {
 			array: ["Array", "sans-serif"],
@@ -274,7 +275,7 @@ module.exports = {
 		extend: {
 			backgroundImage: {
 				"nav-gradient":
-					"linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%)",
+					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
 				"line-gradient":
 					"linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #FFFEFE 100%);",
 				"line-gradient2":

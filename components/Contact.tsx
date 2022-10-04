@@ -3,7 +3,8 @@ import React, { ReactElement } from "react"
 import Image from "next/image"
 import hands from "../images/hands.png"
 import Link from "next/link"
-import linkedin from "../public/images/linkedin.png"
+import LinkedIn from "../public/images/linkedin.svg"
+import Twitter from "../public/images/twitter.svg"
 import mail from "../public/images/mail.png"
 import twitter from "../public/images/twitter.png"
 import github from "../public/images/github.png"
@@ -38,26 +39,21 @@ function Contact({}: Props): ReactElement {
 						<div className="flex flex-row items-center justify-evenly  mb-4">
 							<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 								<a className="hover:scale-110 duration-300">
-									<Image
-										className="self-center"
-										src={linkedin}
-										alt="linkedin"
-										width={31}
-										height={31}
-									/>
+									<LinkedIn className="w-[31px] h-[31px]" />
 								</a>
 							</Link>
 							<Link href="https://twitter.com/sarthakahuja07">
 								<a className="hover:scale-110 duration-300">
-									<Image
-										className="self-center"
-										src={twitter}
-										alt="twitter"
-										width={28.4}
-										height={23.1}
-									/>
+									<Twitter className="w-[31px] h-[31px]" />
 								</a>
 							</Link>
+							<Image
+								className="self-center"
+								src={twitter}
+								alt="twitter"
+								width={28.4}
+								height={23.1}
+							/>
 							<Link href="https://github.com/sarthakahuja07">
 								<a className="hover:scale-110 duration-300">
 									<Image

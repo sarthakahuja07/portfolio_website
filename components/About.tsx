@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
 import Link from "next/link"
-import linkedin from "../public/images/linkedin.png"
+import LinkedIn from "../public/images/linkedin.svg"
 import mail from "../public/images/mail.png"
 import twitter from "../public/images/twitter.png"
 import github from "../public/images/github.png"
@@ -26,13 +26,7 @@ function About({}: Props): ReactElement {
 					<div className="flex flex-row items-center justify-between w-[192px] sm:w-[212px] md:w-[216px] xl:w-[224px] ">
 						<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
 							<a className="hover:scale-110 duration-300">
-								<Image
-									className="self-center"
-									src={linkedin}
-									alt="linkedin"
-									width={31}
-									height={31}
-								/>
+								<LinkedIn className="w-[31px] h-[31px]" />
 							</a>
 						</Link>
 						<Link href="https://twitter.com/sarthakahuja07">
