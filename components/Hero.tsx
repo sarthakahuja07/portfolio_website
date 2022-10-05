@@ -198,12 +198,10 @@ function Hero({}: Props): ReactElement {
 								<div className="cursor w-full">
 									<textarea
 										id="code"
-										// placeholder="Error:[ please try again!"
 										className="codeTextArea bg-transparent text-white resize-none w-full overflow-y-hidden"
 										spellCheck="false"
 										rows={1}
 										cols={100}
-										autoFocus
 										onChange={handleCodeChange}
 									/>
 									<i className="hide"></i>

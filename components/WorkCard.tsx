@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link"
 import React from "react"
 
 interface Props {}
@@ -33,9 +34,13 @@ const WorkCard = (props: Props) => {
 										className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 mr-1"
 										alt="website"
 									/>
-									<h4 className="text-phoneSm sm:text-4xsm lg:text-3xsm">
-										Website
-									</h4>
+									<Link href="https://www.linkedin.com/in/sarthak-ahuja07/ ">
+										<a className="hover-underline-animation cursor-pointer after:bg-active">
+											<h4 className="text-phoneSm sm:text-4xsm lg:text-3xsm">
+												Website
+											</h4>
+										</a>
+									</Link>
 								</div>
 								<div>|</div>
 								<div className="flex flex-row items-center">
@@ -44,9 +49,13 @@ const WorkCard = (props: Props) => {
 										className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 mr-1"
 										alt="github"
 									/>
-									<h4 className="text-phoneSm sm:text-4xsm lg:text-3xsm">
-										Github
-									</h4>
+									<Link href="https://www.linkedin.com/in/sarthak-ahuja07/ ">
+										<a className="hover-underline-animation cursor-pointer after:bg-active">
+											<h4 className="text-phoneSm sm:text-4xsm lg:text-3xsm">
+												Github
+											</h4>
+										</a>
+									</Link>
 								</div>
 							</div>
 						</div>
