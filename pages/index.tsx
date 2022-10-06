@@ -12,26 +12,25 @@ import Work from "../components/Work"
 const Home: NextPage = () => {
 	return (
 		<div>
+			<Head>
+				<title>Sarthak Portfolio</title>
+				<meta
+					name="description"
+					content="Portfolio website for software developer Sarthak Ahuja"
+				/>
+				<link rel="icon" href="/favicon.svg" />
+			</Head>
 			<Navbar />
-			<div className="w-full h-screen bg-hero-pattern absolute bg-center bg-cover bg-no-repeat">
-				<div className="backdrop-blur-[100px] absolute w-full">
-					<Head>
-						<title>Sarthak Portfolio</title>
-						<meta
-							name="description"
-							content="Portfolio website for software developer Sarthak Ahuja"
-						/>
-						<link rel="icon" href="/favicon.svg" />
-					</Head>
-					{/* TODO: fix the mt based on each screen size */}
-					<div className="mt-[66.5px] sm:mt-[109px] md:mt-[105px] lg:mt-[107px] xl:mt-[124px]"></div>
-					<Hero />
-					<About />
-					<Work />
-					<Contact />
-					<Footer />
-				</div>
+			<div className="bg-hero-pattern bg-center bg-cover bg-no-repeat h-screen w-[100%] absolute inset-0 z-[-10]">
+				<div className="backdrop-blur-[100px] h-[250%]"></div>
 			</div>
+			<div className="mt-[66.5px] sm:mt-[109px] md:mt-[105px] lg:mt-[107px] xl:mt-[124px]"></div>
+
+			<Hero />
+			<About />
+			<Work />
+			<Contact />
+			<Footer />
 		</div>
 	)
 }

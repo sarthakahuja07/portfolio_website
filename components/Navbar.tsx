@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import logo from "../public/images/logo.png"
 // import { ReactComponent as YourSvg } from "./your-svg.svg"
@@ -11,6 +11,24 @@ interface Props {}
 
 const Navbar = (props: Props) => {
 	const [isNavOpen, setisNavOpen] = useState(false)
+
+	const btnRef = useRef<HTMLButtonElement>(null)
+
+	useEffect(() => {
+		const closeNavbar = (e: any) => {
+			console.log(!e.path.includes(btnRef.current))
+
+			if (!e.path.includes(btnRef.current)) {
+				if (isNavOpen) {
+					setisNavOpen(false)
+				}
+			}
+		}
+		document.body.addEventListener("click", closeNavbar)
+		return () => {
+			document.body.removeEventListener("click", closeNavbar)
+		}
+	}, [isNavOpen])
 
 	return (
 		<>
@@ -30,7 +48,8 @@ const Navbar = (props: Props) => {
 								</Link>
 							</div>
 							<button
-								className="block xl:hidden"
+								ref={btnRef}
+								className="block xl:hidden px-[10px] py-[2px]"
 								onClick={() => setisNavOpen(!isNavOpen)}
 							>
 								<NavMenu className=" w-[20px] h-[15px] hidden sm:block" />
@@ -41,41 +60,41 @@ const Navbar = (props: Props) => {
 									isNavOpen ? "flex" : "hidden"
 								} xl:flex `}
 							>
-								<div className="py-3 sm:py-[20px] xl:py-0">
-									<Link href="#work">
+								<Link href="#work">
+									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 										<a className="text-white text-nav font-array hover:text-shadow-navItem">
 											.work()
 										</a>
-									</Link>
-								</div>
-								<div className="py-3  sm:py-[20px] xl:py-0">
-									<Link href="#skills">
+									</div>
+								</Link>
+								<Link href="#skills">
+									<div className="py-3  sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 										<a className="text-white text-nav font-array hover:text-shadow-navItem">
 											.skills()
 										</a>
-									</Link>
-								</div>
-								<div className="py-3 sm:py-[20px] xl:py-0">
-									<Link href="#about">
+									</div>
+								</Link>
+								<Link href="#about">
+									<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
 										<a className="text-white text-nav font-array hover:text-shadow-navItem">
 											.about()
 										</a>
-									</Link>
-								</div>
-								<div className="py-3 sm:py-[20px] xl:py-0">
-									<Link href="#contact">
+									</div>
+								</Link>
+								<Link href="#contact">
+									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 										<a className="text-white text-nav font-array hover:text-shadow-navItem">
 											.contact()
 										</a>
-									</Link>
-								</div>
-								<div className="py-3 sm:py-[20px] xl:py-0">
-									<Link href="#resume">
+									</div>
+								</Link>
+								<Link href="#resume">
+									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 										<a className="text-white text-nav font-array hover:text-shadow-navItem">
 											.resume()
 										</a>
-									</Link>
-								</div>
+									</div>
+								</Link>
 							</div>
 						</div>
 					</nav>

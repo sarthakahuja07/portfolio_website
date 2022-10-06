@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react"
+import Modal from "./Modal"
 import WorkCard from "./WorkCard"
 
 interface Props {}
@@ -26,6 +27,7 @@ function Work({}: Props): ReactElement {
 				<WorkCard />
 				<WorkCard />
 			</div>
+			{/* <Modal /> */}
 		</div>
 	)
 }
