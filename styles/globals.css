@@ -133,6 +133,15 @@
 	border-radius: 50%;
 	background-color: white;
 }
+
+/* target every div with a specific class name when hovered on .card and change their scale */
+.card:hover .cardNumber {
+	transform: scale(1.17) translateY(-13%) translateX(17%);
+}
+.card:hover .cardBox {
+	transform: scale(1.17);
+}
+
 .outlinedNumber {
 	color: linear-gradient(158.17deg, #ffffff 14.3%, rgba(0, 0, 0, 0) 104.12%);
 	-webkit-text-fill-color: black; /* Will override color (regardless of order) */

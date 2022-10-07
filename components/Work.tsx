@@ -1,10 +1,17 @@
-import React, { ReactElement } from "react"
-import Modal from "./Modal"
+import React, { ReactElement, useState } from "react"
+import Modal from "./WorkModal"
 import WorkCard from "./WorkCard"
 
 interface Props {}
 
 function Work({}: Props): ReactElement {
+	const [isModalOpen, setIsModalOpen] = useState(false)
+
+	const open = () => {
+		setIsModalOpen(true)
+		document.body.style.overflow = "hidden"
+	}
+
 	return (
 		<div>
 			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px]">
@@ -21,13 +28,29 @@ function Work({}: Props): ReactElement {
 					Projects
 				</h3>
 			</div>
-			<div className="w-full flex flex-col xl:flex-row overflow-hidden">
-				<WorkCard />
-				<WorkCard />
-				<WorkCard />
-				<WorkCard />
+			<div className="w-full flex flex-col xl:flex-row overflow-x-clip">
+				<div onClick={open}>
+					<WorkCard />
+				</div>
+				<div onClick={open}>
+					<WorkCard />
+				</div>
+				<div onClick={open}>
+					<WorkCard />
+				</div>
+				<div onClick={open}>
+					<WorkCard />
+				</div>
+				<div onClick={open}>
+					<WorkCard />
+				</div>
 			</div>
-			{/* <Modal /> */}
+			{isModalOpen && (
+				<Modal
+					setIsModalOpen={setIsModalOpen}
+					isModalOpen={isModalOpen}
+				/>
+			)}
 		</div>
 	)
 }

@@ -242,7 +242,8 @@ module.exports = {
 			codePurple: "#BF5AF2",
 			codeComment: "#8E8E93",
 			transparent: "transparent",
-			"nav-border": "rgba(255, 255, 255, 0.05)"
+			"nav-border": "rgba(255, 255, 255, 0.05)",
+			"modal-bg": "#07070759"
 		},
 		fontFamily: {
 			array: ["Array", "sans-serif"],
@@ -267,6 +268,7 @@ module.exports = {
 			lg: "10px",
 			large: "12px",
 			xl: "22px",
+			xxl: "24px",
 			terminal: "20px"
 		},
 		linearBorderGradients: (theme) => ({
@@ -287,7 +289,8 @@ module.exports = {
 				// "hero-pattern": "url('../public/images/hero-bg.png')",
 				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')",
 				"work-card-gradient":
-					" linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);"
+					" linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
+				modal: "linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);"
 			},
 			dropShadow: {
 				menuItem: " 0px -3px 0px #09F755;",
