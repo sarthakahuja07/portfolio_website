@@ -269,6 +269,7 @@ module.exports = {
 			large: "12px",
 			xl: "22px",
 			xxl: "24px",
+			xxxl: "36.5963px",
 			terminal: "20px"
 		},
 		linearBorderGradients: (theme) => ({
