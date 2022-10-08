@@ -28,17 +28,17 @@ function Work({}: Props): ReactElement {
 					Projects
 				</h3>
 			</div>
-			<div className="w-full flex flex-col xl:flex-row overflow-x-clip">
+			<div className="w-full flex flex-col xl:flex-row overflow-x-clip work-row relative before:hidden xl:before:block after:hidden xl:after:block ">
 				<div>
 					<WorkCard open={open} />
 				</div>
 				<div>
 					<WorkCard open={open} />
 				</div>
-                <div>
+				<div>
 					<WorkCard open={open} />
 				</div>
-                <div>
+				<div>
 					<WorkCard open={open} />
 				</div>
 			</div>

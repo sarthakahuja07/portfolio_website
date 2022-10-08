@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	padding-right: 100px;
+	padding: 100px;
+	margin: 100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px transparent;
+	border-radius: 10px;
+	margin: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: red;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #b30000;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -134,9 +160,38 @@
 	background-color: white;
 }
 
+.work-row::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 450px;
+	background-image: linear-gradient(
+		90.31deg,
+		rgba(7, 7, 7, 0.95) 0.25%,
+		rgba(7, 7, 7, 0) 104.18%
+	);
+	z-index: 4;
+}
+.work-row::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 150px;
+	height: 450px;
+	background-image: linear-gradient(
+		270.31deg,
+		rgba(7, 7, 7, 0.95) 0.25%,
+		rgba(7, 7, 7, 0) 104.18%
+	);
+	z-index: 4;
+}
+
 /* target every div with a specific class name when hovered on .card and change their scale */
 .card:hover .cardNumber {
-	transform: scale(1.17) translateY(-13%) translateX(17%);
+	transform: scale(1.17) translateY(-17%) translateX(17%);
 }
 .card:hover .cardBox {
 	transform: scale(1.17);

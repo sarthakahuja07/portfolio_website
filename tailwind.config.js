@@ -264,7 +264,9 @@ module.exports = {
 			lg: "0.5rem",
 			full: "9999px",
 			full: "9999px",
-			"work-card": "8.63404px",
+			"work-card-lg": "17px",
+			"work-card-xs": "8.63404px",
+			"work-card-sm": "13.1669px",
 			lg: "10px",
 			large: "12px",
 			xl: "22px",
@@ -290,8 +292,8 @@ module.exports = {
 				// "hero-pattern": "url('../public/images/hero-bg.png')",
 				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')",
 				"work-card-gradient":
-					" linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
-				modal: "linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);"
+					"url('../public/images/card-bg.png'), linear-gradient(92.04deg, rgba(0, 0, 0, 0.06) -8.08%, rgba(0, 0, 0, 0.4) 112.27%)",
+				modal: "url('../public/images/card-bg.png'), linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);"
 			},
 			dropShadow: {
 				menuItem: " 0px -3px 0px #09F755;",
