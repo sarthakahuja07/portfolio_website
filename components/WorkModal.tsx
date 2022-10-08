@@ -99,7 +99,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 									</div>
 								</div>
 							</div>
-							<div className="xxl:w-[312px] xl:w-[278px] w-[312px] mx-auto lg:mx-0">
+							<div className="xxl:w-[312px] xl:w-[278px] sm:w-[312px] w-full max-w-[312px] mx-auto lg:mx-0">
 								<div className="w-full flex flex-row items-center justify-between text-black">
 									<Link href="/">
 										<button className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex">
