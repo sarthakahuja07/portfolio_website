@@ -22,7 +22,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 	}
 	return (
 		<div className="fixed inset-0 bg-modal-bg flex items-center justify-center z-[20]">
-			<div className="bg-modal backdrop-blur-[12px] xl:rounded-xxl xl:border-[0.5px] xl:border-solid xl:border-grey xxl:p-[76px] xl:p-[76px] lg:p-[44px] md:p-[40px] sm:p-[45px] p-[28px] md:px-[70px] px-9 pb-0 flex flex-col xxl:w-[880px] xl:w-[880px] xl:h-fit h-screen w-full overflow-auto">
+			<div className="bg-modal backdrop-blur-[12px] xl:rounded-xxl xl:border-[0.5px] xl:border-solid xl:border-grey xxl:p-[76px] xl:p-[76px] lg:p-[44px] md:p-[40px] sm:p-[45px] p-[28px] md:px-[70px] px-9 pb-0 flex flex-col xxl:w-[880px] xl:w-[880px] xl:h-fit h-[100%] w-full overflow-auto">
 				<div
 					className="xl:hidden flex gap-[14px] mb-[20px] cursor-pointer"
 					onClick={close}
