@@ -22,7 +22,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 	}
 	return (
 		<div className="fixed inset-0 bg-modal-bg flex items-center justify-center z-[20]">
-			<div className="bg-modal backdrop-blur-[12px] xl:rounded-xxl xl:border-[0.5px] xl:border-solid xl:border-grey xxl:p-[76px] xl:p-[20px] lg:p-[44px] md:p-[40px] sm:p-[45px] p-[28px] md:px-[70px] px-9 pb-0 flex flex-col xxl:w-[880px] xl:w-[660px] xl:h-fit h-screen w-full overflow-auto">
+			<div className="bg-modal backdrop-blur-[12px] xl:rounded-xxl xl:border-[0.5px] xl:border-solid xl:border-grey xxl:p-[76px] xl:p-[76px] lg:p-[44px] md:p-[40px] sm:p-[45px] p-[28px] md:px-[70px] px-9 pb-0 flex flex-col xxl:w-[880px] xl:w-[880px] xl:h-fit h-screen w-full overflow-auto">
 				<div
 					className="xl:hidden flex gap-[14px] mb-[20px] cursor-pointer"
 					onClick={close}
@@ -32,7 +32,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 						NFT Marketplace
 					</h3>
 				</div>
-				<div className="mx-auto w-full sm:w-auto">
+				<div className="mx-auto w-full sm:w-auto ">
 					<div className="mb-[40px] xl:mb-0">
 						<div className="absolute top-[24px] right-[24px] hidden xl:block">
 							<button onClick={close}>
@@ -52,13 +52,13 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 							</div>
 							<img
 								src="images/hero-bg.png"
-								className=" xxl:w-[728px] xxl:h-[322px] xl:w-[546px] xl:h-[242px] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[200px] rounded-xxl "
+								className=" xxl:w-[728px] xxl:h-[322px] xl:w-[728px] xl:h-[322px] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl "
 								alt="me"
 							/>
 						</div>
 						<div className="flex flex-col xxl:gap-[60px] xl:gap-[30px] lg:gap-[50px] sm:gap-[32px] gap-[44px]">
 							<div className="flex sm:flex-row flex-col justify-between gap-6 sm:gap-0">
-								<div className="xxl:w-[372px] xl:w-[278px] lg:w-[372px] sm:w-[294px] w-full">
+								<div className="xxl:w-[372px] xl:w-[372px] lg:w-[372px] sm:w-[294px] w-full">
 									<p className="mb-2 font-clash text-md hidden xl:block">
 										NFT Marketplace
 									</p>
@@ -99,7 +99,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 									</div>
 								</div>
 							</div>
-							<div className="xxl:w-[312px] xl:w-[278px] sm:w-[312px] w-full max-w-[312px] mx-auto lg:mx-0">
+							<div className="xxl:w-[312px] xl:w-[312px] sm:w-[312px] w-full max-w-[312px] mx-auto lg:mx-0">
 								<div className="w-full flex flex-row items-center justify-between text-black">
 									<Link href="/">
 										<button className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex">

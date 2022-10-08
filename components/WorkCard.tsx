@@ -4,18 +4,23 @@ import React from "react"
 import GitHub from "../public/images/github.svg"
 import Globe from "../public/images/globe-white.svg"
 
-interface Props {}
+interface Props {
+	open: () => void
+}
 
-const WorkCard = (props: Props) => {
+const WorkCard = ({ open }: Props) => {
 	return (
 		<div className="mb-4 lg:mb-9 xl:mb-0 xl:mr-5">
 			<div className="relative w-[320px] card sm:w-[488px] lg:w-[564px] mx-auto mb-[46px] sm:mb-[72px] lg:mb-[92px] hover:z-[4] ">
 				<div className=" absolute top-0 right-0 w-[94px] h-[86px] sm:w-[142px] sm:h-[130px] lg:w-[184px] lg:h-[168px] cardNumber duration-300 delay-75">
-					<p className="font-clash text-number outlinedNumber sm:text-numberMd lg:text-numberLg">
+					<p className="font-clash text-number outlinedNumber sm:text-numberMd lg:text-numberLg text-black_bg">
 						01
 					</p>
 				</div>
-				<div className="bg-work-card-gradient cursor-pointer cardBox duration-300 delay-75 backdrop-blur-[6.86799px] rounded-work-card border-solid border-grey border-[0.196228px] relative top-[46px] sm:top-[72px] lg:top-[92px] p-3 sm:p-5 lg:p-[26px]">
+				<div
+					onClick={open}
+					className="bg-work-card-gradient cursor-pointer cardBox duration-300 delay-75 backdrop-blur-[6.86799px] rounded-work-card border-solid border-grey border-[0.196228px] relative top-[46px] sm:top-[72px] lg:top-[92px] p-3 sm:p-5 lg:p-[26px]"
+				>
 					<div className="flex flex-row justify-between items-center">
 						<img
 							src="images/herobg.png"

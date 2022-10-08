@@ -29,20 +29,17 @@ function Work({}: Props): ReactElement {
 				</h3>
 			</div>
 			<div className="w-full flex flex-col xl:flex-row overflow-x-clip">
-				<div onClick={open}>
-					<WorkCard />
+				<div>
+					<WorkCard open={open} />
 				</div>
-				<div onClick={open}>
-					<WorkCard />
+				<div>
+					<WorkCard open={open} />
 				</div>
-				<div onClick={open}>
-					<WorkCard />
+                <div>
+					<WorkCard open={open} />
 				</div>
-				<div onClick={open}>
-					<WorkCard />
-				</div>
-				<div onClick={open}>
-					<WorkCard />
+                <div>
+					<WorkCard open={open} />
 				</div>
 			</div>
 			{isModalOpen && (
