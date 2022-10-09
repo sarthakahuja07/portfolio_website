@@ -4,7 +4,7 @@ interface Props {}
 
 function Experience({}: Props): ReactElement {
 	return (
-		<div className="w-full xl:w-[424px] mb-[92px] xl:mb-0 ">
+		<div className="w-full xl:w-[424px]  ">
 			<div className="mb-4">
 				<div className="flex flex-row items-center justify-start mb-[2px] experienceHeading relative after:top-2 after:left-[-16px] xl:after:top-[-16px] xl:after:left-[30%]">
 					<h4 className="text-xsm sm:text-md font-clash mr-4">

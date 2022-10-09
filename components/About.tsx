@@ -56,9 +56,9 @@ function About({}: Props): ReactElement {
 				<h3 className=" font-clash text-lg sm:text-4xl w-fit mx-auto text-shadow-h3 mb-[15px] sm:mb-[20px] xl:mb-[16px]">
 					Experience
 				</h3>
-				<div className="flex flex-row xl:flex-col w-full">
-					<div className="h-auto w-[1px] xl:w-full xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-60px] xl:translate-y-0"></div>
-					<div className="flex flex-col xl:flex-row w-full justify-between">
+				<div className="flex flex-row xl:flex-col w-full h-full">
+					<div className="h-[90%] w-[1px] xl:w-full xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0"></div>
+					<div className="flex flex-col xl:flex-row w-full justify-between gap-[92px] xl:gap-0 ">
 						<Experience />
 						<Experience />
 					</div>

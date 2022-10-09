@@ -293,7 +293,11 @@ module.exports = {
 				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')",
 				"work-card-gradient":
 					"url('../public/images/card-bg.png'), linear-gradient(92.04deg, rgba(0, 0, 0, 0.06) -8.08%, rgba(0, 0, 0, 0.4) 112.27%)",
-				modal: "url('../public/images/card-bg.png'), linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);"
+				modal: "url('../public/images/card-bg.png'), linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);",
+				"skills-card-gradient":
+					"linear-gradient(155.73deg, #166D3B 15.54%, #000000 85.89%);",
+				"skills-card":
+					"url('../public/images/skills-card-bg.png'), linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%) "
 			},
 			dropShadow: {
 				menuItem: " 0px -3px 0px #09F755;",

@@ -8,6 +8,7 @@ import Contact from "../components/Contact"
 import Hero from "../components/Hero"
 import About from "../components/About"
 import Work from "../components/Work"
+import Skills from "../components/Skills"
 
 const Home: NextPage = () => {
 	return (
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
 
 			<Hero />
 			<About />
+            <Skills />
 			<Work />
 			<Contact />
 			<Footer />
