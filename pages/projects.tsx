@@ -16,8 +16,6 @@ const Projects: NextPage = () => {
 				/>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
-			<Navbar />
-			<div className="mt-[66.5px] sm:mt-[109px] md:mt-[105px] lg:mt-[107px] xl:mt-[124px]"></div>
 
 			<ProjectsPage />
 			<Footer />
