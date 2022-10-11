@@ -223,6 +223,13 @@ module.exports = {
 					lineHeight: "165px",
 					fontWeight: "600"
 				}
+			],
+			numberXl: [
+				"95.25px",
+				{
+					lineHeight: "117.16px",
+					fontWeight: "600"
+				}
 			]
 		},
 		colors: {

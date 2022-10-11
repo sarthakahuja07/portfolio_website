@@ -41,7 +41,7 @@ const Skills = (props: Props) => {
 					</div>
 
 					<div className="my-[28px] sm:my-[32px] mx-auto w-[254px] sm:w-[455px] flex fex-row flex-wrap sm:gap-y-[16px] sm:gap-x-[77px] gap-y-[22px] gap-x-[28px]">
-						{[...Array(12)].map((_, i) => (
+						{[...Array(11)].map((_, i) => (
 							<div
 								key={i}
 								className="sm:w-[100px] w-[66px] text-center "
