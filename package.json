@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "prisma generate next build && next export",
+		"build": "prisma generate && next build && next export",
 		"start": "next start",
 		"deploy": "firebase deploy --only hosting",
 		"export": "next export"
