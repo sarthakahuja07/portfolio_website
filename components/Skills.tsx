@@ -49,11 +49,11 @@ const Skills = ({ skillSet }: Props) => {
 						})}
 					</div>
 
-					<div className="my-[28px] sm:my-[32px] mx-auto w-[254px] sm:w-[455px] flex fex-row flex-wrap sm:gap-y-[16px] sm:gap-x-[76px] gap-y-[22px] gap-x-[13px]">
+					<div className="my-[28px] sm:my-[32px] mx-auto w-[254px] sm:w-[455px] flex fex-row flex-wrap sm:gap-y-[16px] sm:gap-x-[77px] gap-y-[22px] gap-x-[13px]">
 						{currSkill.skills.map((singleSkill, i) => (
 							<div
 								key={singleSkill.id}
-								className="sm:w-[100px] w-[77px] text-center "
+								className="sm:w-[100px] w-[76px] text-center "
 							>
 								<img
 									src={singleSkill.logo}
