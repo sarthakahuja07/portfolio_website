@@ -4,8 +4,13 @@ import Navbar from "../components/Navbar"
 import { Footer } from "../components/Footer"
 
 import ProjectsPage from "../components/projectsPage"
+import { PrismaClient, projects } from "@prisma/client"
 
-const Projects: NextPage = () => {
+interface Props {
+	projects: projects[]
+}
+
+const Projects: NextPage<Props> = ({ projects }) => {
 	return (
 		<div>
 			<Head>
@@ -17,10 +22,21 @@ const Projects: NextPage = () => {
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
 
-			<ProjectsPage />
+			<ProjectsPage projects={projects} />
 			<Footer />
 		</div>
 	)
 }
 
 export default Projects
+
+export const getStaticProps = async () => {
+	const prisma = new PrismaClient()
+	// get skillSet from prisma and include the skills associated with it
+
+	const projects: projects[] = await prisma.projects.findMany({})
+
+	return {
+		props: { projects }
+	}
+}
