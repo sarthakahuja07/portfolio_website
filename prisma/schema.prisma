@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+model skills {
+    id            String     @id @default(auto()) @map("_id") @db.ObjectId
+    name          String
+    logo          String
+    skills_set    skills_set @relation(fields: [skills_set_id], references: [id])
+    skills_set_id String     @db.ObjectId
+}
+
+model skills_set {
+    id     String   @id @default(auto()) @map("_id") @db.ObjectId
+    name   String
+    skills skills[]
+}
+
+model experience {
+    id            String   @id @default(auto()) @map("_id") @db.ObjectId
+    company_name  String
+    starting_date String
+    ending_date   String
+    position      String
+    description   String[]
+}
+
+model projects {
+    id            String       @id @default(auto()) @map("_id") @db.ObjectId
+    name          String
+    description   String[]
+    gist          String
+    website       String
+    github        String
+    image         String[]
+    cover         String
+    techStack     String[]
+}
+

@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react"
 
-interface Props {}
+interface Props {
+	logo: string
+}
 
-const TechStack = (props: Props) => {
+const TechStack = ({ logo }: Props) => {
 	return (
 		<div className="w-[26px] h-[26px]">
 			<img
-				src="images/android.png"
+				src={logo}
 				className="w-[26px] h-[26px] "
 				alt="android"
 			/>

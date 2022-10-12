@@ -9,13 +9,15 @@ import BackButton from "../public/images/back.svg"
 import Next from "../public/images/carousel-next.svg"
 import TechStack from "./TechStack"
 import { Footer } from "./Footer"
+import { projects } from "@prisma/client"
 
 interface Props {
 	isModalOpen: boolean
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
+	project: projects
 }
 
-const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
+const WorkModal = ({ isModalOpen, setIsModalOpen, project }: Props) => {
 	const close = () => {
 		setIsModalOpen(false)
 		document.body.style.overflow = "visible"
@@ -29,7 +31,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 				>
 					<BackButton className="sm:h-6 sm:w-6 h-4 w-4 " />
 					<h3 className="font-clash sm:text-md text-xxsm">
-						NFT Marketplace
+						{project.name}
 					</h3>
 				</div>
 				<div className="mx-auto w-full sm:w-auto xl:mx-0 xxl:mx-auto">
@@ -51,7 +53,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 								</button>
 							</div>
 							<img
-								src="images/hero-bg.png"
+								src={project.image[0]}
 								className=" xxl:w-[728px] xxl:h-[322px] xl:w-[79vh] xl:h-[35vh] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl "
 								alt="me"
 							/>
@@ -60,25 +62,19 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 							<div className="flex sm:flex-row flex-col justify-between gap-6 sm:gap-0">
 								<div className="xxl:w-[372px] xl:w-[372px] lg:w-[372px] sm:w-[294px] w-full">
 									<p className="mb-2 font-clash text-md hidden xl:block">
-										NFT Marketplace
+										{project.name}
 									</p>
 									<div className="">
-										<p className="mb-2 font-clash sm:text-4xsm text-phoneLg">
-											Here is a showcase of some of my
-											best projects that i made. They can
-											be found on my guthub.Here is a
-											showcase of some of my best projects
-											that i made.They can be found on my
-											guthub.
-										</p>
-										<p className="mb-2 font-clash sm:text-4xsm text-phoneLg">
-											Here is a showcase of some of my
-											best projects that i made. They can
-											be found on my guthub.Here is a
-											showcase of some of my best projects
-											that i made.They can be found on my
-											guthub.
-										</p>
+										{project.description.map(
+											(desc, index) => (
+												<p
+													key={index}
+													className="mb-2 font-clash sm:text-4xsm text-phoneLg"
+												>
+													{desc}
+												</p>
+											)
+										)}
 									</div>
 								</div>
 								<div className="xl:w-[194px] sm:w-[226px] w-full">
@@ -86,22 +82,20 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 										Tech Stack
 									</h3>
 									<div className="flex flex-wrap gap-4 gap-y-3">
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
-										<TechStack />
+										{project.techStack.map(
+											(tech, index) => (
+												<TechStack
+													key={index}
+													logo={tech}
+												/>
+											)
+										)}
 									</div>
 								</div>
 							</div>
 							<div className="xxl:w-[312px] xl:w-[312px] sm:w-[312px] w-full max-w-[312px] mx-auto lg:mx-0">
 								<div className="w-full flex flex-row items-center justify-between text-black">
-									<Link href="/">
+									<Link href={project.website}>
 										<button className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center">
 											<Globe className="h-[20px] w-[20px] mr-4" />
 											<p className="font-clash sm:text-xxsm text-phoneXxl">
@@ -109,7 +103,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen }: Props) => {
 											</p>
 										</button>
 									</Link>
-									<Link href="/">
+									<Link href={project.github}>
 										<button className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex  items-center">
 											<GitHub className="h-[20px] w-[20px] mr-4" />
 											<p className="font-clash sm:text-xxsm text-phoneXxl">

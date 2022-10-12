@@ -3,16 +3,22 @@ import Modal from "./WorkModal"
 import WorkCard from "./WorkCard"
 import AllProjectsIcon from "../public/images/allProjects.svg"
 import Link from "next/link"
+import { projects } from "@prisma/client"
 
-interface Props {}
+interface Props {
+	projects: projects[]
+}
 
-function Work({}: Props): ReactElement {
+function Work({ projects }: Props): ReactElement {
 	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [currProject, setCurrProject] = useState(projects[0])
+
 	const viewAllRef = useRef<HTMLDivElement>(null)
 	const allProjectIcon = useRef<HTMLDivElement>(null)
 
-	const open = () => {
+	const open = (project: projects) => {
 		setIsModalOpen(true)
+		setCurrProject(project)
 		document.body.style.overflow = "hidden"
 	}
 
@@ -74,23 +80,19 @@ function Work({}: Props): ReactElement {
 				onMouseOver={toggleIcon}
 				onMouseOut={toggleIcon}
 			>
-				<div>
-					<WorkCard open={open} />
-				</div>
-				<div>
-					<WorkCard open={open} />
-				</div>
-				<div>
-					<WorkCard open={open} />
-				</div>
-				<div>
-					<WorkCard open={open} />
-				</div>
+				{projects.map((project: projects, i) => {
+					return (
+						<div key={project.id}>
+							<WorkCard open={open} project={project} index={i} />
+						</div>
+					)
+				})}
 			</div>
 			{isModalOpen && (
 				<Modal
 					setIsModalOpen={setIsModalOpen}
 					isModalOpen={isModalOpen}
+                    project={currProject}
 				/>
 			)}
 		</div>

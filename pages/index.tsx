@@ -9,8 +9,23 @@ import Hero from "../components/Hero"
 import About from "../components/About"
 import Work from "../components/Work"
 import Skills from "../components/Skills"
+import {
+	skills_set,
+	PrismaClient,
+	skills,
+	experience,
+	projects
+} from "@prisma/client"
 
-const Home: NextPage = () => {
+type SkillsSetType = skills_set & { skills: skills[] }
+
+interface Props {
+	skillSet: SkillsSetType[]
+	experiences: experience[]
+	projects: projects[]
+}
+
+const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 	return (
 		<div>
 			<Head>
@@ -28,9 +43,9 @@ const Home: NextPage = () => {
 			<div className="mt-[66.5px] sm:mt-[109px] md:mt-[105px] lg:mt-[107px] xl:mt-[124px]"></div>
 
 			<Hero />
-			<About />
-            <Skills />
-			<Work />
+			<About experiences={experiences} />
+			<Skills skillSet={skillSet} />
+			<Work projects={projects} />
 			<Contact />
 			<Footer />
 		</div>
@@ -38,3 +53,20 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps = async () => {
+	const prisma = new PrismaClient()
+	// get skillSet from prisma and include the skills associated with it
+	const skillSet: SkillsSetType[] = await prisma.skills_set.findMany({
+		include: {
+			skills: true
+		}
+	})
+
+	const experiences: experience[] = await prisma.experience.findMany({})
+	const projects: projects[] = await prisma.projects.findMany({})
+
+	return {
+		props: { skillSet, experiences, projects }
+	}
+}

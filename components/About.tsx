@@ -7,10 +7,13 @@ import Mail from "../public/images/mail.svg"
 import GitHub from "../public/images/github.svg"
 import React, { ReactElement } from "react"
 import Experience from "./Experience"
+import { experience } from "@prisma/client"
 
-interface Props {}
+interface Props {
+	experiences: experience[]
+}
 
-function About({}: Props): ReactElement {
+function About({ experiences }: Props): ReactElement {
 	return (
 		<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[92px] sm:mt[40px] md:mt[130px] lg:mt[158px] xl:mt-[234px]">
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 active flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
@@ -59,8 +62,12 @@ function About({}: Props): ReactElement {
 				<div className="flex flex-row xl:flex-col w-full h-full">
 					<div className="h-[90%] w-[1px] xl:w-[85%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0"></div>
 					<div className="flex flex-col xl:flex-row w-full justify-between gap-[92px] xl:gap-0 ">
-						<Experience />
-						<Experience />
+						{experiences.map((experience) => (
+							<Experience
+								key={experience.id}
+								experience={experience}
+							/>
+						))}
 					</div>
 				</div>
 			</div>
