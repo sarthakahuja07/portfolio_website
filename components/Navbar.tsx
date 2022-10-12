@@ -16,8 +16,6 @@ const Navbar = (props: Props) => {
 
 	useEffect(() => {
 		const closeNavbar = (e: any) => {
-			console.log(!e.path.includes(btnRef.current))
-
 			if (!e.path.includes(btnRef.current)) {
 				if (isNavOpen) {
 					setisNavOpen(false)

@@ -1,15 +1,39 @@
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement, useState, useRef } from "react"
 import Modal from "./WorkModal"
 import WorkCard from "./WorkCard"
+import AllProjectsIcon from "../public/images/allProjects.svg"
+import Link from "next/link"
 
 interface Props {}
 
 function Work({}: Props): ReactElement {
 	const [isModalOpen, setIsModalOpen] = useState(false)
+	const viewAllRef = useRef<HTMLDivElement>(null)
+	const allProjectIcon = useRef<HTMLDivElement>(null)
 
 	const open = () => {
 		setIsModalOpen(true)
 		document.body.style.overflow = "hidden"
+	}
+
+	const toggleViewAll = () => {
+		if (viewAllRef.current?.classList.contains("hidden")) {
+			viewAllRef.current?.classList.remove("hidden")
+			viewAllRef.current?.classList.add("xl:flex")
+		} else if (viewAllRef.current?.classList.contains("xl:flex")) {
+			viewAllRef.current?.classList.remove("xl:flex")
+			viewAllRef.current?.classList.add("hidden")
+		}
+	}
+
+	const toggleIcon = () => {
+		if (allProjectIcon.current?.classList.contains("hidden")) {
+			allProjectIcon.current?.classList.remove("hidden")
+			allProjectIcon.current?.classList.add("xl:flex")
+		} else if (allProjectIcon.current?.classList.contains("xl:flex")) {
+			allProjectIcon.current?.classList.remove("xl:flex")
+			allProjectIcon.current?.classList.add("hidden")
+		}
 	}
 
 	return (
@@ -24,11 +48,32 @@ function Work({}: Props): ReactElement {
 						made. They can be found on my github.
 					</p>
 				</div>
-				<h3 className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 w-full font-clash xl:text-4xl mb-2 hidden xl:block">
-					Projects
-				</h3>
+				<div
+					className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 min-w-[250px] w-fit mb-2 hidden xl:flex flex-row items-center gap-[28px]"
+					onMouseOver={toggleViewAll}
+					onMouseOut={toggleViewAll}
+				>
+					<h3 className="font-clash xl:text-4xl">Projects</h3>
+					<Link href="/projects">
+						<div
+							className="items-center gap-1 hidden cursor-pointer"
+							ref={viewAllRef}
+						>
+							<p className="font-clash text-xxsm">View All</p>
+							<AllProjectsIcon className="h-[14px] w-[10px]" />
+						</div>
+					</Link>
+
+					<div ref={allProjectIcon} className="hidden ">
+						<AllProjectsIcon className="h-[22px] w-[14px]" />
+					</div>
+				</div>
 			</div>
-			<div className="w-full flex flex-col xl:flex-row overflow-x-clip work-row relative before:hidden xl:before:block after:hidden xl:after:block ">
+			<div
+				className="w-full flex flex-col xl:flex-row overflow-x-clip work-row relative before:hidden xl:before:block after:hidden xl:after:block "
+				onMouseOver={toggleIcon}
+				onMouseOut={toggleIcon}
+			>
 				<div>
 					<WorkCard open={open} />
 				</div>
