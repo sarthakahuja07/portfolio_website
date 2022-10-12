@@ -62,7 +62,7 @@ function Contact({}: Props): ReactElement {
 								sarthak.ahuja0007@gmail.com
 							</span>
 							<CopyToClipboard text="sarthak.ahuja0007@gmail.com">
-								<Copy className="w-[10px] h-[13.3px] sl:w-[13.2px] xl:h-[17.6px] cursor-pointer" />
+								<Copy className="w-[10px] h-[13.3px] sm:w-[13.2px] sm:h-[17.6px] cursor-pointer" />
 							</CopyToClipboard>
 						</div>
 					</div>
