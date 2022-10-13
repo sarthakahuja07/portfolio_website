@@ -164,20 +164,17 @@
 }
 
 .test::after {
-	/* sm:left-[34px] sm:top-[105px] z-[-1] w-[269px] h-[333px] left-[18.5px] top-[79px] sm:w-[556px] sm:h-[448px] bg-skills-card-gradient blur-[100px] rounded-full */
 	content: "";
-    position: absolute;
-	top: 79px;
-	left: 18.5px;
-	width: 269px;
-	height: 333px;
+	position: absolute;
+    top: 105px;
+    left: 34px;
+    width: 556px;
+    height: 448px;
 	background-image: linear-gradient(
 		155.73deg,
 		#166d3b 15.54%,
 		#000000 85.89%
 	);
-
-	backdrop-filter: blur(100px);
 	border-radius: 50%;
 	z-index: -1;
 }
@@ -199,6 +196,13 @@
 		);
 		-webkit-background-clip: text;
 		-webkit-text-stroke: 3.62px transparent;
+	}
+
+	.test::after {
+		top: 79px;
+		left: 18.5px;
+		width: 269px;
+		height: 333px;
 	}
 }
 
