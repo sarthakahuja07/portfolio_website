@@ -30,8 +30,8 @@ const Skills = ({ skillSet }: Props) => {
 						learning abilities.
 					</p>
 				</div>
-				<div className="w-full overflow-clip max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative">
-					<div className="absolute sm:left-[34px] sm:top-[105px] z-[-1] w-[269px] h-[333px] left-[18.5px] top-[79px] sm:w-[556px] sm:h-[448px] bg-skills-card-gradient blur-[100px] rounded-full"></div>
+				<div className="w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative">
+					<div className="sm:left-[34px] sm:top-[105px] z-[-1] w-[269px] h-[333px] left-[18.5px] top-[79px] sm:w-[556px] sm:h-[448px] bg-skills-card-gradient blur-[100px] rounded-full"></div>
 
 					<div className=" w-full flex flex-row flex-no-wrap overflow-auto bg-[#FFFFFF1A] rounded-[6px] sm:rounded-[12px] justify-between font-clash text-phoneXl sm:text-xsm ">
 						{skillSet.map((singleSkillSet, i) => {
