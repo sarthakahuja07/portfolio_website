@@ -44,7 +44,7 @@ function Work({ projects }: Props): ReactElement {
 
 	return (
 		<div>
-			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px]">
+			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px] " id="work">
 				<div className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 w-full sm:w-[456px] lg:w-[604px] xl:w-[580px] mb-[28px] sm:mb-[36px] lg:mb-[40px] xl:mb-[84px]">
 					<h2 className="text-shadow-work font-clash text-4xl sm:text-7xl xl:text-8xl mb-1 sm:mb-2">
 						Work
@@ -55,14 +55,14 @@ function Work({ projects }: Props): ReactElement {
 					</p>
 				</div>
 				<div
-					className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 min-w-[250px] w-fit mb-2 hidden xl:flex flex-row items-center gap-[28px]"
+					className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 min-w-[250px] w-fit mb-2 hidden xl:flex flex-row items-end"
 					onMouseOver={toggleViewAll}
 					onMouseOut={toggleViewAll}
 				>
 					<h3 className="font-clash xl:text-4xl">Projects</h3>
 					<Link href="/projects">
 						<div
-							className="items-center gap-1 hidden cursor-pointer"
+							className="items-center gap-1 hidden ml-5 cursor-pointer"
 							ref={viewAllRef}
 						>
 							<p className="font-clash text-xxsm">View All</p>
@@ -70,7 +70,7 @@ function Work({ projects }: Props): ReactElement {
 						</div>
 					</Link>
 
-					<div ref={allProjectIcon} className="hidden ">
+					<div ref={allProjectIcon} className="hidden ml-3 self-center">
 						<AllProjectsIcon className="h-[22px] w-[14px]" />
 					</div>
 				</div>

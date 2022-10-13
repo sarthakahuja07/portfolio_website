@@ -14,7 +14,10 @@ interface Props {}
 
 function Contact({}: Props): ReactElement {
 	return (
-		<div className="container mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 ">
+		<div
+			className="container mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 "
+			id="contact"
+		>
 			<div className="mt-[116px] sm:mt-[92px] xxl:mt-14 col-span-12 lg:col-span-8 lg:col-start-3 col-start-1 flex flex-col items-center xxl:col-span-12 xxl:col-start-1 xxl:max-w-[914px] xxl:mx-auto">
 				<div>
 					<img
@@ -57,12 +60,14 @@ function Contact({}: Props): ReactElement {
 								</a>
 							</Link>
 						</div>
-						<div className="px-4 py-2 rounded-lg border-[0.5px] border-[#636262] border-solid bg-nav-gradient backdrop-blur-[17.5px] flex items-center">
-							<span className="text-3xsm font-clash mr-3">
-								sarthak.ahuja0007@gmail.com
-							</span>
-							<CopyToClipboard text="sarthak.ahuja0007@gmail.com">
-								<Copy className="w-[10px] h-[13.3px] sm:w-[13.2px] sm:h-[17.6px] cursor-pointer" />
+						<div className="cursor-pointer">
+							<CopyToClipboard text="sarthak.ahuja0007@gmail.com ">
+								<div className="px-4 py-2 rounded-lg border-[0.5px] border-[#636262] border-solid bg-nav-gradient backdrop-blur-[17.5px] flex items-center">
+									<span className="text-3xsm font-clash mr-3">
+										sarthak.ahuja0007@gmail.com
+									</span>
+									<Copy className="w-[10px] h-[13.3px] sm:w-[13.2px] sm:h-[17.6px] " />
+								</div>
 							</CopyToClipboard>
 						</div>
 					</div>

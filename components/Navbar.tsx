@@ -34,7 +34,7 @@ const Navbar = (props: Props) => {
 				<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5">
 					<nav className="w-auto mt-6 sm:mt-[32px] md:mt-[28px] lg:mt-[30px] xl:mt-[44px] col-span-4 md:col-span-12 lg:col-span-8 col-start-1 lg:col-start-3 py-4 sm:py-[30px] px-3 sm:pl-6 sm:pr-[30px] xl:pr-6 rounded-lg sm:rounded-xl bg-nav-gradient backdrop-blur-[20px] border-[1px] sm:border-[1.5px] xl:border-[2px] border-nav-border border-solid ">
 						<div className="flex flex-row justify-between items-center flex-wrap ">
-							<div>
+							<button>
 								<Link href="/">
 									<a>
 										<img
@@ -44,7 +44,7 @@ const Navbar = (props: Props) => {
 										/>
 									</a>
 								</Link>
-							</div>
+							</button>
 							<button
 								ref={btnRef}
 								className="block xl:hidden px-[10px] py-[2px]"
@@ -58,41 +58,51 @@ const Navbar = (props: Props) => {
 									isNavOpen ? "flex" : "hidden"
 								} xl:flex `}
 							>
-								<Link href="#work">
-									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-										<a className="text-white text-nav font-array hover:text-shadow-navItem">
-											.work()
-										</a>
-									</div>
-								</Link>
-								<Link href="#skills">
-									<div className="py-3  sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-										<a className="text-white text-nav font-array hover:text-shadow-navItem">
-											.skills()
-										</a>
-									</div>
-								</Link>
-								<Link href="#about">
-									<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
-										<a className="text-white text-nav font-array hover:text-shadow-navItem">
-											.about()
-										</a>
-									</div>
-								</Link>
-								<Link href="#contact">
-									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-										<a className="text-white text-nav font-array hover:text-shadow-navItem">
-											.contact()
-										</a>
-									</div>
-								</Link>
-								<Link href="#resume">
-									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-										<a className="text-white text-nav font-array hover:text-shadow-navItem">
-											.resume()
-										</a>
-									</div>
-								</Link>
+								<button>
+									<Link href="#work">
+										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
+											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+												.work()
+											</a>
+										</div>
+									</Link>
+								</button>
+								<button>
+									<Link href="#skills">
+										<div className="py-3  sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
+											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+												.skills()
+											</a>
+										</div>
+									</Link>
+								</button>
+								<button>
+									<Link href="#about">
+										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
+											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+												.about()
+											</a>
+										</div>
+									</Link>
+								</button>
+								<button>
+									<Link href="#contact">
+										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
+											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+												.contact()
+											</a>
+										</div>
+									</Link>
+								</button>
+								<button>
+									<Link href="#resume">
+										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
+											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+												.resume()
+											</a>
+										</div>
+									</Link>
+								</button>
 							</div>
 						</div>
 					</nav>

@@ -15,7 +15,10 @@ interface Props {
 
 function About({ experiences }: Props): ReactElement {
 	return (
-		<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[92px] sm:mt[40px] md:mt[130px] lg:mt[158px] xl:mt-[234px]">
+		<div
+			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[92px] sm:mt[40px] md:mt[130px] lg:mt[158px] xl:mt-[234px]"
+			id="about"
+		>
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 active flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
 				<div className="sm:w-[568px] md:w-[580px] xl:w-[520px] xxl:w-[580px] mb-[32px] sm:mb-[46px] lg:mb-[50px] xl:mb-0">
 					<p className="font-clash text-4xl md:text-7xl xl:text-8xl sm:text-7xl text-shadow-h2 mb-1 sm:mb-2">
