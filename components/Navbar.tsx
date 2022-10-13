@@ -15,42 +15,17 @@ const Navbar = (props: Props) => {
 	const btnRef = useRef<HTMLButtonElement>(null)
 
 	useEffect(() => {
-		const body = document.querySelector("body")
-		const mainNav = document.querySelector("nav#main-nav")
-		const navToggle = document.querySelector("#toggler")
-
-		console.log("body", body)
-		console.log("mainNav", mainNav)
-		console.log("navToggle", navToggle)
-
-		navToggle?.addEventListener("click", () => {
-			mainNav?.classList.toggle("is-active")
-			if (!body?.classList.contains("is-active"))
-				body?.classList.add("is-active")
-		})
-
-		body?.addEventListener("click", (e: any) => {
-			if (
-				!e.path.includes(btnRef.current) &&
-				mainNav?.classList.contains("is-active")
-			) {
+		const closeNavbar = (e: any) => {
+			if (!e.path.includes(btnRef.current)) {
 				if (isNavOpen) {
 					setisNavOpen(false)
 				}
 			}
-		})
-
-		// const closeNavbar = (e: any) => {
-		// if (!e.path.includes(btnRef.current)) {
-		// 	if (isNavOpen) {
-		// 		setisNavOpen(false)
-		// 	}
-		// }
-		// }
-		// document.body.addEventListener("touchstart", closeNavbar)
-		// return () => {
-		// 	document.body.removeEventListener("touchstart", closeNavbar)
-		// }
+		}
+		document.body.addEventListener("touchstart", closeNavbar)
+		return () => {
+			document.body.removeEventListener("touchstart", closeNavbar)
+		}
 	}, [isNavOpen])
 
 	return (
