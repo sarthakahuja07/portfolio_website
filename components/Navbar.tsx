@@ -22,9 +22,9 @@ const Navbar = (props: Props) => {
 				}
 			}
 		}
-		document.body.addEventListener("click", closeNavbar)
+		document.body.addEventListener("touchend", closeNavbar)
 		return () => {
-			document.body.removeEventListener("click", closeNavbar)
+			document.body.removeEventListener("touchend", closeNavbar)
 		}
 	}, [isNavOpen])
 
