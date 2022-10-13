@@ -175,6 +175,8 @@
 		#166d3b 15.54%,
 		#000000 85.89%
 	);
+
+	backdrop-filter: blur(100px);
 	border-radius: 50%;
 	z-index: -1;
 }

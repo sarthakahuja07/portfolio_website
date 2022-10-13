@@ -30,7 +30,7 @@ const Skills = ({ skillSet }: Props) => {
 						learning abilities.
 					</p>
 				</div>
-				<div className="w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative test after:blur-[100px]">
+				<div className="w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative test after:blur-[100px] ">
 					<div className=" w-full flex flex-row flex-no-wrap overflow-auto bg-[#FFFFFF1A] rounded-[6px] sm:rounded-[12px] justify-between font-clash text-phoneXl sm:text-xsm ">
 						{skillSet.map((singleSkillSet, i) => {
 							return (
