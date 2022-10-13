@@ -22,9 +22,9 @@ const Navbar = (props: Props) => {
 				}
 			}
 		}
-		document.body.addEventListener("touchstart", closeNavbar)
+		document.body.addEventListener("click", closeNavbar)
 		return () => {
-			document.body.removeEventListener("touchstart", closeNavbar)
+			document.body.removeEventListener("click", closeNavbar)
 		}
 	}, [isNavOpen])
 
@@ -37,7 +37,7 @@ const Navbar = (props: Props) => {
 						id="main-nav"
 					>
 						<div className="flex flex-row justify-between items-center flex-wrap ">
-							<button>
+							<button onClick={() => setisNavOpen(false)}>
 								<Link href="/">
 									<a>
 										<img
@@ -62,7 +62,7 @@ const Navbar = (props: Props) => {
 									isNavOpen ? "flex" : "hidden"
 								} xl:flex `}
 							>
-								<button>
+								<button onClick={() => setisNavOpen(false)}>
 									<Link href="#work">
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -71,7 +71,7 @@ const Navbar = (props: Props) => {
 										</div>
 									</Link>
 								</button>
-								<button>
+								<button onClick={() => setisNavOpen(false)}>
 									<Link href="#skills">
 										<div className="py-3  sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -80,7 +80,7 @@ const Navbar = (props: Props) => {
 										</div>
 									</Link>
 								</button>
-								<button>
+								<button onClick={() => setisNavOpen(false)}>
 									<Link href="#about">
 										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -89,7 +89,7 @@ const Navbar = (props: Props) => {
 										</div>
 									</Link>
 								</button>
-								<button>
+								<button onClick={() => setisNavOpen(false)}>
 									<Link href="#contact">
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -98,7 +98,7 @@ const Navbar = (props: Props) => {
 										</div>
 									</Link>
 								</button>
-								<button>
+								<button onClick={() => setisNavOpen(false)}>
 									<Link href="#resume">
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
