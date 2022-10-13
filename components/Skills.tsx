@@ -13,7 +13,7 @@ const Skills = ({ skillSet }: Props) => {
 	const [currSkill, setCurrSkill] = useState(skillSet[0])
 
 	return (
-		<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px]">
+		<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px]" id="skills">
 			<div className="flex justify-between items-start flex-col xl:flex-row gap-[68px] sm:gap-[44px] lg:gap-[112px] md:gap-[92px] xl:gap-0 col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 xxl:col-span-10">
 				<div className="w-full sm:w-[568px] md:w-[580px] xl:w-[530px] ">
 					<h3 className="mb-1 sm:mb-2 font-clash text-4xl md:text-7xl xl:text-8xl sm:text-7xl text-shadow-h2">

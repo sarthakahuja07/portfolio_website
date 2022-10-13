@@ -15,24 +15,52 @@ const Navbar = (props: Props) => {
 	const btnRef = useRef<HTMLButtonElement>(null)
 
 	useEffect(() => {
-		const closeNavbar = (e: any) => {
-			if (!e.path.includes(btnRef.current)) {
+		const body = document.querySelector("body")
+		const mainNav = document.querySelector("nav#main-nav")
+		const navToggle = document.querySelector("#toggler")
+
+		console.log("body", body)
+		console.log("mainNav", mainNav)
+		console.log("navToggle", navToggle)
+
+		navToggle?.addEventListener("click", () => {
+			mainNav?.classList.toggle("is-active")
+			if (!body?.classList.contains("is-active"))
+				body?.classList.add("is-active")
+		})
+
+		body?.addEventListener("click", (e: any) => {
+			if (
+				!e.path.includes(btnRef.current) &&
+				mainNav?.classList.contains("is-active")
+			) {
 				if (isNavOpen) {
 					setisNavOpen(false)
 				}
 			}
-		}
-		document.body.addEventListener("touchstart", closeNavbar)
-		return () => {
-			document.body.removeEventListener("touchstart", closeNavbar)
-		}
+		})
+
+		// const closeNavbar = (e: any) => {
+		// if (!e.path.includes(btnRef.current)) {
+		// 	if (isNavOpen) {
+		// 		setisNavOpen(false)
+		// 	}
+		// }
+		// }
+		// document.body.addEventListener("touchstart", closeNavbar)
+		// return () => {
+		// 	document.body.removeEventListener("touchstart", closeNavbar)
+		// }
 	}, [isNavOpen])
 
 	return (
 		<>
 			<div className="fixed w-[100%] top-0 z-10">
 				<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5">
-					<nav className="w-auto mt-6 sm:mt-[32px] md:mt-[28px] lg:mt-[30px] xl:mt-[44px] col-span-4 md:col-span-12 lg:col-span-8 col-start-1 lg:col-start-3 py-4 sm:py-[30px] px-3 sm:pl-6 sm:pr-[30px] xl:pr-6 rounded-lg sm:rounded-xl bg-nav-gradient backdrop-blur-[20px] border-[1px] sm:border-[1.5px] xl:border-[2px] border-nav-border border-solid ">
+					<nav
+						className="w-auto mt-6 sm:mt-[32px] md:mt-[28px] lg:mt-[30px] xl:mt-[44px] col-span-4 md:col-span-12 lg:col-span-8 col-start-1 lg:col-start-3 py-4 sm:py-[30px] px-3 sm:pl-6 sm:pr-[30px] xl:pr-6 rounded-lg sm:rounded-xl bg-nav-gradient backdrop-blur-[20px] border-[1px] sm:border-[1.5px] xl:border-[2px] border-nav-border border-solid "
+						id="main-nav"
+					>
 						<div className="flex flex-row justify-between items-center flex-wrap ">
 							<button>
 								<Link href="/">
@@ -46,6 +74,7 @@ const Navbar = (props: Props) => {
 								</Link>
 							</button>
 							<button
+								id="toggler"
 								ref={btnRef}
 								className="block xl:hidden px-[10px] py-[2px]"
 								onClick={() => setisNavOpen(!isNavOpen)}
