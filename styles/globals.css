@@ -163,13 +163,13 @@
 	z-index: 4;
 }
 
-.test::after {
+.skillsCard::before {
 	content: "";
 	position: absolute;
-	top: 105px;
-	left: 34px;
-	width: 556px;
-	height: 448px;	
+    top: 79px;
+    left: 18.5px;
+    width: 269px;
+    height: 333px;	
 	background-image: linear-gradient(
 		155.73deg,
 		#166d3b 15.54%,
@@ -200,11 +200,11 @@
 		-webkit-text-stroke: 3.62px transparent;
 	}
 
-	.test::after {
-		top: 79px;
-		left: 18.5px;
-		width: 269px;
-		height: 333px;
+	.skillsCard::before {
+		top: 105px;
+		left: 34px;
+		width: 556px;
+		height: 448px;
 	}
 }
 
