@@ -14,7 +14,7 @@ interface Props {
 const ProjectCard = ({ open, project, index }: Props) => {
 	return (
 		<div className="relative w-[320px] card sm:w-[488px] lg:w-[482px] xl:w-[367px] mx-auto xl:m-0 hover:z-[2]">
-			<div className=" absolute top-0 right-0 w-[94px] h-[86px] sm:w-[142px] sm:h-[130px] lg:w-[159px] lg:h-[109px] xl:w-[126px] xl:h-[116px] cardNumber duration-300 delay-75">
+			<div className=" absolute top-0 right-0 w-fit h-[86px] sm:h-[130px] lg:h-[109px] xl:h-[116px] cardNumber duration-300 delay-75">
 				<p className="font-clash text-number outlinedNumber sm:text-numberMd lg:text-numberLg xl:text-numberXl text-black_bg">
 					{("0" + (index + 1)).slice(-2)}
 				</p>
