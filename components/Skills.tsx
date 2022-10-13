@@ -30,7 +30,7 @@ const Skills = ({ skillSet }: Props) => {
 						learning abilities.
 					</p>
 				</div>
-				<div className="w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative after:content-[''] after:blur-[100px] after:sm:left-[34px]  after:sm:top-[105px] after:z-[-2] after:w-[269px] after:h-[333px] after:left-[18.5px] after:top-[79px] after:sm:w-[556px] after:sm:h-[448px] after:bg-skills-card-gradient after:rounded-full after:absolute">
+				<div className="w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative after:blur-[100px] after:sm:left-[34px] after:sm:top-[105px] after:w-[269px] after:h-[333px] after:left-[18.5px] after:top-[79px] after:sm:w-[556px] after:sm:h-[448px] test">
 
 					<div className=" w-full flex flex-row flex-no-wrap overflow-auto bg-[#FFFFFF1A] rounded-[6px] sm:rounded-[12px] justify-between font-clash text-phoneXl sm:text-xsm ">
 						{skillSet.map((singleSkillSet, i) => {
