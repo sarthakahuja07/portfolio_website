@@ -20,6 +20,7 @@
 		"react-copy-to-clipboard": "^5.1.0",
 		"react-dom": "18.2.0",
 		"react-icons": "^4.4.0",
+		"react-slick": "^0.29.0",
 		"tailwindcss-border-gradients": "^2.0.3"
 	},
 	"devDependencies": {
@@ -27,6 +28,7 @@
 		"@types/react": "18.0.20",
 		"@types/react-copy-to-clipboard": "^5.0.4",
 		"@types/react-dom": "18.0.6",
+		"@types/react-slick": "^0.23.10",
 		"autoprefixer": "^10.4.11",
 		"eslint": "8.23.1",
 		"eslint-config-next": "12.3.0",
