@@ -6,6 +6,7 @@ import logo from "../public/images/logo.png"
 // import { ReactComponent as YourSvg } from "./your-svg.svg"
 import NavMenu from "../public/images/menu.svg"
 import NavMenuXs from "../public/images/menu-xs.svg"
+import { motion } from "framer-motion"
 
 interface Props {}
 
@@ -32,7 +33,14 @@ const Navbar = (props: Props) => {
 		<>
 			<div className="fixed w-[100%] top-0 z-10">
 				<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5">
-					<nav
+					<motion.nav
+						initial={{ opacity: 0, scale: 0.8 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{
+							duration: 0.5,
+							// delay: 0.5,
+							ease: [0, 0.71, 0.2, 1.01]
+						}}
 						className="w-auto mt-6 sm:mt-[32px] md:mt-[28px] lg:mt-[30px] xl:mt-[44px] col-span-4 md:col-span-12 lg:col-span-8 col-start-1 lg:col-start-3 py-4 sm:py-[30px] px-3 sm:pl-6 sm:pr-[30px] xl:pr-6 rounded-lg sm:rounded-xl bg-nav-gradient backdrop-blur-[20px] border-[1px] sm:border-[1.5px] xl:border-[2px] border-nav-border border-solid "
 						id="main-nav"
 					>
@@ -109,7 +117,7 @@ const Navbar = (props: Props) => {
 								</button>
 							</div>
 						</div>
-					</nav>
+					</motion.nav>
 				</div>
 			</div>
 		</>

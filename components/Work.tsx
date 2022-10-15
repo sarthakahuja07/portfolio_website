@@ -4,6 +4,10 @@ import WorkCard from "./WorkCard"
 import AllProjectsIcon from "../public/images/allProjects.svg"
 import Link from "next/link"
 import { projects } from "@prisma/client"
+import ScrollAnimation from "./ScrollAnimation"
+import bounceVariant from "../animation/bonceVariant"
+import delayedBounceVariant from "../animation/delayedBounceVariant"
+import { motion } from "framer-motion"
 
 interface Props {
 	projects: projects[]
@@ -43,34 +47,56 @@ function Work({ projects }: Props): ReactElement {
 	}
 
 	return (
-		<div>
-			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px] " id="work">
+		<>
+			<div
+				className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[96px] lg:mt[180px] xl:mt-[240px] "
+				id="work"
+			>
 				<div className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 w-full sm:w-[456px] lg:w-[604px] xl:w-[580px] mb-[28px] sm:mb-[36px] lg:mb-[40px] xl:mb-[84px]">
-					<h2 className="text-shadow-work font-clash text-4xl sm:text-7xl xl:text-8xl mb-1 sm:mb-2">
-						Work
-					</h2>
-					<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm">
-						Here is a showcase of some of my best projects that i
-						made. They can be found on my github.
-					</p>
+					<ScrollAnimation>
+						<motion.h2
+							variants={bounceVariant}
+							className="text-shadow-work font-clash text-4xl sm:text-7xl xl:text-8xl mb-1 sm:mb-2"
+						>
+							Work
+						</motion.h2>
+						<motion.div variants={delayedBounceVariant}>
+							<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm">
+								Here is a showcase of some of my best projects
+								that i made. They can be found on my github.
+							</p>
+						</motion.div>
+					</ScrollAnimation>
 				</div>
 				<div
 					className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 min-w-[250px] w-fit mb-2 hidden xl:flex flex-row items-end"
 					onMouseOver={toggleViewAll}
 					onMouseOut={toggleViewAll}
 				>
-					<h3 className="font-clash xl:text-4xl">Projects</h3>
-					<Link href="/projects">
-						<div
-							className="items-center gap-1 hidden ml-5 cursor-pointer"
-							ref={viewAllRef}
+					<ScrollAnimation>
+						<motion.h3
+							variants={bounceVariant}
+							className="font-clash xl:text-4xl"
 						>
-							<p className="font-clash text-xxsm">View All</p>
-							<AllProjectsIcon className="h-[14px] w-[10px]" />
-						</div>
-					</Link>
+							Projects
+						</motion.h3>
+					</ScrollAnimation>
+					<ScrollAnimation>
+						<Link href="/projects">
+							<div
+								className="items-center gap-1 hidden ml-5 cursor-pointer"
+								ref={viewAllRef}
+							>
+								<p className="font-clash text-xxsm">View All</p>
+								<AllProjectsIcon className="h-[14px] w-[10px]" />
+							</div>
+						</Link>
+					</ScrollAnimation>
 
-					<div ref={allProjectIcon} className="hidden ml-3 self-center">
+					<div
+						ref={allProjectIcon}
+						className="hidden ml-3 self-center"
+					>
 						<AllProjectsIcon className="h-[22px] w-[14px]" />
 					</div>
 				</div>
@@ -88,14 +114,15 @@ function Work({ projects }: Props): ReactElement {
 					)
 				})}
 			</div>
+
 			{isModalOpen && (
 				<Modal
 					setIsModalOpen={setIsModalOpen}
 					isModalOpen={isModalOpen}
-                    project={currProject}
+					project={currProject}
 				/>
 			)}
-		</div>
+		</>
 	)
 }
 

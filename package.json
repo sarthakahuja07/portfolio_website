@@ -13,6 +13,7 @@
 		"@prisma/client": "^4.4.0",
 		"babel-plugin-inline-react-svg": "^2.0.1",
 		"firebase": "^9.9.4",
+		"framer-motion": "^7.5.3",
 		"next": "12.3.0",
 		"next-themes": "^0.2.1",
 		"react": "18.2.0",

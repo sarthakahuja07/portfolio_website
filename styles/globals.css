@@ -70,21 +70,6 @@
 	transition: 300ms all;
 }
 
-.terminal::after {
-	position: absolute;
-	top: -2px;
-	bottom: -2px;
-	left: -2px;
-	right: -2px;
-	background: linear-gradient(
-		309.02deg,
-		#545454 2.35%,
-		rgba(84, 84, 84, 0) 100%
-	);
-	content: "";
-	z-index: -1;
-	border-radius: 20px;
-}
 .codeTextArea {
 	border: 0;
 }

@@ -9,6 +9,10 @@ import Mail from "../public/images/mail.svg"
 import GitHub from "../public/images/github.svg"
 import Copy from "../public/images/copy.svg"
 import { CopyToClipboard } from "react-copy-to-clipboard"
+import ScrollAnimation from "./ScrollAnimation"
+import { motion } from "framer-motion"
+import bounceVariant from "../animation/bonceVariant"
+import delayedBounceVariant from "../animation/delayedBounceVariant"
 
 interface Props {}
 
