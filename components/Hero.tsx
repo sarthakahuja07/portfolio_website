@@ -56,6 +56,7 @@ function Hero({}: Props): ReactElement {
 							alt="star"
 							width={24}
 							height={24}
+                            priority
 						/>
 					</motion.div>
 					<motion.div
@@ -74,6 +75,7 @@ function Hero({}: Props): ReactElement {
 							alt="star"
 							width={24}
 							height={24}
+                            priority
 						/>
 					</motion.div>
 					<motion.div
@@ -91,6 +93,7 @@ function Hero({}: Props): ReactElement {
 							src={star}
 							alt="star"
 							width={24}
+                            priority
 							height={24}
 						/>
 					</motion.div>
