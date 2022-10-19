@@ -39,6 +39,16 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 				img.onerror = reject
 			})
 		})
+		//  add star image to cache
+		promises.push(
+			new Promise((resolve, reject) => {
+				const img = new Image()
+				img.src = "/images/star.png"
+				img.onload = resolve
+				img.onerror = reject
+			})
+		)
+
 		await Promise.all(promises)
 
 		setLoading(false)
