@@ -5,51 +5,51 @@ const backgrounds = [
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/CRe77nk.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/o1a0gYK.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/SNbyVHQ.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/bxIYNcN.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/KXG71K9.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/vFFhoHe.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/TZfguBy.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/RKLKV9I.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/7yzYHGs.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/tfW2YBy.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/5MrrRnM.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
-		url: "https://i.imgur.com/5B8Wo5H.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 ]
 
