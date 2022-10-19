@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import JS from "../public/images/js.svg"
 import { skills_set, skills } from "@prisma/client"
 import ScrollAnimation from "./ScrollAnimation"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
 
@@ -72,26 +72,35 @@ const Skills = ({ skillSet }: Props) => {
 								)
 							})}
 						</div>
-						<div className="overflow-auto h-[calc(100%-38px)] sm:h-[calc(100%-60px)]">
-							<div className="my-[28px] sm:my-[32px] mx-auto w-[254px] sm:w-[455px] flex fex-row flex-wrap sm:gap-y-[16px] sm:gap-x-[77px] gap-y-[22px] gap-x-[7px]">
-								{currSkill.skills.map((singleSkill, i) => (
-									<div
-										key={singleSkill.id}
-										className="sm:w-[100px] w-[80px] text-center "
-									>
-										<img
-											src={singleSkill.logo}
-											alt={singleSkill.name}
-											className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1"
-										/>
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={currSkill ? currSkill.name : "empty"}
+								initial={{ scale: 0.6, opacity: 0 }}
+								animate={{ scale: 1, opacity: 1 }}
+								exit={{ scale: 0.6, opacity: 0 }}
+								transition={{ duration: 0.2 }}
+								className="overflow-auto h-[calc(100%-38px)] sm:h-[calc(100%-60px)]"
+							>
+								<div className="my-[28px] sm:my-[32px] mx-auto w-[254px] sm:w-[455px] flex fex-row flex-wrap sm:gap-y-[16px] sm:gap-x-[77px] gap-y-[22px] gap-x-[7px]">
+									{currSkill.skills.map((singleSkill, i) => (
+										<div
+											key={singleSkill.id}
+											className="sm:w-[100px] w-[80px] text-center "
+										>
+											<img
+												src={singleSkill.logo}
+												alt={singleSkill.name}
+												className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1"
+											/>
 
-										<p className="text-4xsm sm:text-3xsm font-clash">
-											{singleSkill.name}
-										</p>
-									</div>
-								))}
-							</div>
-						</div>
+											<p className="text-4xsm sm:text-3xsm font-clash">
+												{singleSkill.name}
+											</p>
+										</div>
+									))}
+								</div>
+							</motion.div>
+						</AnimatePresence>
 					</motion.div>
 				</div>
 			</div>

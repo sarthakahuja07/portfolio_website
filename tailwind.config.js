@@ -21,7 +21,7 @@ module.exports = {
 			work: "0px 4px 30px rgba(255, 255, 255, 0.5);",
 			"skills-tab": "0px 4px 30px rgba(255, 255, 255, 0.7);",
 			404: "0px 4px 30px rgba(9, 247, 85, 0.75);",
-            '404-lg': "0px 4px 30px #09F755;"
+			"404-lg": "0px 4px 30px #09F755;"
 		},
 		fontSize: {
 			phoneSm: [
@@ -254,7 +254,7 @@ module.exports = {
 					lineHeight: "120.67px",
 					fontWeight: "700"
 				}
-			],
+			]
 		},
 		colors: {
 			// Configure your color palette here
@@ -274,7 +274,8 @@ module.exports = {
 			codeComment: "#8E8E93",
 			transparent: "transparent",
 			"nav-border": "rgba(255, 255, 255, 0.05)",
-			"modal-bg": "#07070759"
+			"modal-bg": "#07070759",
+			"nav-bg": "#25252580"
 		},
 		fontFamily: {
 			array: ["Array", "sans-serif"],
@@ -310,8 +311,9 @@ module.exports = {
 		}),
 		extend: {
 			backgroundImage: {
-				"nav-gradient":
-					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
+				"nav-gradient": "#25252580",
+				// "nav-gradient":
+				// 	"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
 				"line-gradient":
 					"linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #FFFEFE 100%);",
 				"line-gradient2":
@@ -321,7 +323,7 @@ module.exports = {
 				"experience-line-horizontal":
 					"linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #FFFFFF 13.02%, #FFFFFF 88.54%, rgba(0, 0, 0, 0) 100%);",
 				// "hero-pattern": "url('../public/images/hero-bg.png')",
-				"hero-pattern": "url('https://i.imgur.com/QZ36B0m.png')",
+				"hero-pattern": "url('https://i.imgur.com/MMNkbq2.png')",
 				"work-card-gradient":
 					"url('../public/images/card-bg.png'), linear-gradient(92.04deg, rgba(0, 0, 0, 0.06) -8.08%, rgba(0, 0, 0, 0.4) 112.27%)",
 				modal: "url('../public/images/card-bg.png'), linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);",

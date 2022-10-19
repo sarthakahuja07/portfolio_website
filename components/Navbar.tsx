@@ -41,7 +41,7 @@ const Navbar = (props: Props) => {
 							// delay: 0.5,
 							ease: [0, 0.71, 0.2, 1.01]
 						}}
-						className="w-auto mt-6 sm:mt-[32px] md:mt-[28px] lg:mt-[30px] xl:mt-[44px] col-span-4 md:col-span-12 lg:col-span-8 col-start-1 lg:col-start-3 py-4 sm:py-[30px] px-3 sm:pl-6 sm:pr-[30px] xl:pr-6 rounded-lg sm:rounded-xl bg-nav-gradient backdrop-blur-[20px] border-[1px] sm:border-[1.5px] xl:border-[2px] border-nav-border border-solid "
+						className="w-auto mt-6 sm:mt-[32px] md:mt-[28px] lg:mt-[30px] xl:mt-[44px] col-span-4 md:col-span-12 lg:col-span-8 col-start-1 lg:col-start-3 py-4 sm:py-[30px] px-3 sm:pl-6 sm:pr-[30px] xl:pr-6 rounded-lg sm:rounded-xl bg-nav-bg backdrop-blur-[80px] "
 						id="main-nav"
 					>
 						<div className="flex flex-row justify-between items-center flex-wrap ">
