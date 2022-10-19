@@ -128,8 +128,8 @@ function Hero({}: Props): ReactElement {
 
 				<motion.div
 					initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.5 }}
 					className="col-span-4 mx-auto col-start-1 md:col-span-12  xl:col-span-5 xl:col-start-8 w-[240px] h-[264px] sm:w-[430px] sm:h-[372px] mt-[92px] sm:mt-[64px] md:mt-[100px] xl:mt-[38px] xxl:mt-[54px] xl:mx-0 bg-[#000] rounded-terminal relative "
 				>
 					<div>

@@ -16,6 +16,8 @@ import {
 	experience,
 	projects
 } from "@prisma/client"
+import backgrounds from "../public/backgrounds"
+import { useEffect } from "react"
 
 type SkillsSetType = skills_set & { skills: skills[] }
 
@@ -26,6 +28,19 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
+	const randomBackground = () => {
+		const randomindex = Math.floor(Math.random() * backgrounds.length)
+		return backgrounds[randomindex].url
+	}
+
+	useEffect(() => {
+		const background = randomBackground()
+        console.log(background);
+		document.getElementById(
+			"bg"
+		)!.style.backgroundImage = `url(${background})`
+	}, [])
+
 	return (
 		<div>
 			<Head>
@@ -37,7 +52,10 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
 			<Navbar />
-			<div className="bg-hero-pattern bg-center bg-cover bg-no-repeat h-screen w-[100%] absolute inset-0 z-[-10]">
+			<div
+				id="bg"
+				className=" bg-center bg-cover bg-no-repeat h-screen w-[100%] absolute inset-0 z-[-10]"
+			>
 				<div className="backdrop-blur-[100px] h-[250%]"></div>
 			</div>
 			<div className="mt-[66.5px] sm:mt-[109px] md:mt-[105px] lg:mt-[107px] xl:mt-[124px]"></div>
