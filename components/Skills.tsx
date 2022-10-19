@@ -4,7 +4,7 @@ import JS from "../public/images/js.svg"
 import { skills_set, skills } from "@prisma/client"
 import ScrollAnimation from "./ScrollAnimation"
 import { motion } from "framer-motion"
-import bounceVariant from "../animation/bonceVariant"
+import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
 
 type SkillsSetType = skills_set & { skills: skills[] }
@@ -61,10 +61,10 @@ const Skills = ({ skillSet }: Props) => {
 										onClick={() =>
 											setCurrSkill(singleSkillSet)
 										}
-										className={`px-[6px] py-[9px] sm:py-[16px] sm:px-[22px] opacity-30 capitalize cursor-pointer ${
+										className={`px-[6px] py-[9px] sm:py-[16px] sm:px-[22px] opacity-30 capitalize cursor-pointer hover:opacity-75  ${
 											singleSkillSet.id ===
 												currSkill.id &&
-											"opacity-100 px-[8px] sm:px-[28px] rounded-[6px] bg-[#FFFFFF26]"
+											"px-[8px] sm:px-[28px] rounded-[6px] bg-[#FFFFFF26] text-shadow-skills-tab opacity-100 hover:opacity-100 "
 										}`}
 									>
 										{singleSkillSet.name}

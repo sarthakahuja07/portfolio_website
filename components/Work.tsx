@@ -5,7 +5,7 @@ import AllProjectsIcon from "../public/images/allProjects.svg"
 import Link from "next/link"
 import { projects } from "@prisma/client"
 import ScrollAnimation from "./ScrollAnimation"
-import bounceVariant from "../animation/bonceVariant"
+import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
 import { motion } from "framer-motion"
 

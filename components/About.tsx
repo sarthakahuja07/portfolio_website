@@ -10,7 +10,7 @@ import Experience from "./Experience"
 import { experience } from "@prisma/client"
 import { motion } from "framer-motion"
 import ScrollAnimation from "./ScrollAnimation"
-import bounceVariant from "../animation/bonceVariant"
+import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
 
 interface Props {

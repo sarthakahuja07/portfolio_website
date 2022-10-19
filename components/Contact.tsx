@@ -11,7 +11,7 @@ import Copy from "../public/images/copy.svg"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import ScrollAnimation from "./ScrollAnimation"
 import { motion } from "framer-motion"
-import bounceVariant from "../animation/bonceVariant"
+import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
 
 interface Props {}

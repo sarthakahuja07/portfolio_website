@@ -18,7 +18,10 @@ module.exports = {
 			h2: "0px 2.25641px 16.9231px rgba(255, 255, 255, 0.5)",
 			h3: "0px 3.12381px 43.7333px rgba(255, 255, 255, 0.5)",
 			h1: "0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)",
-			work: "0px 4px 30px rgba(255, 255, 255, 0.5);"
+			work: "0px 4px 30px rgba(255, 255, 255, 0.5);",
+			"skills-tab": "0px 4px 30px rgba(255, 255, 255, 0.7);",
+			404: "0px 4px 30px rgba(9, 247, 85, 0.75);",
+            '404-lg': "0px 4px 30px #09F755;"
 		},
 		fontSize: {
 			phoneSm: [
@@ -230,7 +233,28 @@ module.exports = {
 					lineHeight: "117.16px",
 					fontWeight: "600"
 				}
-			]
+			],
+			404: [
+				"68.66px",
+				{
+					lineHeight: "86.31px",
+					fontWeight: "700"
+				}
+			],
+			"404-sm": [
+				"72px",
+				{
+					lineHeight: "90.5px",
+					fontWeight: "700"
+				}
+			],
+			"404-lg": [
+				"96px",
+				{
+					lineHeight: "120.67px",
+					fontWeight: "700"
+				}
+			],
 		},
 		colors: {
 			// Configure your color palette here
@@ -314,7 +338,7 @@ module.exports = {
 				]
 			},
 			cursor: {
-				fancy: "url('../public/images/cursor.svg') 10 0, auto"
+				fancy: "url('../public/images/cursor.svg') 10 5, auto"
 			}
 		}
 	},
