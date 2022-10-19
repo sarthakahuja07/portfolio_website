@@ -1,7 +1,7 @@
 const backgrounds = [
 	{
 		name: "background1",
-		url: "https://i.imgur.com/qGSZGiB.png"
+		url: "https://i.imgur.com/qICYuXE.jpg"
 	},
 	{
 		name: "background1",
