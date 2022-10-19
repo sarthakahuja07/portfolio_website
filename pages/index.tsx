@@ -30,51 +30,22 @@ interface Props {
 const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 	const [loading, setLoading] = useState(true)
 
-	const cacheImages = async (srcArray: any) => {
-		const promises = await srcArray.map((image: any) => {
+	const cacheImages = async () => {
+		const promises = await backgrounds.map((image) => {
 			return new Promise((resolve, reject) => {
 				const img = new Image()
-				img.src = image
+				img.src = image.url
 				img.onload = resolve
 				img.onerror = reject
 			})
 		})
 		await Promise.all(promises)
-		setLoading(false)
+		// load all the assets in images folder in public
+		// import all the images in public/images folder
 	}
 
 	useEffect(() => {
-		const srcArray = backgrounds.map((bg) => bg.url)
-		cacheImages(srcArray)
-
-		// setTimeout(() => {
-		// 	setLoading(false)
-		// }, 2000)
-
-		// load all the assets before showing the page
-		// Promise.all(
-		// 	backgrounds.map((background) => {
-		// 		return new Promise((resolve) => {
-		// 			const img: ImageProps = {
-		// 				src: background.url,
-		// 				width: 1920,
-		// 				height: 1080,
-		// 				layout: "responsive",
-		// 				quality: 100,
-		// 				priority: true,
-		// 				loading: "eager",
-		// 				unoptimized: true
-		// 			}
-		// 			img.src = background.url
-		// 			img.onLoad = resolve
-		// 		})
-		// 	})
-		// ).then(() => {
-		// 	console.log("here")
-		// 	setLoading(false)
-		// })
-
-		// load the images into the cache
+		cacheImages()
 	}, [])
 
 	const randomBackground = () => {
