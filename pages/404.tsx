@@ -4,7 +4,7 @@ import Link from "next/link"
 import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
-import star from "../images/star.png"
+import star from "../public/images/star.png"
 import { motion } from "framer-motion"
 
 const FourOhFour: NextPage = () => {

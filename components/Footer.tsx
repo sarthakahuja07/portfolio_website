@@ -1,5 +1,5 @@
 import React from "react"
-import star from "../images/star.png"
+import star from "../public/images/star.png"
 import paint from "../images/paint.png"
 import computer from "../images/computer.png"
 import Image from "next/image"
