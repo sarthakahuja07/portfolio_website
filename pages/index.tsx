@@ -39,15 +39,6 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 				img.onerror = reject
 			})
 		})
-		//  load the star.png image
-		const pro = new Promise((resolve, reject) => {
-			const img = new Image()
-			img.src = "/images/star.png"
-			img.onload = resolve
-			img.onerror = reject
-		})
-		promises.push(pro)
-
 		await Promise.all(promises)
 
 		setLoading(false)
