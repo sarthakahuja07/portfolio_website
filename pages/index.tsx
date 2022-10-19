@@ -40,8 +40,7 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 			})
 		})
 		await Promise.all(promises)
-		// load all the assets in images folder in public
-		// import all the images in public/images folder
+		setLoading(false)
 	}
 
 	useEffect(() => {
