@@ -18,6 +18,7 @@ import {
 import backgrounds from "../public/backgrounds"
 import { useEffect, useState } from "react"
 import { url } from "inspector"
+import { motion } from "framer-motion"
 
 type SkillsSetType = skills_set & { skills: skills[] }
 
@@ -25,6 +26,19 @@ interface Props {
 	skillSet: SkillsSetType[]
 	experiences: experience[]
 	projects: projects[]
+}
+
+const icon = {
+	hidden: {
+		opacity: 0,
+		pathLength: 0,
+		fill: "rgba(0, 0, 0, 0)"
+	},
+	visible: {
+		opacity: 1,
+		pathLength: 1,
+		fill: "rgba(0, 0, 0, 1)"
+	}
 }
 
 const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
@@ -85,8 +99,38 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 			</Head>
 
 			{loading ? (
-				<div className="flex justify-center items-center h-screen">
-					<div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+				<div className="flex justify-center items-center h-screen bg-modal">
+					<div className="w-[250px] h-[250px] drop-shadow-loader flex items-center justify-center overflow-hidden bg-[#000] rounded-[30px]">
+						<motion.svg
+							width="402"
+							height="402"
+							viewBox="0 0 402 402"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							className="w-[56%] overflow-visible stroke-active stroke-[10px]"
+						>
+							<motion.path
+								d="M399.431 101.68V177.871L209.627 85.3537H190.804L85.7059 141.136C74.4118 166.17 97.732 169.707 110.804 168.347L201.784 122.088L401 221.408V301.68L201.784 401L2.56863 301.68V222.769L192.373 320.728H209.627L316.294 263.585C324.137 240.456 306.882 233.653 289.627 237.735L201.784 281.272L1 181.952V98.9592L201.784 1L399.431 101.68Z"
+								// fill="#09F755"
+								// stroke="#09F755"
+								variants={icon}
+								initial="hidden"
+								animate="visible"
+								transition={{
+									default: {
+										duration: 2,
+										ease: "easeOut",
+										repeat: Infinity
+									},
+									fill: {
+										duration: 2,
+										ease: "easeOut",
+										repeat: Infinity
+									}
+								}}
+							/>
+						</motion.svg>
+					</div>
 				</div>
 			) : (
 				<>
