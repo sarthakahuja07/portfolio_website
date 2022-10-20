@@ -62,6 +62,11 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 				img.onerror = reject
 			})
 		)
+		promises.push(
+			new Promise((resolve, reject) => {
+				setTimeout(resolve, 2000)
+			})
+		)
 
 		await Promise.all(promises)
 
