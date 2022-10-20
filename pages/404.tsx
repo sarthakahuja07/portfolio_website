@@ -4,7 +4,7 @@ import Link from "next/link"
 import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
-import star from "../public/images/star.png"
+import Star from "../public/images/star.svg"
 import { motion } from "framer-motion"
 
 const FourOhFour: NextPage = () => {
@@ -34,13 +34,7 @@ const FourOhFour: NextPage = () => {
 							</p>
 							<div className="flex flex-row items-center">
 								<div className="flex-1 h-[1px] bg-line-gradient2 mr-2"></div>
-								<Image
-									className="self-center"
-									src={star}
-									alt="star"
-									width={13}
-									height={13}
-								/>
+								<Star className="w-[13px] h-[13px]" />
 								<div className="flex-1 h-[1px] bg-line-gradient ml-2"></div>
 							</div>
 						</div>

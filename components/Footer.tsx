@@ -1,8 +1,5 @@
 import React from "react"
-import star from "../public/images/star.png"
-import paint from "../images/paint.png"
-import computer from "../images/computer.png"
-import Image from "next/image"
+import Star from "../public/images/star.svg"
 import Link from "next/link"
 
 interface Props {}
@@ -12,13 +9,7 @@ export const Footer = (props: Props) => {
 		<>
 			<div className="flex flex-row items-center ">
 				<div className="flex-1 h-[1px] bg-line-gradient2 mr-2"></div>
-				<Image
-					className="self-center"
-					src={star}
-					alt="star"
-					width={13}
-					height={13}
-				/>
+				<Star className="w-[13px] h-[13px]" />
 				<div className="flex-1 h-[1px] bg-line-gradient ml-2"></div>
 			</div>
 			<div className="mt-6 md:mt-10 mx-auto w-fit text-center mb-8 sm:mb-[30px] md:mb-9 lg:mb-[77.4px] xl:mb-14">

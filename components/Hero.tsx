@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
 import React, { ReactElement } from "react"
-import star from "../public/images/star.png"
 import Star from "../public/images/star.svg"
-
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -52,14 +50,6 @@ function Hero({}: Props): ReactElement {
 						}}
 					>
 						<Star className="w-[24px] h-[24px]" />
-						{/* <Image
-							className="self-center"
-							src={star}
-							alt="star"
-							width={24}
-							height={24}
-							priority
-						/> */}
 					</motion.div>
 					<motion.div
 						className="absolute sm:top-[472px] left-[57px] top-[250px] "
@@ -71,14 +61,7 @@ function Hero({}: Props): ReactElement {
 							damping: 20
 						}}
 					>
-						<Image
-							className="self-center"
-							src={star}
-							alt="star"
-							width={24}
-							height={24}
-							priority
-						/>
+						<Star className="w-[24px] h-[24px]" />
 					</motion.div>
 					<motion.div
 						className="absolute sm:top-[300px] sm:left-[300px] left-[230px] top-[150px]"
@@ -90,14 +73,7 @@ function Hero({}: Props): ReactElement {
 							damping: 20
 						}}
 					>
-						<Image
-							className="self-center"
-							src={star}
-							alt="star"
-							width={24}
-							priority
-							height={24}
-						/>
+						<Star className="w-[24px] h-[24px]" />
 					</motion.div>
 
 					<motion.div
