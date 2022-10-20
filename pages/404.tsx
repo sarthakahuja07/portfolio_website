@@ -11,11 +11,8 @@ const FourOhFour: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Projects</title>
-				<meta
-					name="description"
-					content="Here are a list of my projects"
-				/>
+				<title>{"404 - You are Lost"}</title>
+				<meta name="description" content="page not found" />
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
 
