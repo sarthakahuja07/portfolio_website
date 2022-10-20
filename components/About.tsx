@@ -84,7 +84,7 @@ function About({ experiences }: Props): ReactElement {
 						variants={delayedBounceVariant}
 						className="flex flex-row xl:flex-col w-full h-full"
 					>
-						<div className="h-[90%] w-[1px] xl:w-[85%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0"></div>
+						<div className="h-auto w-[1px] xl:w-[85%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0"></div>
 						<div className="flex flex-col xl:flex-row w-full justify-between gap-[92px] xl:gap-0 ">
 							{experiences.map((experience) => (
 								<Experience
