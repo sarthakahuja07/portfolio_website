@@ -21,6 +21,7 @@ model skills {
 model skills_set {
     id     String   @id @default(auto()) @map("_id") @db.ObjectId
     name   String
+    color  String   @default("#000000")
     skills skills[]
 }
 
@@ -34,14 +35,13 @@ model experience {
 }
 
 model projects {
-    id            String       @id @default(auto()) @map("_id") @db.ObjectId
-    name          String
-    description   String[]
-    gist          String
-    website       String
-    github        String
-    image         String[]
-    cover         String
-    techStack     String[]
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    name        String
+    description String[]
+    gist        String
+    website     String
+    github      String
+    image       String[]
+    cover       String
+    techStack   String[]
 }
-

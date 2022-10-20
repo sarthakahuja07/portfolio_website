@@ -151,16 +151,11 @@
 .skillsCard::before {
 	content: "";
 	position: absolute;
-    top: 79px;
-    left: 18.5px;
-    width: 269px;
-    height: 333px;	
-	background-image: linear-gradient(
-		155.73deg,
-		#166d3b 15.54%,
-		#000000 85.89%
-	);
-
+	top: 79px;
+	left: 18.5px;
+	width: 269px;
+	height: 333px;
+	background-image: var(--skills-bg-color);
 	backdrop-filter: blur(100px);
 	border-radius: 50%;
 	z-index: -1;

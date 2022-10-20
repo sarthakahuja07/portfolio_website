@@ -6,6 +6,7 @@ import ScrollAnimation from "./ScrollAnimation"
 import { motion, AnimatePresence } from "framer-motion"
 import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
+import { useEffect, useRef } from "react"
 
 type SkillsSetType = skills_set & { skills: skills[] }
 
@@ -15,6 +16,19 @@ interface Props {
 
 const Skills = ({ skillSet }: Props) => {
 	const [currSkill, setCurrSkill] = useState(skillSet[0])
+	const skillsBgRef = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		// change the bg color of the skills section
+		if (skillsBgRef.current) {
+			skillsBgRef.current.style.setProperty(
+				"--skills-bg-color",
+				"linear-gradient(155.73deg, #000000 15.54%," +
+					currSkill.color +
+					" 85.89%)"
+			)
+		}
+	}, [currSkill])
 
 	return (
 		<ScrollAnimation>
@@ -45,7 +59,8 @@ const Skills = ({ skillSet }: Props) => {
 					</div>
 					<motion.div
 						variants={bounceVariant}
-						className="w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative skillsCard before:blur-[100px] "
+						className={`w-full overflow-hidden max-w-[360px] sm:max-w-none sm:w-[550px] h-[416px] sm:h-[570px] mx-auto xl:mx-0 bg-skills-card bg-cover bg-clip-padding rounded-large sm:rounded-xxl border-solid border-[0.56px] sm:border-[1px] border-[#FFFFFF14] p-[6px] pb-0 relative skillsCard before:blur-[100px]`}
+						ref={skillsBgRef}
 					>
 						<div className=" w-full flex flex-row flex-no-wrap overflow-auto sm:overflow-hidden bg-[#FFFFFF1A] rounded-[6px] sm:rounded-[12px] justify-between font-clash text-phoneXl sm:text-xsm ">
 							{skillSet.map((singleSkillSet, i) => {
