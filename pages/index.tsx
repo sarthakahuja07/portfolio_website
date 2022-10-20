@@ -105,7 +105,7 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 
 			{loading ? (
 				<div className="flex justify-center items-center h-screen bg-modal">
-					<div className="w-[250px] h-[250px] drop-shadow-loader flex items-center justify-center overflow-hidden bg-[#000] rounded-[30px]">
+					<div className="w-[250px] h-[250px] drop-shadow-loader flex items-center justify-center  bg-[#000] rounded-[30px]">
 						<motion.svg
 							width="402"
 							height="402"
