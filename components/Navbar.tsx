@@ -13,7 +13,7 @@ interface Props {}
 const Path = (props: any) => (
 	<motion.path
 		fill="hsl(0, 0%, 100%)"
-		strokeWidth="3"
+		strokeWidth="2"
 		stroke="hsl(0, 0%, 100%)"
 		strokeLinecap="round"
 		{...props}
@@ -68,13 +68,6 @@ const Navbar = (props: Props) => {
 								</Link>
 							</button>
 
-							{/* <motion.div
-								id="toggler"
-								ref={btnRef}
-								className="block xl:hidden px-[10px]"
-								initial={false}
-								animate={isNavOpen ? "open" : "closed"}
-							> */}
 							<motion.button
 								id="toggler"
 								ref={btnRef}
@@ -117,12 +110,7 @@ const Navbar = (props: Props) => {
 									/>
 								</svg>
 							</motion.button>
-							{/* </motion.div> */}
 
-							{/* <button className="px-[10px] py-[2px] block xl:hidden ">
-								<NavMenu className=" w-[20px] h-[15px] hidden sm:block" />
-								<NavMenuXs className="w-[16.14px] h-[9.05px] block sm:hidden" />
-							</button> */}
 							<div
 								className={`flex-col flex flex-wrap w-full xl:w-[523px] justify-between items-center xl:flex-row mt-4 xl:mt-0 ${
 									isNavOpen ? "flex" : "hidden"
