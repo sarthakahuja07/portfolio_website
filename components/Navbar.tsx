@@ -6,12 +6,23 @@ import logo from "../public/images/logo.png"
 // import { ReactComponent as YourSvg } from "./your-svg.svg"
 import NavMenu from "../public/images/menu.svg"
 import NavMenuXs from "../public/images/menu-xs.svg"
-import { motion } from "framer-motion"
+import { motion, useCycle } from "framer-motion"
 
 interface Props {}
 
+const Path = (props: any) => (
+	<motion.path
+		fill="hsl(0, 0%, 100%)"
+		strokeWidth="3"
+		stroke="hsl(0, 0%, 100%)"
+		strokeLinecap="round"
+		{...props}
+	/>
+)
+
 const Navbar = (props: Props) => {
 	const [isNavOpen, setisNavOpen] = useState(false)
+	const [isOpen, toggleOpen] = useCycle(false, true)
 
 	const btnRef = useRef<HTMLButtonElement>(null)
 
@@ -56,15 +67,62 @@ const Navbar = (props: Props) => {
 									</a>
 								</Link>
 							</button>
-							<button
+
+							{/* <motion.div
 								id="toggler"
 								ref={btnRef}
-								className="block xl:hidden px-[10px] py-[2px]"
+								className="block xl:hidden px-[10px]"
+								initial={false}
+								animate={isNavOpen ? "open" : "closed"}
+							> */}
+							<motion.button
+								id="toggler"
+								ref={btnRef}
+								className="block xl:hidden h-[15px] w-[20px]"
+								initial={false}
+								animate={isNavOpen ? "open" : "closed"}
+								// className=" "
 								onClick={() => setisNavOpen(!isNavOpen)}
 							>
+								<svg
+									width="100%"
+									height="100%"
+									viewBox="0 0 24 19"
+								>
+									<Path
+										variants={{
+											closed: {
+												d: "M 2 2.5 L 20 2.5"
+											},
+											open: { d: "M 3 16.5 L 17 2.5" }
+										}}
+									/>
+									<Path
+										d="M 2 9.423 L 20 9.423"
+										variants={{
+											closed: { opacity: 1 },
+											open: { opacity: 0 }
+										}}
+										transition={{ duration: 0.1 }}
+									/>
+									<Path
+										variants={{
+											closed: {
+												d: "M 2 16.346 L 20 16.346"
+											},
+											open: {
+												d: "M 3 2.5 L 17 16.346"
+											}
+										}}
+									/>
+								</svg>
+							</motion.button>
+							{/* </motion.div> */}
+
+							{/* <button className="px-[10px] py-[2px] block xl:hidden ">
 								<NavMenu className=" w-[20px] h-[15px] hidden sm:block" />
 								<NavMenuXs className="w-[16.14px] h-[9.05px] block sm:hidden" />
-							</button>
+							</button> */}
 							<div
 								className={`flex-col flex flex-wrap w-full xl:w-[523px] justify-between items-center xl:flex-row mt-4 xl:mt-0 ${
 									isNavOpen ? "flex" : "hidden"
