@@ -2,6 +2,7 @@
 import Link from "next/link"
 import React, { useEffect, useRef, useState } from "react"
 import { motion, useCycle, Variants } from "framer-motion"
+import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
 
 interface Props {}
 
@@ -14,24 +15,51 @@ const Path = (props: any) => (
 		{...props}
 	/>
 )
+
 const itemVariants: Variants = {
 	open: {
 		opacity: 1,
 		y: 0,
 		transition: { type: "easeout", damping: 24 }
 	},
-	closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+
+	closed: {
+		opacity: 0,
+		y: 20,
+		transition: { type: "easeout", damping: 24 }
+	}
 }
 
 const Navbar = (props: Props) => {
 	const [isNavOpen, setisNavOpen] = useState(false)
+	const [currBreakpoint, setCurrBreakpoint] = useState<string | undefined>(
+		getCurrentBreakpoint()
+	)
+
+	useEffect(() => {
+		const handleResize = () => {
+			setCurrBreakpoint(getCurrentBreakpoint())
+			if (currBreakpoint == "xl" || currBreakpoint == "xxl") {
+				setisNavOpen(true)
+			} else {
+				setisNavOpen(false)
+			}
+		}
+		handleResize()
+		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
+	}, [currBreakpoint])
 
 	const btnRef = useRef<HTMLButtonElement>(null)
 
 	useEffect(() => {
 		const closeNavbar = (e: any) => {
 			if (!e.path.includes(btnRef.current)) {
-				if (isNavOpen) {
+				if (
+					isNavOpen &&
+					currBreakpoint !== "xl" &&
+					currBreakpoint !== "xxl"
+				) {
 					setisNavOpen(false)
 				}
 			}
@@ -69,14 +97,12 @@ const Navbar = (props: Props) => {
 									</a>
 								</Link>
 							</button>
-
 							<motion.button
 								id="toggler"
 								ref={btnRef}
 								className="block xl:hidden h-[15px] w-[20px] "
 								initial={false}
 								animate={isNavOpen ? "open" : "closed"}
-								// className=" "
 								onClick={() => setisNavOpen(!isNavOpen)}
 							>
 								<svg
@@ -112,10 +138,15 @@ const Navbar = (props: Props) => {
 									/>
 								</svg>
 							</motion.button>
-
 							<motion.div
 								initial={false}
-								animate={isNavOpen ? "open" : "closed"}
+								animate={
+									isNavOpen ||
+									currBreakpoint == "xl" ||
+									currBreakpoint == "xxl"
+										? "open"
+										: "closed"
+								}
 								variants={{
 									open: {
 										transition: {
@@ -134,10 +165,10 @@ const Navbar = (props: Props) => {
 										}
 									}
 								}}
-								className={`flex-col flex  justify-between items-center xl:flex-row w-full xl:w-[523px] overflow-hidden navItems ${
-									!isNavOpen
-										? "xl:max-h-[100px] max-h-0 mt-0"
-										: "max-h-[350px]"
+								className={`flex-col flex justify-between items-center xl:flex-row w-full xl:w-[523px] overflow-hidden navItems ${
+									isNavOpen
+										? "max-h-[350px] mt-4 xl:mt-0"
+										: "xl:max-h-[100px] max-h-0 mt-0"
 								} `}
 							>
 								<motion.button

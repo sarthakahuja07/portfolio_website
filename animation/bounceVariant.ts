@@ -2,14 +2,15 @@ import { Variants } from "framer-motion"
 
 const bounceVariant: Variants = {
 	offscreen: {
-		y: 150
+		y: 100,
+		opacity: 0
 	},
 	onscreen: {
 		y: 0,
+		opacity: 2,
 		transition: {
-			type: "spring",
-			bounce: 0.4,
-			duration: 0.8
+			type: "easeInOut",
+			duration: 0.6
 		}
 	}
 }

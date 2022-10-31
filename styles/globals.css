@@ -162,7 +162,7 @@
 }
 
 .navItems {
-	transition: max-height 300ms ease-in-out;
+	transition: max-height 300ms ease-in-out, margin-top 300ms ease-in-out;
 }
 
 /* target every div with a specific class name when hovered on .card and change their scale */
