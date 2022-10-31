@@ -13,7 +13,7 @@ interface Props {}
 const Path = (props: any) => (
 	<motion.path
 		fill="hsl(0, 0%, 100%)"
-		strokeWidth="2"
+		strokeWidth="2.5"
 		stroke="hsl(0, 0%, 100%)"
 		strokeLinecap="round"
 		{...props}
