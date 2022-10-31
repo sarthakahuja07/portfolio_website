@@ -78,7 +78,7 @@ const Navbar = (props: Props) => {
 							<motion.button
 								id="toggler"
 								ref={btnRef}
-								className="block xl:hidden h-[15px] w-[20px]"
+								className="block xl:hidden h-[15px] w-[20px] "
 								initial={false}
 								animate={isNavOpen ? "open" : "closed"}
 								// className=" "
