@@ -1,12 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 import React, { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import logo from "../public/images/logo.png"
-// import { ReactComponent as YourSvg } from "./your-svg.svg"
-import NavMenu from "../public/images/menu.svg"
-import NavMenuXs from "../public/images/menu-xs.svg"
-import { motion, useCycle } from "framer-motion"
+import { motion, useCycle, Variants } from "framer-motion"
 
 interface Props {}
 
@@ -19,10 +14,17 @@ const Path = (props: any) => (
 		{...props}
 	/>
 )
+const itemVariants: Variants = {
+	open: {
+		opacity: 1,
+		y: 0,
+		transition: { type: "easeout", damping: 24 }
+	},
+	closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+}
 
 const Navbar = (props: Props) => {
 	const [isNavOpen, setisNavOpen] = useState(false)
-	const [isOpen, toggleOpen] = useCycle(false, true)
 
 	const btnRef = useRef<HTMLButtonElement>(null)
 
@@ -111,12 +113,37 @@ const Navbar = (props: Props) => {
 								</svg>
 							</motion.button>
 
-							<div
-								className={`flex-col flex flex-wrap w-full xl:w-[523px] justify-between items-center xl:flex-row mt-4 xl:mt-0 ${
-									isNavOpen ? "flex" : "hidden"
-								} xl:flex `}
+							<motion.div
+								initial={false}
+								animate={isNavOpen ? "open" : "closed"}
+								variants={{
+									open: {
+										transition: {
+											type: "easeout",
+											bounce: 0,
+											duration: 0.4,
+											delayChildren: 0.3,
+											staggerChildren: 0.05
+										}
+									},
+									closed: {
+										transition: {
+											type: "easein",
+											bounce: 0,
+											duration: 0.2
+										}
+									}
+								}}
+								className={`flex-col flex  justify-between items-center xl:flex-row w-full xl:w-[523px] overflow-hidden navItems ${
+									!isNavOpen
+										? "xl:max-h-[100px] max-h-0 mt-0"
+										: "max-h-[350px]"
+								} `}
 							>
-								<button onClick={() => setisNavOpen(false)}>
+								<motion.button
+									variants={itemVariants}
+									onClick={() => setisNavOpen(false)}
+								>
 									<Link href="#work">
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -124,8 +151,11 @@ const Navbar = (props: Props) => {
 											</a>
 										</div>
 									</Link>
-								</button>
-								<button onClick={() => setisNavOpen(false)}>
+								</motion.button>
+								<motion.button
+									variants={itemVariants}
+									onClick={() => setisNavOpen(false)}
+								>
 									<Link href="#skills">
 										<div className="py-3  sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -133,8 +163,11 @@ const Navbar = (props: Props) => {
 											</a>
 										</div>
 									</Link>
-								</button>
-								<button onClick={() => setisNavOpen(false)}>
+								</motion.button>
+								<motion.button
+									variants={itemVariants}
+									onClick={() => setisNavOpen(false)}
+								>
 									<Link href="#about">
 										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -142,8 +175,11 @@ const Navbar = (props: Props) => {
 											</a>
 										</div>
 									</Link>
-								</button>
-								<button onClick={() => setisNavOpen(false)}>
+								</motion.button>
+								<motion.button
+									variants={itemVariants}
+									onClick={() => setisNavOpen(false)}
+								>
 									<Link href="#contact">
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -151,8 +187,11 @@ const Navbar = (props: Props) => {
 											</a>
 										</div>
 									</Link>
-								</button>
-								<button onClick={() => setisNavOpen(false)}>
+								</motion.button>
+								<motion.button
+									variants={itemVariants}
+									onClick={() => setisNavOpen(false)}
+								>
 									<Link href="#resume">
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 											<a className="text-white text-nav font-array hover:text-shadow-navItem">
@@ -160,8 +199,8 @@ const Navbar = (props: Props) => {
 											</a>
 										</div>
 									</Link>
-								</button>
-							</div>
+								</motion.button>
+							</motion.div>
 						</div>
 					</motion.nav>
 				</div>

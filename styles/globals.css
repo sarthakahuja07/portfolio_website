@@ -161,6 +161,10 @@
 	z-index: -1;
 }
 
+.navItems {
+	transition: max-height 300ms ease-in-out;
+}
+
 /* target every div with a specific class name when hovered on .card and change their scale */
 /* disable hover on screens less than 640px */
 @media (min-width: 640px) {
