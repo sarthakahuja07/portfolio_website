@@ -168,6 +168,9 @@
 .slick-list {
 	overflow: visible !important;
 	overflow-x: clip !important;
+	/* padding-left: 50px !important; */
+
+	/* TODO: add a padding left og 50px and remove the #card0  */
 }
 
 .slick-dots li.slick-active button:before {
@@ -184,20 +187,44 @@
 /* target every div with a specific class name when hovered on .card and change their scale */
 /* disable hover on screens less than 640px */
 @media (min-width: 640px) {
+	.cardNumber {
+		transition-duration: 300ms;
+	}
+	.cardBox {
+		transition-duration: 300ms;
+	}
+
 	.card:hover .cardNumber {
-		transform: scale(1.17) translateY(-17%) translateX(17%);
+		transform: scale(1.17) translateY(-20%) translateX(12%);
+		transition-delay: 500ms;
 	}
 	.card:hover .cardBox {
 		transform: scale(1.17);
+		transition-delay: 500ms;
 	}
-	.card:hover .outlinedNumber {
-		background: -webkit-linear-gradient(
-			320.17deg,
-			#09f755 14.3%,
-			rgba(0, 0, 0, 0) 104.12%
-		);
+
+	#card0 .card:hover .cardBox {
+		transform: scale(1.17) translateX(50px);
+		transition-delay: 500ms;
+	}
+
+	#card0 .card:hover .cardNumber {
+		transform: scale(1.17) translateY(-20%) translateX(calc(12% + 50px));
+		transition-delay: 500ms;
+	}
+
+	.outlinedNumber {
+		background-color: #ffffff;
+		transition-duration: 300ms;
+		background-clip: text;
 		-webkit-background-clip: text;
-		-webkit-text-stroke: 3.62px transparent;
+		-webkit-text-stroke: 3.09px transparent;
+	}
+
+	.card:hover .outlinedNumber {
+		background-color: #09f755;
+		transition-delay: 500ms;
+		transition-duration: 300ms;
 	}
 
 	.skillsCard::before {
@@ -206,17 +233,6 @@
 		width: 556px;
 		height: 448px;
 	}
-}
-
-.outlinedNumber {
-	background: -webkit-linear-gradient(
-		320.17deg,
-		#ffffff 14.3%,
-		rgba(0, 0, 0, 0) 104.12%
-	);
-
-	-webkit-background-clip: text;
-	-webkit-text-stroke: 3.09px transparent;
 }
 
 @keyframes blink {

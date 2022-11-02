@@ -10,6 +10,8 @@ import delayedBounceVariant from "../animation/delayedBounceVariant"
 import { motion } from "framer-motion"
 import Slider from "react-slick"
 import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
+import Back from "../public/images/carousel-back.svg"
+import Next from "../public/images/carousel-next.svg"
 
 interface Props {
 	projects: projects[]
@@ -20,6 +22,8 @@ var settings = {
 	dots: true,
 	infinite: true,
 	arrows: false,
+	autoplay: true,
+	speed: 500,
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	variableWidth: true
@@ -31,6 +35,8 @@ function Work({ projects }: Props): ReactElement {
 	const [currBreakpoint, setCurrBreakpoint] = useState<string | undefined>(
 		getCurrentBreakpoint()
 	)
+	const sliderRef = useRef<Slider | null>(null)
+
 	const viewAllRef = useRef<HTMLDivElement>(null)
 	const allProjectIcon = useRef<HTMLDivElement>(null)
 
@@ -144,11 +150,33 @@ function Work({ projects }: Props): ReactElement {
 					})}
 				</div>
 			) : (
-				<div className=" work-row relative before:hidden xl:before:block after:hidden xl:after:block">
-					<Slider {...settings}>
+				<div
+					className="work-row relative before:hidden xl:before:block after:hidden xl:after:block"
+					onMouseOver={toggleIcon}
+					onMouseOut={toggleIcon}
+				>
+					<div className="absolute top-[calc(50%-34px+46px)] left-8 z-10">
+						<button onClick={() => sliderRef.current!.slickPrev()}>
+							<Back className="h-[68px] w-[68px]" />
+						</button>
+					</div>
+					<div className="absolute top-[calc(50%-34px+46px)] right-8 z-10">
+						<button
+							onClick={() => {
+								sliderRef.current!.slickNext()
+							}}
+						>
+							<Next className="h-[68px] w-[68px]" />
+						</button>
+					</div>
+					<Slider {...settings} ref={sliderRef}>
 						{projects.map((project: projects, i) => {
 							return (
-								<div className="test" key={project.id}>
+								<div
+									key={project.id}
+									className="test"
+									id={"card" + i.toString()}
+								>
 									<WorkCard
 										open={open}
 										project={project}

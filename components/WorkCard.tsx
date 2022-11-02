@@ -13,16 +13,16 @@ interface Props {
 
 const WorkCard = ({ open, project, index }: Props) => {
 	return (
-		<div className="mb-4 lg:mb-9 xl:mb-0 xl:mr-5">
+		<div className="mb-4 lg:mb-9 xl:mb-0 xl:mr-5 ">
 			<div className="relative w-[320px] card sm:w-[488px] xxl:w-[564px] lg:w-[482px] mx-auto mb-[46px] sm:mb-[72px] lg:mb-[92px] hover:z-[2] ">
-				<div className=" absolute top-0 right-0 w-fit h-[86px] sm:h-[130px] xxl:h-[168px] lg:h-[109px] cardNumber duration-300 delay-75">
+				<div className=" absolute top-0 right-0 w-fit h-[86px] sm:h-[130px] xxl:h-[168px] lg:h-[109px] cardNumber  ">
 					<p className="font-clash text-number outlinedNumber sm:text-numberMd lg:text-numberLg text-black_bg">
 						{("0" + (index + 1)).slice(-2)}
 					</p>
 				</div>
 				<div
 					onClick={() => open(project)}
-					className="bg-work-card-gradient bg-cover bg-clip-padding cursor-pointer cardBox  duration-300 delay-75 backdrop-blur-[6.86799px] rounded-work-card-xs sm:rounded-work-card-sm lg:rounded-work-card-lg border-solid border-[#FFFFFF0D] xxl:border-[2px] border-[1.5px] relative top-[46px] sm:top-[72px] lg:top-[92px] p-3 sm:p-5  lg:p-[30px] lg:px-[24px] xxl:p-[26px]"
+					className="bg-work-card-gradient  bg-cover bg-clip-padding cursor-pointer cardBox backdrop-blur-[6.86799px] rounded-work-card-xs sm:rounded-work-card-sm lg:rounded-work-card-lg border-solid border-[#FFFFFF0D] xxl:border-[2px] border-[1.5px] relative top-[46px] sm:top-[72px] lg:top-[92px] p-3 sm:p-5  lg:p-[30px] lg:px-[24px] xxl:p-[26px]"
 				>
 					<div className="flex flex-row justify-between items-center">
 						<img
