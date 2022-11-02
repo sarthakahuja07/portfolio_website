@@ -13,6 +13,7 @@ import ScrollAnimation from "./ScrollAnimation"
 import { motion } from "framer-motion"
 import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
+import socialIconMotion from "../animation/socialIconMotion"
 
 interface Props {}
 
@@ -43,26 +44,58 @@ function Contact({}: Props): ReactElement {
 					</div>
 					<div className="flex flex-col justify-around mt-7 sm:mt-10 xl:mt-11">
 						<div className="flex flex-row items-center justify-evenly  mb-4">
-							<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-								<a className="hover:scale-110 duration-300">
-									<LinkedIn className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
-								</a>
-							</Link>
-							<Link href="https://twitter.com/sarthakahuja07">
-								<a className="hover:scale-110 duration-300">
-									<Twitter className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
-								</a>
-							</Link>
-							<Link href="https://twitter.com/sarthakahuja07">
-								<a className="hover:scale-110 duration-300">
-									<GitHub className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
-								</a>
-							</Link>
-							<Link href="https://twitter.com/sarthakahuja07">
-								<a className="hover:scale-110 duration-300">
-									<Mail className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
-								</a>
-							</Link>
+							<motion.div
+								initial="rest"
+								whileHover="hover"
+								animate="rest"
+							>
+								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
+									<a>
+										<motion.div variants={socialIconMotion}>
+											<LinkedIn className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
+										</motion.div>
+									</a>
+								</Link>
+							</motion.div>
+							<motion.div
+								initial="rest"
+								whileHover="hover"
+								animate="rest"
+							>
+								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
+									<a>
+										<motion.div variants={socialIconMotion}>
+											<Twitter className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
+										</motion.div>
+									</a>
+								</Link>
+							</motion.div>
+							<motion.div
+								initial="rest"
+								whileHover="hover"
+								animate="rest"
+							>
+								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
+									<a>
+										<motion.div variants={socialIconMotion}>
+											<GitHub className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
+										</motion.div>
+									</a>
+								</Link>
+							</motion.div>
+							<motion.div
+								initial="rest"
+								whileHover="hover"
+								animate="rest"
+							>
+								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
+									<a>
+										<motion.div variants={socialIconMotion}>
+											<Mail className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
+										</motion.div>
+									</a>
+								</Link>
+							</motion.div>
 						</div>
 						<div className="cursor-pointer">
 							<CopyToClipboard text="sarthak.ahuja0007@gmail.com ">

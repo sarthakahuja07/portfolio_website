@@ -104,12 +104,12 @@ const WorkModal = ({ isModalOpen, setIsModalOpen, project }: Props) => {
 										<motion.button
 											whileHover={{
 												boxShadow:
-													"0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.85)",
+													"0px 4px 4px rgba(255, 255, 255, 0.5)",
 												transform: "translateY(-0.25em)"
 											}}
 											whileFocus={{
 												boxShadow:
-													"0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.85)",
+													"0px 4px 4px rgba(255, 255, 255, 0.5)",
 												transform: "translateY(-0.25em)"
 											}}
 											className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center"
@@ -124,12 +124,12 @@ const WorkModal = ({ isModalOpen, setIsModalOpen, project }: Props) => {
 										<motion.button
 											whileHover={{
 												boxShadow:
-													"0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.85)",
+													"0px 4px 4px rgba(255, 255, 255, 0.5)",
 												transform: "translateY(-0.25em)"
 											}}
 											whileFocus={{
 												boxShadow:
-													"0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.85)",
+													"0px 4px 4px rgba(255, 255, 255, 0.5)",
 												transform: "translateY(-0.25em)"
 											}}
 											className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center"

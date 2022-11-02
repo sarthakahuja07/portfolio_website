@@ -341,7 +341,7 @@ module.exports = {
 				loader: "0px 4px 30px rgba(9, 247, 85, 0.75)"
 			},
 			cursor: {
-				fancy: "url('../public/images/cursor.svg') 10 5, auto"
+				fancy: "url('../public/images/cursor.svg') 12 10, auto"
 			}
 		}
 	},

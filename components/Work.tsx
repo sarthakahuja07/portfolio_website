@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useRef } from "react"
+import React, { ReactElement, useState, useRef, useEffect } from "react"
 import Modal from "./WorkModal"
 import WorkCard from "./WorkCard"
 import AllProjectsIcon from "../public/images/allProjects.svg"
@@ -8,15 +8,29 @@ import ScrollAnimation from "./ScrollAnimation"
 import bounceVariant from "../animation/bounceVariant"
 import delayedBounceVariant from "../animation/delayedBounceVariant"
 import { motion } from "framer-motion"
+import Slider from "react-slick"
+import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
 
 interface Props {
 	projects: projects[]
 }
 
+var settings = {
+	className: "slider variable-width",
+	dots: true,
+	infinite: true,
+	arrows: false,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	variableWidth: true
+}
+
 function Work({ projects }: Props): ReactElement {
 	const [isModalOpen, setIsModalOpen] = useState(false)
 	const [currProject, setCurrProject] = useState(projects[0])
-
+	const [currBreakpoint, setCurrBreakpoint] = useState<string | undefined>(
+		getCurrentBreakpoint()
+	)
 	const viewAllRef = useRef<HTMLDivElement>(null)
 	const allProjectIcon = useRef<HTMLDivElement>(null)
 
@@ -25,6 +39,15 @@ function Work({ projects }: Props): ReactElement {
 		setCurrProject(project)
 		document.body.style.overflow = "hidden"
 	}
+
+	useEffect(() => {
+		const handleResize = () => {
+			setCurrBreakpoint(getCurrentBreakpoint())
+		}
+		handleResize()
+		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
+	}, [currBreakpoint])
 
 	const toggleViewAll = () => {
 		if (viewAllRef.current?.classList.contains("hidden")) {
@@ -101,19 +124,42 @@ function Work({ projects }: Props): ReactElement {
 					</div>
 				</div>
 			</div>
-			<div
-				className="w-full flex flex-col xl:flex-row overflow-x-clip work-row relative before:hidden xl:before:block after:hidden xl:after:block "
-				onMouseOver={toggleIcon}
-				onMouseOut={toggleIcon}
-			>
-				{projects.map((project: projects, i) => {
-					return (
-						<div key={project.id}>
-							<WorkCard open={open} project={project} index={i} />
-						</div>
-					)
-				})}
-			</div>
+
+			{currBreakpoint !== "xl" && currBreakpoint !== "xxl" ? (
+				<div
+					className="w-full flex flex-col xl:flex-row overflow-x-clip work-row relative before:hidden xl:before:block after:hidden xl:after:block "
+					onMouseOver={toggleIcon}
+					onMouseOut={toggleIcon}
+				>
+					{projects.map((project: projects, i) => {
+						return (
+							<div key={project.id}>
+								<WorkCard
+									open={open}
+									project={project}
+									index={i}
+								/>
+							</div>
+						)
+					})}
+				</div>
+			) : (
+				<div className=" work-row relative before:hidden xl:before:block after:hidden xl:after:block">
+					<Slider {...settings}>
+						{projects.map((project: projects, i) => {
+							return (
+								<div className="test" key={project.id}>
+									<WorkCard
+										open={open}
+										project={project}
+										index={i}
+									/>
+								</div>
+							)
+						})}
+					</Slider>
+				</div>
+			)}
 
 			{isModalOpen && (
 				<Modal

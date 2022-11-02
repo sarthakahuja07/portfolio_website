@@ -3,6 +3,8 @@ import type { AppProps } from "next/app"
 import { useEffect, useState } from "react"
 import backgrounds from "../public/backgrounds"
 import { motion } from "framer-motion"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const icon = {
 	hidden: {

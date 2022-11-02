@@ -165,6 +165,22 @@
 	transition: max-height 300ms ease-in-out, margin-top 300ms ease-in-out;
 }
 
+.slick-list {
+	overflow: visible !important;
+	overflow-x: clip !important;
+}
+
+.slick-dots li.slick-active button:before {
+	color: White !important;
+}
+.slick-dots li button:before {
+	color: White !important;
+}
+
+.slick-dots {
+	bottom: -50px !important;
+}
+
 /* target every div with a specific class name when hovered on .card and change their scale */
 /* disable hover on screens less than 640px */
 @media (min-width: 640px) {
