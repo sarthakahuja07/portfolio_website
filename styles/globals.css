@@ -184,10 +184,12 @@
 	bottom: -50px !important;
 }
 
+.nav-link {
+	transition-duration: 500ms;
+}
+
 .active .nav-link {
-	/* color: red; */
-	color: red;
-	/* TODO: change this */
+	color: #09f755;
 }
 .outlinedNumber {
 	background-color: #ffffff;
@@ -196,9 +198,6 @@
 	-webkit-background-clip: text;
 	-webkit-text-stroke: 3.09px transparent;
 }
-
-
-
 
 /* media queries */
 
