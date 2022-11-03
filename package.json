@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^4.4.0",
+		"@types/react-scroll": "^1.8.4",
 		"babel-plugin-inline-react-svg": "^2.0.1",
 		"firebase": "^9.9.4",
 		"framer-motion": "^7.5.3",
@@ -20,6 +21,7 @@
 		"react-copy-to-clipboard": "^5.1.0",
 		"react-dom": "18.2.0",
 		"react-icons": "^4.4.0",
+		"react-scroll": "^1.8.8",
 		"react-slick": "^0.29.0",
 		"slick-carousel": "^1.8.1",
 		"tailwindcss-border-gradients": "^2.0.3"

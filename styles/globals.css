@@ -168,7 +168,7 @@
 .slick-list {
 	overflow: visible !important;
 	overflow-x: clip !important;
-	/* padding-left: 50px !important; */
+	padding-left: 70px !important;
 
 	/* TODO: add a padding left og 50px and remove the #card0  */
 }
@@ -184,8 +184,24 @@
 	bottom: -50px !important;
 }
 
-/* target every div with a specific class name when hovered on .card and change their scale */
-/* disable hover on screens less than 640px */
+.active .nav-link {
+	/* color: red; */
+	color: red;
+	/* TODO: change this */
+}
+.outlinedNumber {
+	background-color: #ffffff;
+	transition-duration: 300ms;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 3.09px transparent;
+}
+
+
+
+
+/* media queries */
+
 @media (min-width: 640px) {
 	.cardNumber {
 		transition-duration: 300ms;
@@ -211,14 +227,6 @@
 	#card0 .card:hover .cardNumber {
 		transform: scale(1.17) translateY(-20%) translateX(calc(12% + 50px));
 		transition-delay: 500ms;
-	}
-
-	.outlinedNumber {
-		background-color: #ffffff;
-		transition-duration: 300ms;
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-stroke: 3.09px transparent;
 	}
 
 	.card:hover .outlinedNumber {

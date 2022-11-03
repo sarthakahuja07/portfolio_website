@@ -14,7 +14,7 @@ interface Props {
 const WorkCard = ({ open, project, index }: Props) => {
 	return (
 		<div className="mb-4 lg:mb-9 xl:mb-0 xl:mr-5 ">
-			<div className="relative w-[320px] card sm:w-[488px] xxl:w-[564px] lg:w-[482px] mx-auto mb-[46px] sm:mb-[72px] lg:mb-[92px] hover:z-[2] ">
+			<div className="relative  w-[320px] card sm:w-[488px] xxl:w-[564px] lg:w-[482px] mx-auto mb-[46px] sm:mb-[72px] lg:mb-[92px] hover:z-[2] ">
 				<div className=" absolute top-0 right-0 w-fit h-[86px] sm:h-[130px] xxl:h-[168px] lg:h-[109px] cardNumber  ">
 					<p className="font-clash text-number outlinedNumber sm:text-numberMd lg:text-numberLg text-black_bg">
 						{("0" + (index + 1)).slice(-2)}

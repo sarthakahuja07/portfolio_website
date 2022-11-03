@@ -10,8 +10,8 @@ import delayedBounceVariant from "../animation/delayedBounceVariant"
 import { motion } from "framer-motion"
 import Slider from "react-slick"
 import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
-import Back from "../public/images/carousel-back.svg"
-import Next from "../public/images/carousel-next.svg"
+import Back from "../public/images/work-back.svg"
+import Next from "../public/images/work-next.svg"
 
 interface Props {
 	projects: projects[]
@@ -174,7 +174,6 @@ function Work({ projects }: Props): ReactElement {
 							return (
 								<div
 									key={project.id}
-									className="test"
 									id={"card" + i.toString()}
 								>
 									<WorkCard

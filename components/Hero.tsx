@@ -37,7 +37,10 @@ function Hero({}: Props): ReactElement {
 
 	return (
 		<>
-			<div className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mb-20 sm:mb-9 md:mb-[64px] xl:mb-[216px] xxl:mb-[204px] pt-[56px] sm:pt-20  md:pt-[88px] lg:pt-[116px] xl:pt-[158px] xxl:pt-[178px]">
+			<div
+				id="hero"
+				className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mb-20 sm:mb-9 md:mb-[64px] xl:mb-[216px] xxl:mb-[204px] pt-[56px] sm:pt-20  md:pt-[88px] lg:pt-[116px] xl:pt-[158px] xxl:pt-[178px]"
+			>
 				<div className="col-start-1 lg:col-start-2 xl:col-start-2 xxl:col-start-2 col-span-4 md:col-span-12 xl:col-span-5 xxl:col-span-5 sm:w-[480px] xl:mt-[58px] xxl:mt-[78px] relative">
 					<motion.div
 						className="absolute top-[-34px] sm:top-[-54px] left-[201px]"

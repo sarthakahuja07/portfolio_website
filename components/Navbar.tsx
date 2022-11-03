@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link"
 import React, { useEffect, useRef, useState } from "react"
 import { motion, useCycle, Variants } from "framer-motion"
 import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 interface Props {}
 
@@ -86,8 +86,15 @@ const Navbar = (props: Props) => {
 						id="main-nav"
 					>
 						<div className="flex flex-row justify-between items-center flex-wrap ">
-							<button onClick={() => setisNavOpen(false)}>
-								<Link href="/">
+							<button>
+								<Link
+									to="hero"
+									spy={true}
+									smooth={true}
+									onClick={() => setisNavOpen(false)}
+									// offset={-200}
+									duration={500}
+								>
 									<a>
 										<img
 											src="images/logo.png"
@@ -171,61 +178,81 @@ const Navbar = (props: Props) => {
 										: "xl:max-h-[100px] max-h-0 mt-0"
 								} `}
 							>
-								<motion.button
-									variants={itemVariants}
-									onClick={() => setisNavOpen(false)}
-								>
-									<Link href="#work">
+								<motion.button variants={itemVariants}>
+									<Link
+										to="work"
+										activeClass="active"
+										spy={true}
+										onClick={() => setisNavOpen(false)}
+										smooth={true}
+										// offset={-200}
+										duration={500}
+									>
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
 												.work()
 											</a>
 										</div>
 									</Link>
 								</motion.button>
-								<motion.button
-									variants={itemVariants}
-									onClick={() => setisNavOpen(false)}
-								>
-									<Link href="#skills">
+								<motion.button variants={itemVariants}>
+									<Link
+										to="skills"
+										activeClass="active"
+										spy={true}
+										smooth={true}
+										// offset={-200}
+										onClick={() => setisNavOpen(false)}
+										duration={500}
+									>
 										<div className="py-3  sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
 												.skills()
 											</a>
 										</div>
 									</Link>
 								</motion.button>
-								<motion.button
-									variants={itemVariants}
-									onClick={() => setisNavOpen(false)}
-								>
-									<Link href="#about">
+								<motion.button variants={itemVariants}>
+									<Link
+										to="about"
+										spy={true}
+										onClick={() => setisNavOpen(false)}
+										activeClass="active"
+										smooth={true}
+										// offset={-200}
+										duration={500}
+									>
 										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
-											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
 												.about()
 											</a>
 										</div>
 									</Link>
 								</motion.button>
-								<motion.button
-									variants={itemVariants}
-									onClick={() => setisNavOpen(false)}
-								>
-									<Link href="#contact">
+								<motion.button variants={itemVariants}>
+									<Link
+										to="contact"
+										spy={true}
+										onClick={() => setisNavOpen(false)}
+										activeClass="active"
+										smooth={true}
+										// offset={-200}
+										duration={500}
+									>
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
 												.contact()
 											</a>
 										</div>
 									</Link>
 								</motion.button>
-								<motion.button
-									variants={itemVariants}
-									onClick={() => setisNavOpen(false)}
-								>
-									<Link href="#resume">
+								<motion.button variants={itemVariants}>
+									<Link
+										to="resume"
+										onClick={() => setisNavOpen(false)}
+									>
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-											<a className="text-white text-nav font-array hover:text-shadow-navItem">
+											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
 												.resume()
 											</a>
 										</div>

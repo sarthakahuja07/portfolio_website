@@ -24,7 +24,7 @@ function About({ experiences }: Props): ReactElement {
 			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[92px] sm:mt[40px] md:mt[130px] lg:mt[158px] xl:mt-[234px]"
 			id="about"
 		>
-			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 active flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
+			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
 				<ScrollAnimation>
 					<motion.div
 						variants={bounceVariant}
