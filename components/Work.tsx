@@ -26,6 +26,7 @@ var settings = {
 	speed: 500,
 	slidesToShow: 1,
 	slidesToScroll: 1,
+	draggable: false,
 	variableWidth: true
 }
 
@@ -39,6 +40,8 @@ function Work({ projects }: Props): ReactElement {
 
 	const viewAllRef = useRef<HTMLDivElement>(null)
 	const allProjectIcon = useRef<HTMLDivElement>(null)
+	const leftScrollIcon = useRef<HTMLDivElement>(null)
+	const rightScrollIcon = useRef<HTMLDivElement>(null)
 
 	const open = (project: projects) => {
 		setIsModalOpen(true)
@@ -72,6 +75,41 @@ function Work({ projects }: Props): ReactElement {
 		} else if (allProjectIcon.current?.classList.contains("xl:flex")) {
 			allProjectIcon.current?.classList.remove("xl:flex")
 			allProjectIcon.current?.classList.add("hidden")
+		}
+		if (
+			leftScrollIcon.current?.classList.contains("opacity-0") &&
+			leftScrollIcon.current?.classList.contains("scale-0")
+		) {
+			leftScrollIcon.current?.classList.remove("opacity-0")
+			leftScrollIcon.current?.classList.remove("scale-0")
+			leftScrollIcon.current?.classList.add("opacity-100")
+			leftScrollIcon.current?.classList.add("scale-1")
+		} else if (
+			leftScrollIcon.current?.classList.contains("opacity-100") &&
+			leftScrollIcon.current?.classList.contains("scale-1")
+		) {
+			leftScrollIcon.current?.classList.remove("opacity-100")
+			leftScrollIcon.current?.classList.remove("scale-1")
+			leftScrollIcon.current?.classList.add("opacity-0")
+			leftScrollIcon.current?.classList.add("scale-0")
+		}
+
+		if (
+			rightScrollIcon.current?.classList.contains("opacity-0") &&
+			rightScrollIcon.current?.classList.contains("scale-0")
+		) {
+			rightScrollIcon.current?.classList.remove("opacity-0")
+			rightScrollIcon.current?.classList.remove("scale-0")
+			rightScrollIcon.current?.classList.add("opacity-100")
+			rightScrollIcon.current?.classList.add("scale-1")
+		} else if (
+			rightScrollIcon.current?.classList.contains("opacity-100") &&
+			rightScrollIcon.current?.classList.contains("scale-1")
+		) {
+			rightScrollIcon.current?.classList.remove("opacity-100")
+			rightScrollIcon.current?.classList.remove("scale-1")
+			rightScrollIcon.current?.classList.add("opacity-0")
+			rightScrollIcon.current?.classList.add("scale-0")
 		}
 	}
 
@@ -155,12 +193,18 @@ function Work({ projects }: Props): ReactElement {
 					onMouseOver={toggleIcon}
 					onMouseOut={toggleIcon}
 				>
-					<div className="absolute top-[calc(50%-34px+46px)] left-8 z-10">
+					<div
+						ref={leftScrollIcon}
+						className="absolute top-[calc(50%-34px+46px)] left-8 z-10 opacity-0 scale-0 duration-300 hover:scale-[1.5]"
+					>
 						<button onClick={() => sliderRef.current!.slickPrev()}>
 							<Back className="h-[68px] w-[68px]" />
 						</button>
 					</div>
-					<div className="absolute top-[calc(50%-34px+46px)] right-8 z-10">
+					<div
+						ref={rightScrollIcon}
+						className="absolute top-[calc(50%-34px+46px)] right-8 z-10 opacity-0 scale-0 duration-300 hover:scale-[1.5]"
+					>
 						<button
 							onClick={() => {
 								sliderRef.current!.slickNext()

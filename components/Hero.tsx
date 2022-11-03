@@ -36,7 +36,7 @@ function Hero({}: Props): ReactElement {
 			: event.target.classList.remove("hide")
 
 		if (event.target.value.includes("\n")) {
-			if (commands.includes(event.target.value.trim())) {
+			if (commands.includes(event.target.value.trim().replace(";", ""))) {
 				if (
 					event.target.value.trim().replace(";", "") ===
 					"sarthak.playFavSong()"
