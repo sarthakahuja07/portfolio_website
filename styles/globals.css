@@ -185,7 +185,7 @@
 }
 
 .nav-link {
-	transition-duration: 500ms;
+	transition-duration: 300ms;
 }
 
 .active .nav-link {

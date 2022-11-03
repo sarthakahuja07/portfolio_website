@@ -1,13 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
-import React, { ReactElement } from "react"
+import React, { ReactElement, useState } from "react"
 import Star from "../public/images/star.svg"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
 interface Props {}
 
+const commands = ["sarthak.playFavSong()", "sarthak.pauseFavSong()"]
+let path = "./sounds/song.mp3"
+
 function Hero({}: Props): ReactElement {
+	const [isPlaying, setIsPlaying] = useState(false)
+	const [audio, setAudio] = useState<HTMLAudioElement>(new Audio(path))
+	audio.volume = 0.05
+
+	const play = () => {
+		console.log("play")
+		if (!isPlaying) {
+			audio.play()
+			setIsPlaying(true)
+		}
+	}
+
+	const pause = () => {
+		audio.pause()
+		setIsPlaying(false)
+	}
+
 	const handleCodeChange = (
 		event: React.ChangeEvent<HTMLTextAreaElement>
 	) => {
@@ -15,23 +35,34 @@ function Hero({}: Props): ReactElement {
 			? event.target.classList.add("hide")
 			: event.target.classList.remove("hide")
 
-		if (
-			event.target.value.includes("\n") &&
-			event.target.value.replace(/\s/g, "") === "sarthak"
-		) {
-			event.target.value = ""
-			event.target.placeholder = ""
-			event.target.classList.remove("hide")
-		} else if (event.target.value.includes("\n")) {
-			event.target.placeholder = "Error :[ please try again!"
-			event.target.classList.remove("hide")
-			event.target.classList.add("error")
-			event.target.value = ""
-
-			setTimeout(() => {
+		if (event.target.value.includes("\n")) {
+			if (commands.includes(event.target.value.trim())) {
+				if (
+					event.target.value.trim().replace(";", "") ===
+					"sarthak.playFavSong()"
+				) {
+					play()
+				}
+				if (
+					event.target.value.trim().replace(";", "") ===
+					"sarthak.pauseFavSong()"
+				) {
+					pause()
+				}
+				event.target.value = ""
 				event.target.placeholder = ""
-				event.target.classList.remove("error")
-			}, 5000)
+				event.target.classList.remove("hide")
+			} else {
+				event.target.placeholder = "Error :[ please try again!"
+				event.target.classList.remove("hide")
+				event.target.classList.add("error")
+				event.target.value = ""
+
+				setTimeout(() => {
+					event.target.placeholder = ""
+					event.target.classList.remove("error")
+				}, 5000)
+			}
 		}
 	}
 
