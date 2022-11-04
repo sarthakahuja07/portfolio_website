@@ -148,12 +148,12 @@ function Contact({}: Props): ReactElement {
 					</div>
 				</ScrollAnimation>
 
-				<ScrollAnimation>
-					<motion.div
-						variants={bounceVariant}
-						className="flex flex-col items-center sm:mt-8 mt-[12px] py-[50px] sm:py-[14px] xl:py-[0.5px] mb-[108px] sm:mb-[213px] md:mb-[335px] xl:mb-[96px] xxl:mb-[132px]"
-					>
-						<div className="font-clash text-center">
+				<div className="flex flex-col items-center sm:mt-8 mt-[12px] py-[50px] sm:py-[14px] xl:py-[0.5px] mb-[108px] sm:mb-[213px] md:mb-[335px] xl:mb-[96px] xxl:mb-[132px]">
+					<ScrollAnimation>
+						<motion.div
+							variants={bounceVariant}
+							className="font-clash text-center"
+						>
 							<p className="customShadow xl:text-8xl sm:text-7xl text-4xl mb-1 xl:mb-3">
 								let&apos;s talk
 							</p>
@@ -163,8 +163,13 @@ function Contact({}: Props): ReactElement {
 								& Summer 2021 open to opportunities for Spring
 								2021 &
 							</p>
-						</div>
-						<div className="flex flex-col justify-around mt-7 sm:mt-10 xl:mt-11">
+						</motion.div>
+					</ScrollAnimation>
+					<ScrollAnimation>
+						<motion.div
+							variants={bounceVariant}
+							className="flex flex-col justify-around mt-7 sm:mt-10 xl:mt-11"
+						>
 							<div className="flex flex-row items-center justify-evenly  mb-4">
 								<motion.div
 									initial="rest"
@@ -292,9 +297,9 @@ function Contact({}: Props): ReactElement {
 									</motion.div>
 								</CopyToClipboard>
 							</motion.div>
-						</div>
-					</motion.div>
-				</ScrollAnimation>
+						</motion.div>
+					</ScrollAnimation>
+				</div>
 			</div>
 		</div>
 	)
