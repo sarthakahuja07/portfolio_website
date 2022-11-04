@@ -108,7 +108,7 @@ function Contact({}: Props): ReactElement {
 
 	return (
 		<div
-			className="container mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 "
+			className="container overflow-x-clip mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 "
 			id="contact"
 		>
 			<div className=" relative mt-[216px] sm:mt-[192px] xxl:mt-[156] col-span-12 lg:col-span-8 lg:col-start-3 col-start-1 flex flex-col items-center xxl:col-span-12 xxl:col-start-1 xxl:max-w-[914px] xxl:mx-auto">
@@ -132,17 +132,17 @@ function Contact({}: Props): ReactElement {
 						<Star className="w-[24px] h-[24px] mx-auto" />
 					</motion.div>
 
-					<div className="flex">
+					<div className="flex overflow-x-clip w-[100vw]">
 						<motion.img
 							variants={leftHandVariant}
 							src="images/left-hand.png"
-							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px]"
+							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px] ml-auto"
 							alt="left-hand"
 						/>
 						<motion.img
 							variants={rightHandVariant}
 							src="images/right-hand.png"
-							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px]"
+							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px] mr-auto"
 							alt="right-hand"
 						/>
 					</div>
