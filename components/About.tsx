@@ -117,7 +117,7 @@ function About({ experiences }: Props): ReactElement {
 						variants={delayedBounceVariant}
 						className="flex flex-row xl:flex-col w-full h-full"
 					>
-						<div className="h-auto w-[1px] relative experience-line xl:w-[90%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0 xl:after:top-[-3px] after:bottom-[1%] xl:after:right-[1%] after:right-[-4px] xl:before:top-[-3px] before:top-[10%] xl:before:left-[10%] before:left-[-3px]  "></div>
+						<div className="h-auto w-[1px] relative experience-line xl:w-[90%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0 xl:after:top-[-3px] after:bottom-[1%] xl:after:right-[4px] after:right-[-4px] xl:before:top-[-3px] before:top-[10%] xl:before:left-[10%] before:left-[-3px]  "></div>
 						<div className="flex flex-col xl:flex-row w-full justify-between gap-[92px] xl:gap-0 ">
 							{experiences.map((experience) => (
 								<Experience

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image"
 import React, { ReactElement, useState } from "react"
 import Star from "../public/images/star.svg"
 import Link from "next/link"
@@ -299,18 +298,6 @@ function Hero({}: Props): ReactElement {
 						</div>
 					</div>
 				</motion.div>
-			</div>
-
-			<div className="w-fit mx-auto">
-				<Link href="/">
-					<a>
-						<img
-							src="images/arrow.png"
-							className="w-[27px] h-[48px] md:w-[74px] md:h-[95px] xl:w-[68px] xl:h-[88px]"
-							alt="arrow"
-						/>
-					</a>
-				</Link>
 			</div>
 		</>
 	)

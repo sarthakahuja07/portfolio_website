@@ -71,7 +71,7 @@ const ImageScroller = ({ project }: Props) => {
 					className="h-full w-full rounded-xxl object-cover"
 					alt="me"
 				/>
-				<div className="absolute top-[calc(50%-14px)] left-2 ">
+				<div className="absolute top-[calc(50%-14px)] left-2 duration-300 hover:scale-[1.2]">
 					<button>
 						<Back
 							className="h-[28px] w-[28px]"
@@ -79,7 +79,7 @@ const ImageScroller = ({ project }: Props) => {
 						/>
 					</button>
 				</div>
-				<div className="absolute top-[calc(50%-14px)] right-2 ">
+				<div className="absolute top-[calc(50%-14px)] right-2 duration-300 hover:scale-[1.2]">
 					<button>
 						<Next
 							className="h-[28px] w-[28px]"
