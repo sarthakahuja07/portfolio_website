@@ -79,7 +79,7 @@ const Skills = ({ skillSet }: Props) => {
 										className={`px-[6px] py-[9px] sm:py-[16px] sm:px-[22px] opacity-30 capitalize cursor-pointer hover:opacity-75  ${
 											singleSkillSet.id ===
 												currSkill.id &&
-											"px-[8px] sm:px-[28px] rounded-[6px] bg-[#FFFFFF26] text-shadow-skills-tab opacity-100 hover:opacity-100 "
+											" active-skill px-[8px] sm:px-[28px] rounded-[6px] bg-[#FFFFFF26] text-shadow-skills-tab opacity-100 hover:opacity-100 "
 										}`}
 									>
 										{singleSkillSet.name}
