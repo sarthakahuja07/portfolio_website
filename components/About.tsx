@@ -106,7 +106,7 @@ function About({ experiences }: Props): ReactElement {
 			</div>
 
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 xl:col-start-1 sm:w-[548px] md:w-[558px] lg:w-[603px] xl:w-full xxl:w-[1324px] xl:mx-auto">
-				<ScrollAnimation>
+				<ScrollAnimation >
 					<motion.h3
 						variants={bounceVariant}
 						className=" font-clash text-lg sm:text-4xl w-fit mx-auto text-shadow-h3 mb-[15px] sm:mb-[20px] xl:mb-[16px]"

@@ -9,7 +9,7 @@ const ScrollAnimation = ({ children }: Props) => (
 	<motion.div
 		initial="offscreen"
 		whileInView="onscreen"
-		viewport={{ once: true, amount: 0.8 }}
+		viewport={{ once: true, amount: 0.1 }}
 	>
 		{children}
 	</motion.div>

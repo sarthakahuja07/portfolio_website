@@ -24,7 +24,8 @@
 		"react-scroll": "^1.8.8",
 		"react-slick": "^0.29.0",
 		"slick-carousel": "^1.8.1",
-		"tailwindcss-border-gradients": "^2.0.3"
+		"tailwindcss-border-gradients": "^2.0.3",
+		"typewriter-effect": "^2.19.0"
 	},
 	"devDependencies": {
 		"@types/node": "18.7.18",

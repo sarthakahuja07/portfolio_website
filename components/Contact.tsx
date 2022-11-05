@@ -244,8 +244,8 @@ function Contact({}: Props): ReactElement {
 									// variants={copyPrompt}
 									className=" h-0 absolute w-[100%] bottom-[calc(100%+4px)] left-0 opacity-0 duration-500"
 								>
-									<div className=" bg-white rounded-[6px] py-2 px-[18px] z-[2] flex items-center gap-1 bottom-[calc(100%+4px)] left-[calc(50%+4px)] mx-auto w-fit">
-										<p className="text-4xsm text-black_bg">
+									<div className=" bg-[#181a1b] rounded-[6px] py-2 px-[18px] z-[2] flex items-center gap-1 bottom-[calc(100%+4px)] left-[calc(50%+4px)] mx-auto w-fit">
+										<p className="text-4xsm text-white">
 											Copied
 										</p>
 										<Copy className="w-[10px] h-[13.33px]" />

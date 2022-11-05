@@ -3,6 +3,7 @@ import React, { ReactElement, useState } from "react"
 import Star from "../public/images/star.svg"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Typewriter from "typewriter-effect"
 
 interface Props {}
 
@@ -11,6 +12,7 @@ let path = "./sounds/song.mp3"
 
 function Hero({}: Props): ReactElement {
 	const [isPlaying, setIsPlaying] = useState(false)
+	const [startTyping, setStartTyping] = useState(false)
 	const [audio, setAudio] = useState<HTMLAudioElement>(new Audio(path))
 	audio.volume = 0.05
 
@@ -153,147 +155,42 @@ function Hero({}: Props): ReactElement {
 						<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5  bg-[#F8D41C] rounded-full absolute sm:top-6 sm:left-[56px] top-[12px] left-[52px] xl:left-[68px]"></div>
 						<div className=" pb-5 px-2 pt-4 sm:pb-[46px] sm:px-4">
 							<div className="font-source text-code sm:text-codeLg">
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										1{" "}
-									</span>
-									class
-									<span className="text-codeYellow">
-										{`
-                            Person {`}
-									</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										2{" "}
-									</span>
-									&emsp;&emsp;
-									{`  constructor
-                                `}
-									<span className="text-codePurple">{`() {`}</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										3{" "}
-									</span>
-									&emsp;&emsp;&emsp;&emsp;
-									<span className="text-codeBlue">this</span>
-									{`.name= `}
-									<span className="text-codeGreen">{`"Sarthak Ahuja"`}</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										4{" "}
-									</span>
-									&emsp;&emsp;&emsp;&emsp;
-									<span className="text-codeBlue">this</span>
-									{`.interest = `}
-									<span className="text-codeGreen">{`"WEB 3"`}</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										5{" "}
-									</span>
-									&emsp;&emsp;&emsp;&emsp;
-									<span className="text-codeBlue">this</span>
-									{`.age = `}
-									<span className="text-codeGreen">{`21`}</span>
-								</p>
-								<div className="inline-flex">
-									<div className="text-[#636262] mr-1 w-[33px]">
-										6
-									</div>
-									&emsp;&emsp;&emsp;&emsp;
-									<span className="">
-										<span className="text-codeBlue">
-											this
+								<Typewriter
+									options={{
+										delay: 15,
+										cursor: ""
+									}}
+									onInit={(typewriter) => {
+										typewriter
+											.pauseFor(10)
+											.typeString(
+												`<span><span class="text-[#636262] mr-1"> 1 </span>class<span class="text-codeYellow"> Person {</span></span></br><span><span class="text-[#636262] mr-1"> 2 </span>&emsp;&emsp; constructor<span class="text-codePurple">() {</span></span></br><span><span class="text-[#636262] mr-1"> 3 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.name = <span class="text-codeGreen">"Sarthak Ahuja"</span></span></br><span><span class="text-[#636262] mr-1"> 4 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.interest = <span class="text-codeGreen">"WEB 3"</span></span></br><span><span class="text-[#636262] mr-1"> 5 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.age = <span class="text-codeGreen">21</span></span></br><span class="inline-flex"><span class="flex-grow-0 flex-shrink-0 text-[#636262] mr-1 sm:w-[16.81px] w-[12px]"> 6 </span>&emsp;&emsp;&emsp;&emsp;<span class="flex-grow-0"><span class="text-codeBlue">this</span>.tech = ["<span><span class="text-codeGreen">React</span><span>", "</span><span class="text-codeGreen">Redux</span><span>", "</span><span class="text-codeGreen">Node</span><span>", "</span><span class="text-codeGreen">MongoDB</span><span>", "</span><span class="text-codeGreen">Typescript</span><span>", "</span><span class="text-codeGreen">Solidity</span><span>"]</span></span></span></span></br><span><span class="text-[#636262] mr-1"> 7 </span>&emsp;&emsp;<span class="text-codePurple"> }</span></span></br><span><span class="text-[#636262] mr-1"> 8 </span>&emsp;&emsp; <span>...</span></span></br><span><span class="text-[#636262] mr-1"> 9 </span><span class="text-codeYellow">}</span></span></br><span><span class="text-[#636262] mr-1"> 10</span>const sarthak = <span class="text-codeBlue">new </span><span class="text-codeYellow"> Person() </span></span></br><span><span class="text-[#636262] mr-1"> 11</span><span class="text-codeComment">// try to ask my favSong </span></span>`
+											)
+											.start()
+											.callFunction(() => {
+												setStartTyping(true)
+											})
+									}}
+								/>
+
+								{startTyping && (
+									<div className="inline-flex">
+										<span className="text-[#636262] mr-1">
+											12
 										</span>
-										{`.tech = ["`}
-										<span>
-											<span className="text-codeGreen">{`React`}</span>
-											<span>{`", "`}</span>
-											<span className="text-codeGreen">{`Redux`}</span>
-											<span>{`", "`}</span>
-
-											<span className="text-codeGreen">{`Node`}</span>
-											<span>{`", "`}</span>
-
-											<span className="text-codeGreen">{`MongoDB`}</span>
-											<span>{`", "`}</span>
-
-											<span className="text-codeGreen">{`Typescript`}</span>
-											<span>{`", "`}</span>
-											<span className="text-codeGreen">{`Solidity`}</span>
-											<span>{`"]`}</span>
-										</span>
-									</span>
-								</div>
-
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										7{" "}
-									</span>
-									&emsp;&emsp;
-									<span className="text-codePurple">{`}`}</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										8{" "}
-									</span>
-									&emsp;&emsp;
-									<span>{`...`}</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										8{" "}
-									</span>
-
-									<span className="text-codeYellow">{`}`}</span>
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										{" "}
-										9{" "}
-									</span>
-									{`const sarthak = `}
-									<span className="text-codeBlue">new </span>
-									<span className="text-codeYellow">
-										Person()
-									</span>
-									;
-								</p>
-								<p>
-									<span className="text-[#636262] mr-1">
-										10
-									</span>
-									<span className="text-codeComment">
-										{`// try to ask my favSong`}
-									</span>
-								</p>
-								<div className="inline-flex">
-									<span className="text-[#636262] mr-1">
-										11
-									</span>
-									<div className="cursor w-full">
-										<textarea
-											id="code"
-											className="codeTextArea bg-transparent text-white resize-none w-full overflow-y-hidden"
-											spellCheck="false"
-											rows={1}
-											cols={100}
-											onChange={handleCodeChange}
-										/>
-										<i className="hide"></i>
+										<div className="cursor w-full">
+											<textarea
+												id="code"
+												className="codeTextArea bg-transparent text-white resize-none w-full overflow-y-hidden"
+												spellCheck="false"
+												rows={1}
+												cols={100}
+												onChange={handleCodeChange}
+											/>
+											<i className="hide"></i>
+										</div>
 									</div>
-								</div>
+								)}
 							</div>
 						</div>
 					</div>
