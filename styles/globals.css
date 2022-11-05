@@ -237,6 +237,15 @@
 	position: relative;
 }
 
+.audio-player-close {
+	transition: 600ms all linear 100ms, z-index 0ms;
+}
+.audio-player-open {
+	transition: 600ms all, z-index 100ms linear 600ms;
+	/* transition: z-index 0s linear 1s, 1000ms all; */
+}
+
+
 /* media queries */
 
 @media (min-width: 640px) {

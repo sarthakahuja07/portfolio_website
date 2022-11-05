@@ -1,31 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement, useState, useRef } from "react"
 import Star from "../public/images/star.svg"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import Typewriter from "typewriter-effect"
+import ReactAudioPlayer from "react-audio-player"
 
 interface Props {}
 
 const commands = ["sarthak.playFavSong()", "sarthak.pauseFavSong()"]
 let path = "./sounds/song.mp3"
+const url =
+	"https://anchor.fm/s/3ca3951c/podcast/play/34000987/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-4-22%2F189000537-44100-2-8ece7d27bd7d2.m4a"
 
 function Hero({}: Props): ReactElement {
 	const [isPlaying, setIsPlaying] = useState(false)
 	const [startTyping, setStartTyping] = useState(false)
-	const [audio, setAudio] = useState<HTMLAudioElement>(new Audio(path))
-	audio.volume = 0.05
+	const audioRef = useRef<ReactAudioPlayer>(null)
 
 	const play = () => {
 		console.log("play")
 		if (!isPlaying) {
-			audio.play()
+			audioRef.current?.audioEl.current?.play()
 			setIsPlaying(true)
 		}
 	}
 
 	const pause = () => {
-		audio.pause()
+		audioRef.current?.audioEl.current?.pause()
 		setIsPlaying(false)
 	}
 
@@ -148,6 +150,23 @@ function Hero({}: Props): ReactElement {
 					transition={{ duration: 0.5 }}
 					className="col-span-4 mx-auto col-start-1 md:col-span-12  xl:col-span-5 xl:col-start-8 w-[240px] h-[264px] sm:w-[430px] sm:h-[372px] mt-[92px] sm:mt-[64px] md:mt-[100px] xl:mt-[38px] xxl:mt-[54px] xl:mx-0 bg-[#000] rounded-terminal relative "
 				>
+					<div
+						className={` absolute top-[-60px] left-0 right-0 ${
+							isPlaying
+								? "opacity-100 h-10 z-[0] audio-player-open"
+								: "opacity-0 h-0 top-[60px] z-[-1] audio-player-close "
+						}`}
+					>
+						<ReactAudioPlayer
+							ref={audioRef}
+							src={path}
+							controls
+							volume={0.1}
+							onPause={() => setIsPlaying(false)}
+							onPlay={() => setIsPlaying(true)}
+							className={`mx-auto h-[inherit] w-[100%] sm:w-[revert] `}
+						/>
+					</div>
 					<div>
 						<div className="bg-[#1F1F22] sm:h-[58px] h-[32px] w-[full] opacity-50 rounded-[20px] rounded-b-[0px]"></div>
 						<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#E35353] rounded-full absolute sm:top-6 sm:left-6 top-[12px] left-5  "></div>
@@ -164,7 +183,7 @@ function Hero({}: Props): ReactElement {
 										typewriter
 											.pauseFor(10)
 											.typeString(
-												`<span><span class="text-[#636262] mr-1"> 1 </span>class<span class="text-codeYellow"> Person {</span></span></br><span><span class="text-[#636262] mr-1"> 2 </span>&emsp;&emsp; constructor<span class="text-codePurple">() {</span></span></br><span><span class="text-[#636262] mr-1"> 3 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.name = <span class="text-codeGreen">"Sarthak Ahuja"</span></span></br><span><span class="text-[#636262] mr-1"> 4 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.interest = <span class="text-codeGreen">"WEB 3"</span></span></br><span><span class="text-[#636262] mr-1"> 5 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.age = <span class="text-codeGreen">21</span></span></br><span class="inline-flex"><span class="flex-grow-0 flex-shrink-0 text-[#636262] mr-1 sm:w-[16.81px] w-[12px]"> 6 </span>&emsp;&emsp;&emsp;&emsp;<span class="flex-grow-0"><span class="text-codeBlue">this</span>.tech = ["<span><span class="text-codeGreen">React</span><span>", "</span><span class="text-codeGreen">Redux</span><span>", "</span><span class="text-codeGreen">Node</span><span>", "</span><span class="text-codeGreen">MongoDB</span><span>", "</span><span class="text-codeGreen">Typescript</span><span>", "</span><span class="text-codeGreen">Solidity</span><span>"]</span></span></span></span></br><span><span class="text-[#636262] mr-1"> 7 </span>&emsp;&emsp;<span class="text-codePurple"> }</span></span></br><span><span class="text-[#636262] mr-1"> 8 </span>&emsp;&emsp; <span>...</span></span></br><span><span class="text-[#636262] mr-1"> 9 </span><span class="text-codeYellow">}</span></span></br><span><span class="text-[#636262] mr-1"> 10</span>const sarthak = <span class="text-codeBlue">new </span><span class="text-codeYellow"> Person() </span></span></br><span><span class="text-[#636262] mr-1"> 11</span><span class="text-codeComment">// try to ask my favSong </span></span>`
+												`<span><span class="text-[#636262] mr-1"> 1 </span>class<span class="text-codeYellow"> Person {</span></span></br><span><span class="text-[#636262] mr-1"> 2 </span>&emsp;&emsp; constructor<span class="text-codePurple">() {</span></span></br><span><span class="text-[#636262] mr-1"> 3 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.name = <span class="text-codeGreen">"Sarthak Ahuja"</span></span></br><span><span class="text-[#636262] mr-1"> 4 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.interest = <span class="text-codeGreen">"WEB 3"</span></span></br><span><span class="text-[#636262] mr-1"> 5 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.age = <span class="text-codeGreen">21</span></span></br><span class="inline-flex"><span class="flex-grow-0 flex-shrink-0 text-[#636262] mr-1 sm:w-[16.81px] w-[12px]"> 6 </span>&emsp;&emsp;&emsp;&emsp;<span class="flex-grow-0"><span class="text-codeBlue">this</span>.tech = ["<span><span class="text-codeGreen">React</span><span>", "</span><span class="text-codeGreen">Redux</span><span>", "</span><span class="text-codeGreen">Node</span><span>", "</span><span class="text-codeGreen">MongoDB</span><span>", "</span><span class="text-codeGreen">Typescript</span><span>", "</span><span class="text-codeGreen">Solidity</span><span>"]</span></span></span></span></br><span><span class="text-[#636262] mr-1"> 7 </span>&emsp;&emsp;<span class="text-codePurple"> }</span></span></br><span><span class="text-[#636262] mr-1"> 8 </span>&emsp;&emsp; <span>...</span></span></br><span><span class="text-[#636262] mr-1"> 9 </span><span class="text-codeYellow">}</span></span></br><span><span class="text-[#636262] mr-1"> 10</span>const sarthak = <span class="text-codeBlue">new </span><span class="text-codeYellow"> Person() </span></span>`
 											)
 											.start()
 											.callFunction(() => {
@@ -172,6 +191,32 @@ function Hero({}: Props): ReactElement {
 											})
 									}}
 								/>
+								{startTyping && (
+									<div className="flex gap-1">
+										<span>
+											<span className="text-[#636262] mr-1">
+												11
+											</span>
+											<span className="text-codeComment">
+												{`// try `}
+											</span>
+										</span>
+										<Typewriter
+											options={{
+												delay: 15,
+												cursor: "",
+												pauseFor: 2500,
+												deleteSpeed: 20,
+												strings: [
+													'<span class="text-codeComment"> "sarthak.playFavSong()" </span>',
+													'<span class="text-codeComment"> "sarthak.pauseFavSong()" </span>'
+												],
+												autoStart: true,
+												loop: true
+											}}
+										/>
+									</div>
+								)}
 
 								{startTyping && (
 									<div className="inline-flex">

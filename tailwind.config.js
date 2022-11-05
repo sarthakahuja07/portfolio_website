@@ -310,6 +310,9 @@ module.exports = {
 			colors: theme("colors")
 		}),
 		extend: {
+			transitionProperty: {
+				zIndex: "z-index"
+			},
 			backgroundImage: {
 				"nav-gradient": "#25252580",
 				// "nav-gradient":
