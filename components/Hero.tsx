@@ -205,14 +205,15 @@ function Hero({}: Props): ReactElement {
 											options={{
 												delay: 15,
 												cursor: "",
-												pauseFor: 2500,
 												deleteSpeed: 20,
 												strings: [
 													'<span class="text-codeComment"> "sarthak.playFavSong()" </span>',
 													'<span class="text-codeComment"> "sarthak.pauseFavSong()" </span>'
 												],
 												autoStart: true,
-												loop: true
+												loop: true,
+												// @ts-ignore
+												pauseFor: 2500
 											}}
 										/>
 									</div>
