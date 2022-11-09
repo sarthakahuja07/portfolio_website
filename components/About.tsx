@@ -4,7 +4,11 @@ import Link from "next/link"
 import LinkedIn from "../public/images/linkedin.svg"
 import Twitter from "../public/images/twitter.svg"
 import AboutImage from "../public/images/about-image.svg"
-import AboutLogo from "../public/images/about-logo.svg"
+import TSLogo from "../public/images/ts-logo.svg"
+import ReactLogo from "../public/images/react-logo.svg"
+import ValoLogo from "../public/images/valo-logo.svg"
+import FirebaseLogo from "../public/images/firebase-logo.svg"
+import NodeLogo from "../public/images/node-logo.svg"
 import Mail from "../public/images/mail.svg"
 import GitHub from "../public/images/github.svg"
 import React, { ReactElement } from "react"
@@ -25,7 +29,7 @@ function About({ experiences }: Props): ReactElement {
 			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[130px] md:mt-[150px] lg:mt-[160px] xl:mt-[300px] xxl:mt-[350px]"
 			id="about"
 		>
-			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
+			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 flex flex-col xl:flex-row justify-between items-center mb-11 sm:mb-[72px] lg:mb-[78px] ">
 				<ScrollAnimation>
 					<motion.div
 						variants={bounceVariant}
@@ -96,22 +100,37 @@ function About({ experiences }: Props): ReactElement {
 					</motion.div>
 				</ScrollAnimation>
 
-				<div className=" w-[396px] h-[396px] relative flex test ">
-					<div className="absolute inset-0 w-[274px] h-[274px] m-auto border-[3px] border-[rgba(255,255,255,0.75)] z-[1] rounded-full"></div>
-					<div className="absolute inset-0 w-[345px] h-[345px] m-auto border-[1px] border-[rgba(255,255,255,0.75)] z-[1] rounded-full"></div>
-					<AboutLogo className="absolute inset-0 m-auto z-[2] test2" />
-
-					<AboutImage className="mx-auto my-auto z-[1]" />
-
-					{/* <div className="w-[258px] h-[258px] rounded-full bg-about-image-gradient mx-auto my-auto"></div> */}
-				</div>
 				<ScrollAnimation>
-					{/* <motion.img
-						
-						src="images/hero-bg.png"
-						className="w-full sm:w-[422px] md:w-[430px] lg:w-[440px] mx-auto xl:mx-0 h-[140px] lg:h-[356px] my-auto"
-						alt="me"
-					/> */}
+					<motion.div
+						variants={bounceVariant}
+						className=" w-[396px] h-[396px] relative flex about-image-container "
+					>
+						<div className="absolute inset-0 w-[274px] h-[274px] m-auto border-[3px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
+						<div className="absolute inset-0 w-[345px] h-[345px] m-auto border-[1px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
+						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px] backdrop-blur-lg animate-rot-js rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<TSLogo />
+						</div>
+						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-react rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<ReactLogo />
+						</div>
+						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-valo rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<ValoLogo />
+						</div>
+						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-firebase rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<FirebaseLogo />
+						</div>
+						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-node rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<NodeLogo />
+						</div>
+
+						<img
+							src="images/about-image.png"
+							className="h-[192px] w-[192px] z-[1] m-auto"
+							alt="me"
+						/>
+
+						{/* <AboutImage className="mx-auto my-auto z-[1]" /> */}
+					</motion.div>
 				</ScrollAnimation>
 			</div>
 

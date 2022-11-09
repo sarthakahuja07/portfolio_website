@@ -247,7 +247,7 @@
 .active-skill {
 	opacity: 100;
 }
-.test::after {
+.about-image-container::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -263,7 +263,7 @@
 	);
 	backdrop-filter: blur(44.3568px);
 }
-.test::before {
+.about-image-container::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -281,9 +281,7 @@
 		#fb775a 78.75%
 	);
 }
-.test2 {
-	animation: rot 3s infinite linear;
-}
+
 
 /* media queries */
 
@@ -327,11 +325,3 @@
 	}
 }
 
-@keyframes rot {
-	from {
-		transform: rotate(0deg) translate(-250px) rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg) translate(-250px) rotate(-360deg);
-	}
-}

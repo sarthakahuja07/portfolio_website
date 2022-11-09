@@ -310,6 +310,65 @@ module.exports = {
 			colors: theme("colors")
 		}),
 		extend: {
+			animation: {
+				"rot-js": "rot-js 55s infinite linear",
+				"rot-react": "rot-react 55s infinite linear",
+				"rot-valo": "rot-valo 55s infinite linear",
+				"rot-firebase": "rot-firebase 55s infinite linear",
+				"rot-node": "rot-node 55s infinite linear"
+			},
+			keyframes: {
+				"rot-js": {
+					"0%": {
+						transform:
+							"rotate(90deg) translate(-172.5px) rotate(-90deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(450deg) translate(-172.5px) rotate(-450deg);"
+					}
+				},
+				"rot-react": {
+					"0%": {
+						transform:
+							"rotate(170deg) translate(-137px) rotate(-170deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(530deg) translate(-137px) rotate(-530deg);"
+					}
+				},
+				"rot-valo": {
+					"0%": {
+						transform:
+							"rotate(240deg) translate(-172.5px) rotate(-240deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(600deg) translate(-172.5px) rotate(-600deg);"
+					}
+				},
+				"rot-node": {
+					"0%": {
+						transform:
+							"rotate(340deg) translate(-172.5px) rotate(-340deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(700deg) translate(-172.5px) rotate(-700deg);"
+					}
+				},
+				"rot-firebase": {
+					"0%": {
+						transform:
+							"rotate(40deg) translate(-137px) rotate(-40deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(400deg) translate(-137px) rotate(-400deg);"
+					}
+				}
+			},
 			transitionProperty: {
 				zIndex: "z-index"
 			},
@@ -336,6 +395,8 @@ module.exports = {
 					"linear-gradient(225.26deg, #4BAAF0 15.39%, #CC4CB4 46.41%, #FB775A 78.75%);",
 				"about-image-blur-gradient":
 					"linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%);",
+				"about-logo-gradient":
+					"linear-gradient(89.89deg, rgba(255, 255, 255, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(255, 255, 255, 0.4) 114.36%);",
 				"skills-card":
 					"url('../public/images/skills-card-bg.png'), linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%) "
 			},
