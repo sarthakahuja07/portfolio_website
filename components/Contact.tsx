@@ -10,7 +10,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard"
 import ScrollAnimation from "./ScrollAnimation"
 import { motion } from "framer-motion"
 import bounceVariant from "../animation/bounceVariant"
-import delayedBounceVariant from "../animation/delayedBounceVariant"
+import contactLogoVariant from "../animation/contactLogoVariant"
 import socialIconMotion from "../animation/socialIconMotion"
 import Star from "../public/images/star.svg"
 
@@ -111,7 +111,7 @@ function Contact({}: Props): ReactElement {
 			className="container overflow-x-clip mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 "
 			id="contact"
 		>
-			<div className=" relative mt-[216px] sm:mt-[192px] xxl:mt-[156] col-span-12 lg:col-span-8 lg:col-start-3 col-start-1 flex flex-col items-center xxl:col-span-12 xxl:col-start-1 xxl:max-w-[914px] xxl:mx-auto">
+			<div className="mt-[200px] md:mt-[220px] lg:mt-[220px] xl:mt-[250px] xxl:mt-[300px] relative col-span-12 lg:col-span-8 lg:col-start-3 col-start-1 flex flex-col items-center xxl:col-span-12 xxl:col-start-1 xxl:max-w-[914px] xxl:mx-auto">
 				<ScrollAnimation>
 					<motion.div
 						variants={starAnimationVariant}
@@ -148,7 +148,7 @@ function Contact({}: Props): ReactElement {
 					</div>
 				</ScrollAnimation>
 
-				<div className="flex flex-col items-center sm:mt-8 mt-[12px] py-[50px] sm:py-[14px] xl:py-[0.5px] mb-[108px] sm:mb-[213px] md:mb-[335px] xl:mb-[96px] xxl:mb-[132px]">
+				<div className="flex flex-col items-center sm:mt-8 mt-[12px] py-[50px] xl:py-[0.5px] mb-[20px] sm:mb-[20px] md:mb-[30px] xl:mb-[96px] xxl:mb-[100px]">
 					<ScrollAnimation>
 						<motion.div
 							variants={bounceVariant}
@@ -167,7 +167,7 @@ function Contact({}: Props): ReactElement {
 					</ScrollAnimation>
 					<ScrollAnimation>
 						<motion.div
-							variants={bounceVariant}
+							variants={contactLogoVariant}
 							className="flex flex-col justify-around mt-7 sm:mt-10 xl:mt-11"
 						>
 							<div className="flex flex-row items-center justify-evenly  mb-4">

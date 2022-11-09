@@ -71,7 +71,7 @@ function Hero({}: Props): ReactElement {
 		<>
 			<div
 				id="hero"
-				className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mb-20 sm:mb-9 md:mb-[64px] xl:mb-[216px] xxl:mb-[204px] pt-[56px] sm:pt-20  md:pt-[88px] lg:pt-[116px] xl:pt-[158px] xxl:pt-[178px]"
+				className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mb-20 sm:mb-9 md:mb-[64px] xl:mb-[216px] xxl:mb-[204px] pt-[56px] sm:pt-20  md:pt-[88px] lg:pt-[116px] xl:pt-[60px] xxl:pt-[158px]"
 			>
 				<div className="col-start-1 lg:col-start-2 xl:col-start-2 xxl:col-start-2 col-span-4 md:col-span-12 xl:col-span-5 xxl:col-span-5 sm:w-[480px] xl:mt-[58px] xxl:mt-[78px] relative">
 					<motion.div
@@ -112,9 +112,12 @@ function Hero({}: Props): ReactElement {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 0.5 }}
+						initial={{ y: 50, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						transition={{
+							type: "easeInOut",
+							duration: 0.6,
+						}}
 					>
 						<div className="font-clash">
 							<p className="text-xxl sm:text-5xl font-cabinet mb-1 sm:mb-4 ">
@@ -143,9 +146,12 @@ function Hero({}: Props): ReactElement {
 				</div>
 
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
+					initial={{ y: 50, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{
+						type: "easeInOut",
+						duration: 0.6,
+					}}
 					className="col-span-4 mx-auto col-start-1 md:col-span-12  xl:col-span-5 xl:col-start-8 w-[240px] h-[264px] sm:w-[430px] sm:h-[372px] mt-[92px] sm:mt-[64px] md:mt-[100px] xl:mt-[38px] xxl:mt-[54px] xl:mx-0 bg-[#000] rounded-terminal relative "
 				>
 					<div

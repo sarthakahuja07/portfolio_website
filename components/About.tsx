@@ -11,7 +11,6 @@ import { experience } from "@prisma/client"
 import { motion } from "framer-motion"
 import ScrollAnimation from "./ScrollAnimation"
 import bounceVariant from "../animation/bounceVariant"
-import delayedBounceVariant from "../animation/delayedBounceVariant"
 import socialIconMotion from "../animation/socialIconMotion"
 
 interface Props {
@@ -21,7 +20,7 @@ interface Props {
 function About({ experiences }: Props): ReactElement {
 	return (
 		<div
-			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[92px] sm:mt[40px] md:mt[130px] lg:mt[158px] xl:mt-[234px]"
+			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[130px] md:mt-[150px] lg:mt-[160px] xl:mt-[300px] xxl:mt-[350px]"
 			id="about"
 		>
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 flex flex-col xl:flex-row justify-between mb-11 sm:mb-[72px] lg:mb-[78px] ">
@@ -106,25 +105,21 @@ function About({ experiences }: Props): ReactElement {
 			</div>
 
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 xl:col-start-1 sm:w-[548px] md:w-[558px] lg:w-[603px] xl:w-full xxl:w-[1324px] xl:mx-auto">
-				<ScrollAnimation >
-					<motion.h3
-						variants={bounceVariant}
-						className=" font-clash text-lg sm:text-4xl w-fit mx-auto text-shadow-h3 mb-[15px] sm:mb-[20px] xl:mb-[16px]"
-					>
-						Experience
-					</motion.h3>
-					<motion.div
-						variants={delayedBounceVariant}
-						className="flex flex-row xl:flex-col w-full h-full"
-					>
-						<div className="h-auto w-[1px] relative experience-line xl:w-[90%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0 xl:after:top-[-3px] after:bottom-[1%] xl:after:right-[4px] after:right-[-4px] xl:before:top-[-3px] before:top-[10%] xl:before:left-[10%] before:left-[-3px]  "></div>
-						<div className="flex flex-col xl:flex-row w-full justify-between gap-[92px] xl:gap-0 ">
-							{experiences.map((experience) => (
-								<Experience
-									key={experience.id}
-									experience={experience}
-								/>
-							))}
+				<ScrollAnimation>
+					<motion.div variants={bounceVariant}>
+						<h3 className=" font-clash text-lg sm:text-4xl w-fit mx-auto text-shadow-h3 mb-[15px] sm:mb-[20px] xl:mb-[16px]">
+							Experience
+						</h3>
+						<div className="flex flex-row xl:flex-col w-full h-full">
+							<div className="h-auto w-[1px] relative experience-line xl:w-[90%] xl:h-[1px] bg-experience-line xl:bg-experience-line-horizontal mr-3 xl:mr-0 mb-0 xl:mb-3 translate-y-[-30px] xl:translate-y-0 xl:after:top-[-3px] after:bottom-[1%] xl:after:right-[4px] after:right-[-4px] xl:before:top-[-3px] before:top-[10%] xl:before:left-[10%] before:left-[-3px]  "></div>
+							<div className="flex flex-col xl:flex-row w-full justify-between gap-[92px] xl:gap-0 ">
+								{experiences.map((experience) => (
+									<Experience
+										key={experience.id}
+										experience={experience}
+									/>
+								))}
+							</div>
 						</div>
 					</motion.div>
 				</ScrollAnimation>

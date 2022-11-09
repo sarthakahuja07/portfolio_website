@@ -179,6 +179,23 @@ const Navbar = (props: Props) => {
 										: "xl:max-h-[100px] max-h-0 mt-0"
 								} `}
 							>
+                                <motion.button variants={itemVariants}>
+									<ScrollLink
+										to="about"
+										spy={true}
+										onClick={() => setisNavOpen(false)}
+										activeClass="active"
+										smooth={true}
+										// offset={-200}
+										duration={500}
+									>
+										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
+											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
+												.about()
+											</a>
+										</div>
+									</ScrollLink>
+								</motion.button>
 								<motion.button variants={itemVariants}>
 									<ScrollLink
 										to="work"
@@ -213,23 +230,7 @@ const Navbar = (props: Props) => {
 										</div>
 									</ScrollLink>
 								</motion.button>
-								<motion.button variants={itemVariants}>
-									<ScrollLink
-										to="about"
-										spy={true}
-										onClick={() => setisNavOpen(false)}
-										activeClass="active"
-										smooth={true}
-										// offset={-200}
-										duration={500}
-									>
-										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
-											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
-												.about()
-											</a>
-										</div>
-									</ScrollLink>
-								</motion.button>
+								
 								<motion.button variants={itemVariants}>
 									<ScrollLink
 										to="contact"

@@ -63,8 +63,8 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 
 				<Hero />
 				<About experiences={experiences} />
-				<Skills skillSet={skillSet} />
 				<Work projects={projects} />
+				<Skills skillSet={skillSet} />
 				<Contact />
 				<Footer />
 			</>

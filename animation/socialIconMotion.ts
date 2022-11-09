@@ -11,7 +11,7 @@ const socialIconMotion = {
 		filter: "drop-shadow(0px 4px 15px #ffffff)",
 		scale: 1.15,
 		transition: {
-			duration: 0.3,
+			duration: 0.2,
 			type: "tween",
 			ease: "easeIn"
 		}
