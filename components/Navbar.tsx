@@ -92,8 +92,8 @@ const Navbar = (props: Props) => {
 									to="hero"
 									spy={true}
 									smooth={true}
+									offset={-250}
 									onClick={() => setisNavOpen(false)}
-									// offset={-200}
 									duration={500}
 								>
 									<a>
@@ -179,14 +179,13 @@ const Navbar = (props: Props) => {
 										: "xl:max-h-[100px] max-h-0 mt-0"
 								} `}
 							>
-                                <motion.button variants={itemVariants}>
+								<motion.button variants={itemVariants}>
 									<ScrollLink
 										to="about"
 										spy={true}
 										onClick={() => setisNavOpen(false)}
 										activeClass="active"
 										smooth={true}
-										// offset={-200}
 										duration={500}
 									>
 										<div className="py-3 sm:py-[20px]  px-[40px] xl:px-0 xl:py-0">
@@ -203,7 +202,6 @@ const Navbar = (props: Props) => {
 										spy={true}
 										onClick={() => setisNavOpen(false)}
 										smooth={true}
-										// offset={-200}
 										duration={500}
 									>
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
@@ -219,7 +217,6 @@ const Navbar = (props: Props) => {
 										activeClass="active"
 										spy={true}
 										smooth={true}
-										// offset={-200}
 										onClick={() => setisNavOpen(false)}
 										duration={500}
 									>
@@ -230,7 +227,7 @@ const Navbar = (props: Props) => {
 										</div>
 									</ScrollLink>
 								</motion.button>
-								
+
 								<motion.button variants={itemVariants}>
 									<ScrollLink
 										to="contact"
@@ -238,7 +235,6 @@ const Navbar = (props: Props) => {
 										onClick={() => setisNavOpen(false)}
 										activeClass="active"
 										smooth={true}
-										// offset={-200}
 										duration={500}
 									>
 										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
@@ -251,7 +247,7 @@ const Navbar = (props: Props) => {
 								<motion.button variants={itemVariants}>
 									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
 										<a
-                                            href="/resume.pdf"
+											href="/resume.pdf"
 											target="_blank"
 											onClick={() => setisNavOpen(false)}
 											className="nav-link text-white text-nav font-array hover:text-shadow-navItem"

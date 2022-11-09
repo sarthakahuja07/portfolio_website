@@ -31,7 +31,7 @@ const Skills = ({ skillSet }: Props) => {
 
 	return (
 		<div
-			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[130px] md:mt-[150px] lg:mt-[160px] xl:mt-[250px] xxl:mt-[300px]"
+			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 pt-[130px] md:pt-[150px] lg:pt-[160px] xl:pt-[250px] xxl:pt-[300px]"
 			id="skills"
 		>
 			<div className="flex justify-between items-start flex-col xl:flex-row gap-[68px] sm:gap-[44px] lg:gap-[112px] md:gap-[92px] xl:gap-0 col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 xxl:col-span-10">

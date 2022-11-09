@@ -8,11 +8,18 @@ import ReactAudioPlayer from "react-audio-player"
 
 interface Props {}
 
-const commands = ["sarthak.playFavSong()", "sarthak.pauseFavSong()"]
+const commands = [
+	"sarthak.playFavSong()",
+	"sarthak.pauseFavSong()",
+	"sarthak.getBitcoin()",
+	"sarthak.getResume()"
+]
 let path = "./sounds/song.mp3"
+let memePath = "./meme.mp4"
 
 function Hero({}: Props): ReactElement {
 	const [isPlaying, setIsPlaying] = useState(false)
+	const [currWindow, setCurrWindow] = useState("code")
 	const [startTyping, setStartTyping] = useState(false)
 	const audioRef = useRef<ReactAudioPlayer>(null)
 
@@ -27,6 +34,10 @@ function Hero({}: Props): ReactElement {
 	const pause = () => {
 		audioRef.current?.audioEl.current?.pause()
 		setIsPlaying(false)
+	}
+
+	const getBitcoin = () => {
+		setCurrWindow("meme")
 	}
 
 	const handleCodeChange = (
@@ -49,6 +60,20 @@ function Hero({}: Props): ReactElement {
 					"sarthak.pauseFavSong()"
 				) {
 					pause()
+				}
+				if (
+					event.target.value.trim().replace(";", "") ===
+					"sarthak.getBitcoin()"
+				) {
+					getBitcoin()
+				}
+				if (
+					event.target.value.trim().replace(";", "") ===
+					"sarthak.getResume()"
+				) {
+					// open /resume.pdf in new tab
+
+					window && window.open("/resume.pdf", "_blank")
 				}
 				event.target.value = ""
 				event.target.placeholder = ""
@@ -116,7 +141,7 @@ function Hero({}: Props): ReactElement {
 						animate={{ y: 0, opacity: 1 }}
 						transition={{
 							type: "easeInOut",
-							duration: 0.6,
+							duration: 0.6
 						}}
 					>
 						<div className="font-clash">
@@ -150,7 +175,7 @@ function Hero({}: Props): ReactElement {
 					animate={{ y: 0, opacity: 1 }}
 					transition={{
 						type: "easeInOut",
-						duration: 0.6,
+						duration: 0.6
 					}}
 					className="col-span-4 mx-auto col-start-1 md:col-span-12  xl:col-span-5 xl:col-start-8 w-[240px] h-[264px] sm:w-[430px] sm:h-[372px] mt-[92px] sm:mt-[64px] md:mt-[100px] xl:mt-[38px] xxl:mt-[54px] xl:mx-0 bg-[#000] rounded-terminal relative "
 				>
@@ -176,73 +201,108 @@ function Hero({}: Props): ReactElement {
 						<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#E35353] rounded-full absolute sm:top-6 sm:left-6 top-[12px] left-5  "></div>
 						<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5  bg-[#53E37C] rounded-full absolute sm:top-6 sm:left-10 top-[12px] left-[36px] xl:left-[46px]"></div>
 						<div className=" w-2 h-2 sm:w-2.5 sm:h-2.5  bg-[#F8D41C] rounded-full absolute sm:top-6 sm:left-[56px] top-[12px] left-[52px] xl:left-[68px]"></div>
-						<div className=" pb-5 px-2 pt-4 sm:pb-[46px] sm:px-4">
-							<div className="font-source text-code sm:text-codeLg">
-								<Typewriter
-									options={{
-										delay: 15,
-										cursor: ""
-									}}
-									onInit={(typewriter) => {
-										typewriter
-											.pauseFor(10)
-											.typeString(
-												`<span><span class="text-[#636262] mr-1"> 1 </span>class<span class="text-codeYellow"> Person {</span></span></br><span><span class="text-[#636262] mr-1"> 2 </span>&emsp;&emsp; constructor<span class="text-codePurple">() {</span></span></br><span><span class="text-[#636262] mr-1"> 3 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.name = <span class="text-codeGreen">"Sarthak Ahuja"</span></span></br><span><span class="text-[#636262] mr-1"> 4 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.interest = <span class="text-codeGreen">"WEB 3"</span></span></br><span><span class="text-[#636262] mr-1"> 5 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.age = <span class="text-codeGreen">21</span></span></br><span class="inline-flex"><span class="flex-grow-0 flex-shrink-0 text-[#636262] mr-1 sm:w-[16.81px] w-[12px]"> 6 </span>&emsp;&emsp;&emsp;&emsp;<span class="flex-grow-0"><span class="text-codeBlue">this</span>.tech = ["<span><span class="text-codeGreen">React</span><span>", "</span><span class="text-codeGreen">Redux</span><span>", "</span><span class="text-codeGreen">Node</span><span>", "</span><span class="text-codeGreen">MongoDB</span><span>", "</span><span class="text-codeGreen">Typescript</span><span>", "</span><span class="text-codeGreen">Solidity</span><span>"]</span></span></span></span></br><span><span class="text-[#636262] mr-1"> 7 </span>&emsp;&emsp;<span class="text-codePurple"> }</span></span></br><span><span class="text-[#636262] mr-1"> 8 </span>&emsp;&emsp; <span>...</span></span></br><span><span class="text-[#636262] mr-1"> 9 </span><span class="text-codeYellow">}</span></span></br><span><span class="text-[#636262] mr-1"> 10</span>const sarthak = <span class="text-codeBlue">new </span><span class="text-codeYellow"> Person() </span></span>`
-											)
-											.start()
-											.callFunction(() => {
-												setStartTyping(true)
-											})
-									}}
-								/>
-								{startTyping && (
-									<div className="flex gap-1">
-										<span>
-											<span className="text-[#636262] mr-1">
-												11
-											</span>
-											<span className="text-codeComment">
-												{`// try `}
-											</span>
-										</span>
+						{currWindow === "code" ? (
+							<>
+								<div className=" pb-5 px-2 pt-4 sm:pb-[46px] sm:px-4">
+									<div className="font-source text-code sm:text-codeLg">
 										<Typewriter
 											options={{
 												delay: 15,
-												cursor: "",
-												deleteSpeed: 20,
-												strings: [
-													'<span class="text-codeComment"> "sarthak.playFavSong()" </span>',
-													'<span class="text-codeComment"> "sarthak.pauseFavSong()" </span>'
-												],
-												autoStart: true,
-												loop: true,
-												// @ts-ignore
-												pauseFor: 2500
+												cursor: ""
+											}}
+											onInit={(typewriter) => {
+												typewriter
+													.pauseFor(10)
+													.typeString(
+														`<span><span class="text-[#636262] mr-1"> 1 </span>class<span class="text-codeYellow"> Person {</span></span></br><span><span class="text-[#636262] mr-1"> 2 </span>&emsp;&emsp; constructor<span class="text-codePurple">() {</span></span></br><span><span class="text-[#636262] mr-1"> 3 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.name = <span class="text-codeGreen">"Sarthak Ahuja"</span></span></br><span><span class="text-[#636262] mr-1"> 4 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.interest = <span class="text-codeGreen">"WEB 3"</span></span></br><span><span class="text-[#636262] mr-1"> 5 </span>&emsp;&emsp;&emsp;&emsp;<span class="text-codeBlue">this</span>.age = <span class="text-codeGreen">21</span></span></br><span class="inline-flex"><span class="flex-grow-0 flex-shrink-0 text-[#636262] mr-1 sm:w-[16.81px] w-[12px]"> 6 </span>&emsp;&emsp;&emsp;&emsp;<span class="flex-grow-0"><span class="text-codeBlue">this</span>.tech = ["<span><span class="text-codeGreen">React</span><span>", "</span><span class="text-codeGreen">Redux</span><span>", "</span><span class="text-codeGreen">Node</span><span>", "</span><span class="text-codeGreen">MongoDB</span><span>", "</span><span class="text-codeGreen">Typescript</span><span>", "</span><span class="text-codeGreen">Solidity</span><span>"]</span></span></span></span></br><span><span class="text-[#636262] mr-1"> 7 </span>&emsp;&emsp;<span class="text-codePurple"> }</span></span></br><span><span class="text-[#636262] mr-1"> 8 </span>&emsp;&emsp; <span>...</span></span></br><span><span class="text-[#636262] mr-1"> 9 </span><span class="text-codeYellow">}</span></span></br><span><span class="text-[#636262] mr-1"> 10</span>const sarthak = <span class="text-codeBlue">new </span><span class="text-codeYellow"> Person() </span></span>`
+													)
+													.start()
+													.callFunction(() => {
+														setStartTyping(true)
+													})
 											}}
 										/>
-									</div>
-								)}
+										{startTyping && (
+											<div className="flex gap-1">
+												<span>
+													<span className="text-[#636262] mr-1">
+														11
+													</span>
+													<span className="text-codeComment">
+														{`// try `}
+													</span>
+												</span>
+												<Typewriter
+													options={{
+														delay: 15,
+														cursor: "",
+														deleteSpeed: 20,
+														strings: [
+															'<span class="text-codeComment"> "sarthak.playFavSong()" </span>',
+															'<span class="text-codeComment"> "sarthak.pauseFavSong()" </span>',
+															'<span class="text-codeComment"> "sarthak.getResume()" </span>',
+															'<span class="text-codeComment"> "sarthak.getBitcoin()" </span>'
+														],
+														autoStart: true,
+														loop: true,
+														// @ts-ignore
+														pauseFor: 2500
+													}}
+												/>
+											</div>
+										)}
 
-								{startTyping && (
-									<div className="inline-flex">
-										<span className="text-[#636262] mr-1">
-											12
-										</span>
-										<div className="cursor w-full">
-											<textarea
-												id="code"
-												className="codeTextArea bg-transparent text-white resize-none w-full overflow-y-hidden"
-												spellCheck="false"
-												rows={1}
-												cols={100}
-												onChange={handleCodeChange}
-											/>
-											<i className="hide"></i>
-										</div>
+										{startTyping && (
+											<div className="inline-flex">
+												<span className="text-[#636262] mr-1">
+													12
+												</span>
+												<div className="cursor w-full">
+													<textarea
+														id="code"
+														className="codeTextArea bg-transparent text-white resize-none w-full overflow-y-hidden"
+														spellCheck="false"
+														rows={1}
+														cols={100}
+														onChange={
+															handleCodeChange
+														}
+													/>
+													<i className="hide"></i>
+												</div>
+											</div>
+										)}
 									</div>
-								)}
-							</div>
-						</div>
+								</div>
+							</>
+						) : currWindow === "meme" ? (
+							<>
+								{/* <div className="w-[100%]">
+									<div className="sm:h-[300px] h-[200px] relative w-[100%]">
+										<iframe
+											frameBorder="0"
+											height="100%"
+											src="https://giphy.com/embed/2KZ2v2vifTGTvGg1fu/video"
+											className="left-0 absolute top-0"
+											width="100%"
+										></iframe>
+									</div>
+								</div> */}
+								<video
+									className="w-[100%] h-[200px] sm:h-[300px]"
+									width="100%"
+									height="100%"
+									autoPlay
+									controls
+								>
+									<source src={memePath} type="video/mp4" />
+									<source src="movie.ogg" type="video/ogg" />
+									Your browser does not support the video tag.
+								</video>
+							</>
+						) : (
+							<></>
+						)}
 					</div>
 				</motion.div>
 			</div>

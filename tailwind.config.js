@@ -312,10 +312,15 @@ module.exports = {
 		extend: {
 			animation: {
 				"rot-js": "rot-js 55s infinite linear",
+				"rot-js-xs": "rot-js-xs 55s infinite linear",
 				"rot-react": "rot-react 55s infinite linear",
+				"rot-react-xs": "rot-react-xs 55s infinite linear",
 				"rot-valo": "rot-valo 55s infinite linear",
+				"rot-valo-xs": "rot-valo-xs 55s infinite linear",
 				"rot-firebase": "rot-firebase 55s infinite linear",
-				"rot-node": "rot-node 55s infinite linear"
+				"rot-firebase-xs": "rot-firebase-xs 55s infinite linear",
+				"rot-node": "rot-node 55s infinite linear",
+				"rot-node-xs": "rot-node-xs 55s infinite linear"
 			},
 			keyframes: {
 				"rot-js": {
@@ -328,6 +333,16 @@ module.exports = {
 							"rotate(450deg) translate(-172.5px) rotate(-450deg);"
 					}
 				},
+				"rot-js-xs": {
+					"0%": {
+						transform:
+							"rotate(90deg) translate(-95px) rotate(-90deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(450deg) translate(-95px) rotate(-450deg);"
+					}
+				},
 				"rot-react": {
 					"0%": {
 						transform:
@@ -336,6 +351,16 @@ module.exports = {
 					"100%": {
 						transform:
 							"rotate(530deg) translate(-137px) rotate(-530deg);"
+					}
+				},
+				"rot-react-xs": {
+					"0%": {
+						transform:
+							"rotate(170deg) translate(-76px) rotate(-170deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(530deg) translate(-76px) rotate(-530deg);"
 					}
 				},
 				"rot-valo": {
@@ -348,6 +373,16 @@ module.exports = {
 							"rotate(600deg) translate(-172.5px) rotate(-600deg);"
 					}
 				},
+				"rot-valo-xs": {
+					"0%": {
+						transform:
+							"rotate(240deg) translate(-95px) rotate(-240deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(600deg) translate(-95px) rotate(-600deg);"
+					}
+				},
 				"rot-node": {
 					"0%": {
 						transform:
@@ -358,6 +393,16 @@ module.exports = {
 							"rotate(700deg) translate(-172.5px) rotate(-700deg);"
 					}
 				},
+				"rot-node-xs": {
+					"0%": {
+						transform:
+							"rotate(340deg) translate(-95px) rotate(-340deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(700deg) translate(-95px) rotate(-700deg);"
+					}
+				},
 				"rot-firebase": {
 					"0%": {
 						transform:
@@ -366,6 +411,16 @@ module.exports = {
 					"100%": {
 						transform:
 							"rotate(400deg) translate(-137px) rotate(-400deg);"
+					}
+				},
+				"rot-firebase-xs": {
+					"0%": {
+						transform:
+							"rotate(40deg) translate(-76px) rotate(-40deg)"
+					},
+					"100%": {
+						transform:
+							"rotate(400deg) translate(-76px) rotate(-400deg);"
 					}
 				}
 			},

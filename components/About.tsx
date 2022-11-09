@@ -26,7 +26,7 @@ interface Props {
 function About({ experiences }: Props): ReactElement {
 	return (
 		<div
-			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[130px] md:mt-[150px] lg:mt-[160px] xl:mt-[300px] xxl:mt-[350px]"
+			className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 pt-[130px] md:pt-[150px] lg:pt-[160px] xl:pt-[300px] xxl:pt-[350px]"
 			id="about"
 		>
 			<div className="col-start-1 col-span-4 md:col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-1 xl:col-span-11 xxl:col-start-2 xxl:col-span-10 flex flex-col xl:flex-row justify-between items-center mb-11 sm:mb-[72px] lg:mb-[78px] ">
@@ -103,29 +103,29 @@ function About({ experiences }: Props): ReactElement {
 				<ScrollAnimation>
 					<motion.div
 						variants={bounceVariant}
-						className=" w-[396px] h-[396px] relative flex about-image-container "
+						className=" w-[219px] h-[219px] sm:w-[396px] sm:h-[396px] relative flex about-image-container before:w-[142px] before:h-[142px] sm:before:w-[258px] sm:before:h-[258px]"
 					>
-						<div className="absolute inset-0 w-[274px] h-[274px] m-auto border-[3px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
-						<div className="absolute inset-0 w-[345px] h-[345px] m-auto border-[1px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
-						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px] backdrop-blur-lg animate-rot-js rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<TSLogo />
+						<div className="absolute inset-0  w-[152px] h-[152px] sm:w-[274px] sm:h-[274px] m-auto border-[3px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
+						<div className="absolute inset-0  w-[190px] h-[190px] sm:w-[345px] sm:h-[345px] m-auto border-[1px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
+						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px] backdrop-blur-lg animate-rot-js-xs sm:animate-rot-js rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<TSLogo className="h-[41px] w-[45px]" />
 						</div>
-						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-react rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<ReactLogo />
+						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px] backdrop-blur-lg animate-rot-react-xs sm:animate-rot-react rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<ReactLogo className="h-[40px] w-[42px]" />
 						</div>
-						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-valo rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<ValoLogo />
+						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px] backdrop-blur-lg animate-rot-valo-xs sm:animate-rot-valo rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<ValoLogo className="h-[41px] w-[45px]" />
 						</div>
-						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-firebase rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<FirebaseLogo />
+						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px]  backdrop-blur-lg animate-rot-firebase-xs sm:animate-rot-firebase rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<FirebaseLogo className="h-[48px] w-[39px]" />
 						</div>
-						<div className="absolute inset-0 m-auto z-[2] h-[46px] w-[46px]  backdrop-blur-lg animate-rot-node rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<NodeLogo />
+						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px]  backdrop-blur-lg animate-rot-node-xs sm:animate-rot-node rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
+							<NodeLogo className="h-[44px] w-[40px] " />
 						</div>
 
 						<img
 							src="images/about-image.png"
-							className="h-[192px] w-[192px] z-[1] m-auto"
+							className="sm:h-[192px] sm:w-[192px] h-[106px] w-[106px] z-[1] m-auto"
 							alt="me"
 						/>
 

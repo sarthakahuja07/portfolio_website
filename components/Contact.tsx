@@ -108,10 +108,10 @@ function Contact({}: Props): ReactElement {
 
 	return (
 		<div
-			className="container overflow-x-clip mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 "
+			className="container overflow-x-clip mx-auto grid grid-cols-4 sm:grid-cols-12 gap-x-5 pt-[200px] md:pt-[220px] lg:pt-[220px] xl:pt-[250px] xxl:pt-[300px] "
 			id="contact"
 		>
-			<div className="mt-[200px] md:mt-[220px] lg:mt-[220px] xl:mt-[250px] xxl:mt-[300px] relative col-span-12 lg:col-span-8 lg:col-start-3 col-start-1 flex flex-col items-center xxl:col-span-12 xxl:col-start-1 xxl:max-w-[914px] xxl:mx-auto">
+			<div className=" relative col-span-12 lg:col-span-8 lg:col-start-3 col-start-1 flex flex-col items-center xxl:col-span-12 xxl:col-start-1 xxl:max-w-[914px] xxl:mx-auto">
 				<ScrollAnimation>
 					<motion.div
 						variants={starAnimationVariant}

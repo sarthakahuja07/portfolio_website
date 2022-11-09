@@ -115,7 +115,7 @@ function Work({ projects }: Props): ReactElement {
 	return (
 		<>
 			<div
-				className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[130px] md:mt-[150px] lg:mt-[160px] xl:mt-[200px] xxl:mt-[300px] "
+				className="container mx-auto grid grid-cols-4 md:grid-cols-12 gap-x-5 mt-[130px] md:mt-[150px] lg:mt-[160px] xl:pt-[200px] xl:mt-[0px] xxl:mt-[50px] xxl:pt-[250px] "
 				id="work"
 			>
 				<div className="col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 w-full sm:w-[456px] lg:w-[604px] xl:w-[580px] mb-[28px] sm:mb-[36px] lg:mb-[40px] xl:mb-[84px]">
