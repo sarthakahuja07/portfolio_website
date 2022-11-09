@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from "react"
 import { motion, useCycle, Variants } from "framer-motion"
 import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
+import Link from "next/link"
 
 interface Props {}
 
@@ -87,7 +88,7 @@ const Navbar = (props: Props) => {
 					>
 						<div className="flex flex-row justify-between items-center flex-wrap ">
 							<button>
-								<Link
+								<ScrollLink
 									to="hero"
 									spy={true}
 									smooth={true}
@@ -102,7 +103,7 @@ const Navbar = (props: Props) => {
 											alt="logo"
 										/>
 									</a>
-								</Link>
+								</ScrollLink>
 							</button>
 							<motion.button
 								id="toggler"
@@ -179,7 +180,7 @@ const Navbar = (props: Props) => {
 								} `}
 							>
 								<motion.button variants={itemVariants}>
-									<Link
+									<ScrollLink
 										to="work"
 										activeClass="active"
 										spy={true}
@@ -193,10 +194,10 @@ const Navbar = (props: Props) => {
 												.work()
 											</a>
 										</div>
-									</Link>
+									</ScrollLink>
 								</motion.button>
 								<motion.button variants={itemVariants}>
-									<Link
+									<ScrollLink
 										to="skills"
 										activeClass="active"
 										spy={true}
@@ -210,10 +211,10 @@ const Navbar = (props: Props) => {
 												.skills()
 											</a>
 										</div>
-									</Link>
+									</ScrollLink>
 								</motion.button>
 								<motion.button variants={itemVariants}>
-									<Link
+									<ScrollLink
 										to="about"
 										spy={true}
 										onClick={() => setisNavOpen(false)}
@@ -227,10 +228,10 @@ const Navbar = (props: Props) => {
 												.about()
 											</a>
 										</div>
-									</Link>
+									</ScrollLink>
 								</motion.button>
 								<motion.button variants={itemVariants}>
-									<Link
+									<ScrollLink
 										to="contact"
 										spy={true}
 										onClick={() => setisNavOpen(false)}
@@ -244,19 +245,19 @@ const Navbar = (props: Props) => {
 												.contact()
 											</a>
 										</div>
-									</Link>
+									</ScrollLink>
 								</motion.button>
 								<motion.button variants={itemVariants}>
-									<Link
-										to="resume"
-										onClick={() => setisNavOpen(false)}
-									>
-										<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
-											<a className="nav-link text-white text-nav font-array hover:text-shadow-navItem">
-												.resume()
-											</a>
-										</div>
-									</Link>
+									<div className="py-3 sm:py-[20px] px-[40px] xl:px-0 xl:py-0">
+										<a
+                                            href="/resume.pdf"
+											target="_blank"
+											onClick={() => setisNavOpen(false)}
+											className="nav-link text-white text-nav font-array hover:text-shadow-navItem"
+										>
+											.resume()
+										</a>
+									</div>
 								</motion.button>
 							</motion.div>
 						</div>

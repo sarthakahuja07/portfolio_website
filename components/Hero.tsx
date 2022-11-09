@@ -10,8 +10,6 @@ interface Props {}
 
 const commands = ["sarthak.playFavSong()", "sarthak.pauseFavSong()"]
 let path = "./sounds/song.mp3"
-const url =
-	"https://anchor.fm/s/3ca3951c/podcast/play/34000987/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-4-22%2F189000537-44100-2-8ece7d27bd7d2.m4a"
 
 function Hero({}: Props): ReactElement {
 	const [isPlaying, setIsPlaying] = useState(false)

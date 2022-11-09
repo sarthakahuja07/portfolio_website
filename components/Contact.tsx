@@ -99,7 +99,7 @@ function Contact({}: Props): ReactElement {
 			}, 800)
 			setTimeout(() => {
 				copyPromptRef.current!.style.opacity = "0"
-			}, 1000)
+			}, 1200)
 			setTimeout(() => {
 				copyPromptRef.current!.style.height = "0"
 			}, 1400)
@@ -241,7 +241,6 @@ function Contact({}: Props): ReactElement {
 							>
 								<motion.div
 									ref={copyPromptRef}
-									// variants={copyPrompt}
 									className=" h-0 absolute w-[100%] bottom-[calc(100%+4px)] left-0 opacity-0 duration-500"
 								>
 									<div className=" bg-[#181a1b] rounded-[6px] py-2 px-[18px] z-[2] flex items-center gap-1 bottom-[calc(100%+4px)] left-[calc(50%+4px)] mx-auto w-fit">

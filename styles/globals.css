@@ -267,16 +267,6 @@
 		transition-delay: 500ms;
 	}
 
-	#card0 .card:hover .cardBox {
-		transform: scale(1.17) translateX(50px);
-		transition-delay: 500ms;
-	}
-
-	#card0 .card:hover .cardNumber {
-		transform: scale(1.17) translateY(-20%) translateX(calc(12% + 50px));
-		transition-delay: 500ms;
-	}
-
 	.card:hover .outlinedNumber {
 		background-color: #09f755;
 		transition-delay: 500ms;
