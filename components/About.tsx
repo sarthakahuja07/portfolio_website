@@ -3,6 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import LinkedIn from "../public/images/linkedin.svg"
 import Twitter from "../public/images/twitter.svg"
+import AboutImage from "../public/images/about-image.svg"
+import AboutLogo from "../public/images/about-logo.svg"
 import Mail from "../public/images/mail.svg"
 import GitHub from "../public/images/github.svg"
 import React, { ReactElement } from "react"
@@ -94,13 +96,22 @@ function About({ experiences }: Props): ReactElement {
 					</motion.div>
 				</ScrollAnimation>
 
+				<div className=" w-[396px] h-[396px] relative flex test ">
+					<div className="absolute inset-0 w-[274px] h-[274px] m-auto border-[3px] border-[rgba(255,255,255,0.75)] z-[1] rounded-full"></div>
+					<div className="absolute inset-0 w-[345px] h-[345px] m-auto border-[1px] border-[rgba(255,255,255,0.75)] z-[1] rounded-full"></div>
+					<AboutLogo className="absolute inset-0 m-auto z-[2] test2" />
+
+					<AboutImage className="mx-auto my-auto z-[1]" />
+
+					{/* <div className="w-[258px] h-[258px] rounded-full bg-about-image-gradient mx-auto my-auto"></div> */}
+				</div>
 				<ScrollAnimation>
-					<motion.img
-						variants={bounceVariant}
+					{/* <motion.img
+						
 						src="images/hero-bg.png"
 						className="w-full sm:w-[422px] md:w-[430px] lg:w-[440px] mx-auto xl:mx-0 h-[140px] lg:h-[356px] my-auto"
 						alt="me"
-					/>
+					/> */}
 				</ScrollAnimation>
 			</div>
 

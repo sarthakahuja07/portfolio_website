@@ -332,6 +332,10 @@ module.exports = {
 				modal: "url('../public/images/card-bg.png'), linear-gradient(181.1deg, rgba(0, 0, 0, 0.5) -142.74%, #000000 99.06%);",
 				"skills-card-gradient":
 					"linear-gradient(155.73deg, #166D3B 15.54%, #000000 85.89%);",
+				"about-image-gradient":
+					"linear-gradient(225.26deg, #4BAAF0 15.39%, #CC4CB4 46.41%, #FB775A 78.75%);",
+				"about-image-blur-gradient":
+					"linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%);",
 				"skills-card":
 					"url('../public/images/skills-card-bg.png'), linear-gradient(89.89deg, rgba(0, 0, 0, 0.06) -12.34%, rgba(217, 217, 217, 0) 114.36%, rgba(0, 0, 0, 0.4) 114.36%) "
 			},
