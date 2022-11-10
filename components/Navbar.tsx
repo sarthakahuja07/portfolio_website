@@ -4,6 +4,8 @@ import { motion, useCycle, Variants } from "framer-motion"
 import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
 import Link from "next/link"
+import LogoFull from "../public/images/logo-full.svg"
+
 import Image from "next/image"
 
 interface Props {}
@@ -98,14 +100,15 @@ const Navbar = (props: Props) => {
 									duration={500}
 								>
 									<a>
-										<div className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative">
+										<LogoFull className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative" />
+										{/* <div className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative">
 											<Image
-												src="/images/logo.webp"
+												src="/images/logo-full.svg"
 												alt="logo"
 												layout="fill"
 												loading="eager"
 											/>
-										</div>
+										</div> */}
 										{/* <img
 											src="images/logo.png"
 											className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px]"
