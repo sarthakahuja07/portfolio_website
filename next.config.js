@@ -5,6 +5,9 @@ const nextConfig = {
 
 	experimental: {
 		scrollRestoration: true
+	},
+	images: {
+		domains: ["i.imgur.com"]
 	}
 }
 

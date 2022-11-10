@@ -6,6 +6,7 @@ import ScrollAnimation from "./ScrollAnimation"
 import { motion, AnimatePresence } from "framer-motion"
 import bounceVariant from "../animation/bounceVariant"
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 type SkillsSetType = skills_set & { skills: skills[] }
 
@@ -36,7 +37,7 @@ const Skills = ({ skillSet }: Props) => {
 		>
 			<div className="flex justify-between items-start flex-col xl:flex-row gap-[68px] sm:gap-[44px] lg:gap-[112px] md:gap-[92px] xl:gap-0 col-start-1 lg:col-start-2 xl:col-start-1 xxl:col-start-2 col-span-4 md:col-span-12 xxl:col-span-10">
 				<div className="h-[100%]">
-					<ScrollAnimation >
+					<ScrollAnimation>
 						<motion.div
 							variants={bounceVariant}
 							className="h-[100%] w-full sm:w-[568px] md:w-[580px] xl:w-[530px] "
@@ -109,11 +110,24 @@ const Skills = ({ skillSet }: Props) => {
 													key={singleSkill.id}
 													className="sm:w-[100px] w-[80px] text-center "
 												>
-													<img
+													<div className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1 relative">
+														<Image
+															src={
+																singleSkill.logo
+															}
+															alt={
+																singleSkill.name
+															}
+															layout="fill"
+															objectFit="contain"
+															loading="eager"
+														/>
+													</div>
+													{/* <img
 														src={singleSkill.logo}
 														alt={singleSkill.name}
 														className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1"
-													/>
+													/> */}
 
 													<p className="text-4xsm sm:text-3xsm font-clash">
 														{singleSkill.name}
