@@ -356,11 +356,11 @@ module.exports = {
 				"rot-react-xs": {
 					"0%": {
 						transform:
-							"rotate(170deg) translate(-76px) rotate(-170deg)"
+							"rotate(170deg) translate(-74px) rotate(-170deg)"
 					},
 					"100%": {
 						transform:
-							"rotate(530deg) translate(-76px) rotate(-530deg);"
+							"rotate(530deg) translate(-74px) rotate(-530deg);"
 					}
 				},
 				"rot-valo": {
@@ -416,11 +416,11 @@ module.exports = {
 				"rot-firebase-xs": {
 					"0%": {
 						transform:
-							"rotate(40deg) translate(-76px) rotate(-40deg)"
+							"rotate(40deg) translate(-74px) rotate(-40deg)"
 					},
 					"100%": {
 						transform:
-							"rotate(400deg) translate(-76px) rotate(-400deg);"
+							"rotate(400deg) translate(-74px) rotate(-400deg);"
 					}
 				}
 			},
