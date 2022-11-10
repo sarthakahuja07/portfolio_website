@@ -31,6 +31,10 @@ const icon = {
 function MyApp({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(true)
 	const cacheImages = async () => {
+		setTimeout(() => {
+			setLoading(false)
+		}, 8000)
+
 		const promises = await backgrounds.map((image) => {
 			return new Promise((resolve, reject) => {
 				const img = new Image()
