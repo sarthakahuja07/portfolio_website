@@ -43,9 +43,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 		setLoading(false)
 	}
 
-	useEffect(() => {
-		cacheImages()
-	}, [])
+	// useEffect(() => {
+	// 	cacheImages()
+	// }, [])
 
 	return (
 		<>
