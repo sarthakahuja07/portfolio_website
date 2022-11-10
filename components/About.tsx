@@ -127,6 +127,7 @@ function About({ experiences }: Props): ReactElement {
 								src="/images/about-image.png"
 								alt="me"
 								layout="fill"
+                                loading="eager"
 							/>
 						</div>
 

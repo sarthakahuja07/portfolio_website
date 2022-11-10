@@ -33,6 +33,7 @@ const WorkCard = ({ open, project, index }: Props) => {
 								src={project.cover}
 								alt={project.name}
 								layout="fill"
+                                loading="eager"
 								className=" xxl:rounded-[24px] lg:rounded-[18.39px] rounded-[12px] sm:rounded-[18.5px] w-[116px] h-[123px] sm:w-[176px] lg:w-[174px] lg:h-[187px] xxl:w-[228px] xxl:h-[244px] sm:h-[190px]"
 							/>
 						</div>

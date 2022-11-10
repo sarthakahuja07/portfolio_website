@@ -142,6 +142,7 @@ function Contact({}: Props): ReactElement {
 								src="/images/left-hand.png"
 								alt="left-hand"
 								layout="fill"
+                                loading="eager"
 							/>
 						</motion.div>
 						<motion.div
@@ -152,6 +153,7 @@ function Contact({}: Props): ReactElement {
 								src="/images/right-hand.png"
 								alt="left-hand"
 								layout="fill"
+                                loading="eager"
 							/>
 						</motion.div>
 					</div>
