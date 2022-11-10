@@ -21,7 +21,7 @@ const icon = {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const [loading, setLoading] = useState(true)
+	const [loading, setLoading] = useState(false)
 
 	const cacheImages = async () => {
 		const promises = await backgrounds.map((image) => {
