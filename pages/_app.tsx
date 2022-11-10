@@ -2,6 +2,7 @@ import "../styles/globals.css"
 import type { AppProps } from "next/app"
 import { useEffect, useState } from "react"
 import backgrounds from "../public/backgrounds"
+import logos from "../public/skills_logos"
 import { motion } from "framer-motion"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -43,6 +44,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 				img.onerror = reject
 			})
 		})
+		const logosPromises = await logos.map((image) => {
+			return new Promise((resolve, reject) => {
+				const img = new Image()
+				img.src = image.url
+				img.onload = resolve
+				img.onerror = reject
+			})
+		})
+
+		promises.push(...logosPromises)
 
 		promises.push(
 			new Promise((resolve, reject) => {
