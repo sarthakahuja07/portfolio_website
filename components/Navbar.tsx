@@ -4,6 +4,7 @@ import { motion, useCycle, Variants } from "framer-motion"
 import { getCurrentBreakpoint } from "../utils/tailwindBreakpoint"
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
 import Link from "next/link"
+import Image from "next/image"
 
 interface Props {}
 
@@ -97,11 +98,19 @@ const Navbar = (props: Props) => {
 									duration={500}
 								>
 									<a>
-										<img
+										<div className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative">
+											<Image
+												src="/images/logo.png"
+												alt="logo"
+												layout="fill"
+												loading="eager"
+											/>
+										</div>
+										{/* <img
 											src="images/logo.png"
-											className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px]"
+											className="x"
 											alt="logo"
-										/>
+										/> */}
 									</a>
 								</ScrollLink>
 							</button>
