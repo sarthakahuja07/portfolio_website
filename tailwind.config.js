@@ -386,41 +386,41 @@ module.exports = {
 				"rot-node": {
 					"0%": {
 						transform:
-							"rotate(340deg) translate(-172.5px) rotate(-340deg)"
+							"rotate(310deg) translate(-172.5px) rotate(-310deg)"
 					},
 					"100%": {
 						transform:
-							"rotate(700deg) translate(-172.5px) rotate(-700deg);"
+							"rotate(670deg) translate(-172.5px) rotate(-670deg);"
 					}
 				},
 				"rot-node-xs": {
 					"0%": {
 						transform:
-							"rotate(340deg) translate(-95px) rotate(-340deg)"
+							"rotate(310deg) translate(-95px) rotate(-310deg)"
 					},
 					"100%": {
 						transform:
-							"rotate(700deg) translate(-95px) rotate(-700deg);"
+							"rotate(670deg) translate(-95px) rotate(-670deg);"
 					}
 				},
 				"rot-firebase": {
 					"0%": {
 						transform:
-							"rotate(40deg) translate(-137px) rotate(-40deg)"
+							"rotate(20deg) translate(-137px) rotate(-20deg)"
 					},
 					"100%": {
 						transform:
-							"rotate(400deg) translate(-137px) rotate(-400deg);"
+							"rotate(380deg) translate(-137px) rotate(-380deg);"
 					}
 				},
 				"rot-firebase-xs": {
 					"0%": {
 						transform:
-							"rotate(40deg) translate(-74px) rotate(-40deg)"
+							"rotate(20deg) translate(-74px) rotate(-20deg)"
 					},
 					"100%": {
 						transform:
-							"rotate(400deg) translate(-74px) rotate(-400deg);"
+							"rotate(380deg) translate(-74px) rotate(-380deg);"
 					}
 				}
 			},
@@ -461,7 +461,12 @@ module.exports = {
 					"0 35px 35px rgba(0, 0, 0, 0.25)",
 					"0 45px 65px rgba(0, 0, 0, 0.15)"
 				],
-				loader: "0px 4px 30px rgba(9, 247, 85, 0.75)"
+				loader: "0px 4px 30px rgba(9, 247, 85, 0.75)",
+                "ts-logo-shadow" : "0px 4px 4px #2884E9",
+                "react-logo-shadow" : "0px 5px 4px #61DAFB",
+                "valo-logo-shadow" : "0px 5px 5px #FF1058",
+                "firebase-logo-shadow" : "1px 4px 5px #F4810D",
+                "node-logo-shadow" : "0px 2px 4px #4FAA41",
 			},
 			cursor: {
 				fancy: "url('../public/images/cursor.svg') 12 10, auto"

@@ -3,20 +3,20 @@ import Image from "next/image"
 import Link from "next/link"
 import LinkedIn from "../public/images/linkedin.svg"
 import Twitter from "../public/images/twitter.svg"
-import AboutImage from "../public/images/about-image.svg"
+import Mail from "../public/images/mail.svg"
+import GitHub from "../public/images/github.svg"
 import TSLogo from "../public/images/ts-logo.svg"
 import ReactLogo from "../public/images/react-logo.svg"
 import ValoLogo from "../public/images/valo-logo.svg"
 import FirebaseLogo from "../public/images/firebase-logo.svg"
 import NodeLogo from "../public/images/node-logo.svg"
-import Mail from "../public/images/mail.svg"
-import GitHub from "../public/images/github.svg"
 import React, { ReactElement } from "react"
 import Experience from "./Experience"
 import { experience } from "@prisma/client"
 import { motion } from "framer-motion"
 import ScrollAnimation from "./ScrollAnimation"
 import bounceVariant from "../animation/bounceVariant"
+
 import socialIconMotion from "../animation/socialIconMotion"
 
 interface Props {
@@ -108,26 +108,26 @@ function About({ experiences }: Props): ReactElement {
 						<div className="absolute inset-0  w-[152px] h-[152px] sm:w-[274px] sm:h-[274px] m-auto border-[3px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
 						<div className="absolute inset-0  w-[190px] h-[190px] sm:w-[345px] sm:h-[345px] m-auto border-[1px] border-[rgba(255,255,255,0.15)] z-[1] rounded-full"></div>
 						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px] backdrop-blur-lg animate-rot-js-xs sm:animate-rot-js rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<TSLogo className="h-[41px] w-[45px]" />
+							<TSLogo className="h-[19.4px] w-[14.26px] sm:h-[17px] sm:w-[25.8px] filter drop-shadow-ts-logo-shadow" />
 						</div>
 						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px] backdrop-blur-lg animate-rot-react-xs sm:animate-rot-react rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<ReactLogo className="h-[40px] w-[42px]" />
+							<ReactLogo className="h-[13.3px] w-[14.93px] sm:h-[24.04px] sm:w-[27px] filter drop-shadow-react-logo-shadow" />
 						</div>
 						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px] backdrop-blur-lg animate-rot-valo-xs sm:animate-rot-valo rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<ValoLogo className="h-[41px] w-[45px]" />
+							<ValoLogo className="h-[12.27px] w-[14.93px] sm:h-[22.18px] sm:w-[27px] filter drop-shadow-valo-logo-shadow" />
 						</div>
 						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px]  backdrop-blur-lg animate-rot-firebase-xs sm:animate-rot-firebase rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<FirebaseLogo className="h-[48px] w-[39px]" />
+							<FirebaseLogo className="h-[15.94px] w-[11.61px] sm:h-[27.82px] sm:w-[21px] filter drop-shadow-firebase-logo-shadow" />
 						</div>
 						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px]  backdrop-blur-lg animate-rot-node-xs sm:animate-rot-node rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
-							<NodeLogo className="h-[44px] w-[40px] " />
+							<NodeLogo className="h-[15.1px] w-[13.27px] sm:h-[27.31px] sm:w-[24px] filter drop-shadow-node-logo-shadow" />
 						</div>
 						<div className="sm:h-[192px] sm:w-[192px] h-[106px] w-[106px] z-[1] relative m-auto">
 							<Image
 								src="/images/about-image.png"
 								alt="me"
 								layout="fill"
-                                loading="eager"
+								loading="eager"
 							/>
 						</div>
 
