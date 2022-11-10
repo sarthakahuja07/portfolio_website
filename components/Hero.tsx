@@ -277,7 +277,7 @@ function Hero({}: Props): ReactElement {
 							</>
 						) : currWindow === "meme" ? (
 							<>
-								<div className="w-[100%]">
+								{/* <div className="w-[100%]">
 									<div className="sm:h-[300px] h-[200px] relative w-[100%]">
 										<iframe
 											frameBorder="0"
@@ -285,20 +285,24 @@ function Hero({}: Props): ReactElement {
 											src="https://giphy.com/embed/2KZ2v2vifTGTvGg1fu/video"
 											className="left-0 absolute top-0"
 											width="100%"
+                                            
 										></iframe>
 									</div>
-								</div>
-								{/* <video
+								</div> */}
+								<video
 									className="w-[100%] h-[200px] sm:h-[300px]"
 									width="100%"
 									height="100%"
 									autoPlay
+                                    // ignore ts error
+                                    // @ts-ignore
+                                    playsinline 
 									controls
 								>
 									<source src={memePath} type="video/mp4" />
 									<source src="movie.ogg" type="video/ogg" />
 									Your browser does not support the video tag.
-								</video> */}
+								</video>
 							</>
 						) : (
 							<></>
