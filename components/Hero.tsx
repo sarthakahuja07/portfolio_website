@@ -294,9 +294,7 @@ function Hero({}: Props): ReactElement {
 									width="100%"
 									height="100%"
 									autoPlay
-                                    // ignore ts error
-                                    // @ts-ignore
-                                    playsinline 
+                                    playsInline 
 									controls
 								>
 									<source src={memePath} type="video/mp4" />
