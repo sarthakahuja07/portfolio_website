@@ -13,6 +13,7 @@ import bounceVariant from "../animation/bounceVariant"
 import contactLogoVariant from "../animation/contactLogoVariant"
 import socialIconMotion from "../animation/socialIconMotion"
 import Star from "../public/images/star.svg"
+import Image from "next/image"
 
 interface Props {}
 
@@ -133,18 +134,26 @@ function Contact({}: Props): ReactElement {
 					</motion.div>
 
 					<div className="flex overflow-x-clip w-[100vw]">
-						<motion.img
+						<motion.div
 							variants={leftHandVariant}
-							src="images/left-hand.png"
-							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px] ml-auto"
-							alt="left-hand"
-						/>
-						<motion.img
+							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px] ml-auto relative"
+						>
+							<Image
+								src="/images/left-hand.png"
+								alt="left-hand"
+								layout="fill"
+							/>
+						</motion.div>
+						<motion.div
 							variants={rightHandVariant}
-							src="images/right-hand.png"
-							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px] mr-auto"
-							alt="right-hand"
-						/>
+							className="w-[130px] h-[84px] sm:w-[145px] sm:h-[92px] xl:w-[216px] xl:h-[136px] mr-auto relative"
+						>
+							<Image
+								src="/images/right-hand.png"
+								alt="left-hand"
+								layout="fill"
+							/>
+						</motion.div>
 					</div>
 				</ScrollAnimation>
 

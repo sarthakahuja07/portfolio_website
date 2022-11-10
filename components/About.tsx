@@ -122,12 +122,13 @@ function About({ experiences }: Props): ReactElement {
 						<div className="absolute inset-0 m-auto z-[2] h-[26px] w-[26px] sm:h-[46px] sm:w-[46px]  backdrop-blur-lg animate-rot-node-xs sm:animate-rot-node rounded-full flex justify-center items-center border-[0.44px] border-[rgba(255,255,255,0.25)] bg-about-logo-gradient">
 							<NodeLogo className="h-[44px] w-[40px] " />
 						</div>
-
-						<img
-							src="images/about-image.png"
-							className="sm:h-[192px] sm:w-[192px] h-[106px] w-[106px] z-[1] m-auto"
-							alt="me"
-						/>
+						<div className="sm:h-[192px] sm:w-[192px] h-[106px] w-[106px] z-[1] relative m-auto">
+							<Image
+								src="/images/about-image.png"
+								alt="me"
+								layout="fill"
+							/>
+						</div>
 
 						{/* <AboutImage className="mx-auto my-auto z-[1]" /> */}
 					</motion.div>
