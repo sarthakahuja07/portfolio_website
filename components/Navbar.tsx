@@ -100,7 +100,7 @@ const Navbar = (props: Props) => {
 									duration={500}
 								>
 									<a>
-										<LogoFull className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative" />
+										{/* <LogoFull className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative" /> */}
 										{/* <div className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative">
 											<Image
 												src="/images/logo-full.svg"
