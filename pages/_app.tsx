@@ -22,26 +22,26 @@ const icon = {
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(false)
-	const cacheImages = async () => {
-		const promises = await backgrounds.map((image) => {
-			return new Promise((resolve, reject) => {
-				const img = new Image()
-				img.src = image.url
-				img.onload = resolve
-				img.onerror = reject
-			})
-		})
+	// const cacheImages = async () => {
+	// 	const promises = await backgrounds.map((image) => {
+	// 		return new Promise((resolve, reject) => {
+	// 			const img = new Image()
+	// 			img.src = image.url
+	// 			img.onload = resolve
+	// 			img.onerror = reject
+	// 		})
+	// 	})
 
-		promises.push(
-			new Promise((resolve, reject) => {
-				setTimeout(resolve, 2000)
-			})
-		)
+	// 	promises.push(
+	// 		new Promise((resolve, reject) => {
+	// 			setTimeout(resolve, 2000)
+	// 		})
+	// 	)
 
-		await Promise.all(promises)
+	// 	await Promise.all(promises)
 
-		setLoading(false)
-	}
+	// 	setLoading(false)
+	// }
 
 	// useEffect(() => {
 	// 	cacheImages()
