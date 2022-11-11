@@ -124,7 +124,7 @@ const Skills = ({ skillSet }: Props) => {
 															loading="eager"
 															priority={true}
 															placeholder="blur"
-															blurDataURL={`/_next/image?url=${singleSkill.logo}&w=40&q=1`}
+															blurDataURL={`/_next/image?url=${singleSkill.logo}&w=1920&q=1`}
 														/>
 													</div>
 													{/* <img
