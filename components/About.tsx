@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
+import myImage from "../public/images/about-image.png"
 import Link from "next/link"
 import LinkedIn from "../public/images/linkedin.svg"
 import Twitter from "../public/images/twitter.svg"
@@ -124,10 +125,11 @@ function About({ experiences }: Props): ReactElement {
 						</div>
 						<div className="sm:h-[192px] sm:w-[192px] h-[106px] w-[106px] z-[1] relative m-auto">
 							<Image
-								src="/images/about-image.png"
+								src={myImage}
 								alt="me"
 								layout="fill"
 								loading="eager"
+								placeholder="blur"
 							/>
 						</div>
 

@@ -15,6 +15,7 @@
 		"@fortawesome/free-regular-svg-icons": "^6.2.0",
 		"@fortawesome/free-solid-svg-icons": "^6.2.0",
 		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@plaiceholder/next": "^2.5.0",
 		"@prisma/client": "^4.4.0",
 		"@types/react-scroll": "^1.8.4",
 		"babel-plugin-inline-react-svg": "^2.0.1",
@@ -30,6 +31,7 @@
 		"react-player": "^2.11.0",
 		"react-scroll": "^1.8.8",
 		"react-slick": "^0.29.0",
+		"sharp": "^0.31.2",
 		"slick-carousel": "^1.8.1",
 		"tailwindcss-border-gradients": "^2.0.3",
 		"typewriter-effect": "^2.19.0"

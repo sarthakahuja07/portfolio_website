@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import bounceVariant from "../animation/bounceVariant"
 import { useEffect, useRef } from "react"
 import Image from "next/image"
+// @ts-ignore
 
 type SkillsSetType = skills_set & { skills: skills[] }
 
@@ -110,7 +111,7 @@ const Skills = ({ skillSet }: Props) => {
 													key={singleSkill.id}
 													className="sm:w-[100px] w-[80px] text-center "
 												>
-													<div className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1 relative">
+													<div className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1 relative rounded-full">
 														<Image
 															src={
 																singleSkill.logo
@@ -121,6 +122,9 @@ const Skills = ({ skillSet }: Props) => {
 															layout="fill"
 															objectFit="contain"
 															loading="eager"
+															priority={true}
+															placeholder="blur"
+															blurDataURL="{`/_next/image?url=${singleSkill.logo}&w=40&q=1`}"
 														/>
 													</div>
 													{/* <img
