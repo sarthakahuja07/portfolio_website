@@ -9,9 +9,7 @@ import Head from "next/head"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 config.autoAddCss = false
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons"
+import logos from "../public/skills_logos"
 
 // import { faFaceRelieved } from '@fortawesome/pro-solid-svg-icons'
 
@@ -43,7 +41,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 				img.onerror = reject
 			})
 		})
+		const logosPromises = await logos.map((image) => {
+			return new Promise((resolve, reject) => {
+				const img = new Image()
+				img.src = image.url
+				img.onload = resolve
+				img.onerror = reject
+			})
+		})
 
+		promises.push(...logosPromises)
 		promises.push(
 			new Promise((resolve, reject) => {
 				setTimeout(resolve, 2000)
