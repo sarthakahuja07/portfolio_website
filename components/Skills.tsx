@@ -111,7 +111,7 @@ const Skills = ({ skillSet }: Props) => {
 													key={singleSkill.id}
 													className="sm:w-[100px] w-[80px] text-center "
 												>
-													<div className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1 relative rounded-full">
+													{/* <div className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1 relative rounded-full">
 														<Image
 															src={
 																singleSkill.logo
@@ -126,12 +126,12 @@ const Skills = ({ skillSet }: Props) => {
 															placeholder="blur"
 															blurDataURL="L9QlS^oe0IofI9ayIUfP0Fay07WW"
 														/>
-													</div>
-													{/* <img
+													</div> */}
+													<img
 														src={singleSkill.logo}
 														alt={singleSkill.name}
 														className="sm:w-[68px] sm:h-[68px] w-[40px] h-[40px] mx-auto mb-1"
-													/> */}
+													/>
 
 													<p className="text-4xsm sm:text-3xsm font-clash">
 														{singleSkill.name}
