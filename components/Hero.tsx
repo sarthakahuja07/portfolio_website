@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import Typewriter from "typewriter-effect"
 import ReactAudioPlayer from "react-audio-player"
+import backgrounds from "../public/backgrounds"
 
 interface Props {}
 
@@ -12,7 +13,8 @@ const commands = [
 	"sarthak.playFavSong()",
 	"sarthak.pauseFavSong()",
 	"sarthak.getBitcoin()",
-	"sarthak.getResume()"
+	"sarthak.getResume()",
+	"sarthak.changeBG()"
 ]
 let path = "./sounds/song.mp3"
 let memePath = "./meme.mp4"
@@ -39,6 +41,16 @@ function Hero({}: Props): ReactElement {
 	const getBitcoin = () => {
 		setCurrWindow("meme")
 	}
+	const randomBackground = () => {
+		const randomindex = Math.floor(Math.random() * backgrounds.length)
+		return backgrounds[randomindex].url
+	}
+	const changeBG = () => {
+		const background = randomBackground()
+		console.log(background)
+		const bg = document.getElementById("bg")
+		bg!.style.backgroundImage = `url(${background})`
+	}
 
 	const handleCodeChange = (
 		event: React.ChangeEvent<HTMLTextAreaElement>
@@ -49,31 +61,23 @@ function Hero({}: Props): ReactElement {
 
 		if (event.target.value.includes("\n")) {
 			if (commands.includes(event.target.value.trim().replace(";", ""))) {
-				if (
-					event.target.value.trim().replace(";", "") ===
-					"sarthak.playFavSong()"
-				) {
-					play()
-				}
-				if (
-					event.target.value.trim().replace(";", "") ===
-					"sarthak.pauseFavSong()"
-				) {
-					pause()
-				}
-				if (
-					event.target.value.trim().replace(";", "") ===
-					"sarthak.getBitcoin()"
-				) {
-					getBitcoin()
-				}
-				if (
-					event.target.value.trim().replace(";", "") ===
-					"sarthak.getResume()"
-				) {
-					// open /resume.pdf in new tab
-
-					window && window.open("/resume.pdf", "_blank")
+				let command = event.target.value.trim().replace(";", "")
+				switch (command) {
+					case "sarthak.playFavSong()":
+						play()
+						break
+					case "sarthak.pauseFavSong()":
+						pause()
+						break
+					case "sarthak.getBitcoin()":
+						getBitcoin()
+						break
+					case "sarthak.getResume()":
+						window && window.open("/resume.pdf", "_blank")
+						break
+					case "sarthak.changeBG()":
+						changeBG()
+						break
 				}
 				event.target.value = ""
 				event.target.placeholder = ""
@@ -241,7 +245,8 @@ function Hero({}: Props): ReactElement {
 															'<span class="text-codeComment"> "sarthak.playFavSong()" </span>',
 															'<span class="text-codeComment"> "sarthak.pauseFavSong()" </span>',
 															'<span class="text-codeComment"> "sarthak.getResume()" </span>',
-															'<span class="text-codeComment"> "sarthak.getBitcoin()" </span>'
+															'<span class="text-codeComment"> "sarthak.getBitcoin()" </span>',
+															'<span class="text-codeComment"> "sarthak.changeBG()" </span>'
 														],
 														autoStart: true,
 														loop: true,
@@ -294,7 +299,7 @@ function Hero({}: Props): ReactElement {
 									width="100%"
 									height="100%"
 									autoPlay
-                                    playsInline 
+									playsInline
 									controls
 								>
 									<source src={memePath} type="video/mp4" />
