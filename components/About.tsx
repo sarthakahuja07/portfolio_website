@@ -40,9 +40,10 @@ function About({ experiences }: Props): ReactElement {
 							About
 						</p>
 						<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm mb-3 sm:mb-4 xl:mb-[28px] xxl:mb-[36px]">
-							I am a third-year student at Manipal University
-							Jaipur pursuing B.Tech in Information Technology,
-							programming since freshman year of college.
+							I am a Senior at Manipal University Jaipur pursuing
+							B.Tech in Computer Science. Focused,
+							quick-learner and Passionate about coding and trying out
+							new things.
 						</p>
 						<div className="flex flex-row items-center justify-between w-[192px] sm:w-[212px] md:w-[216px] xl:w-[224px] ">
 							<motion.div
@@ -51,7 +52,7 @@ function About({ experiences }: Props): ReactElement {
 								animate="rest"
 							>
 								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-									<a>
+									<a target="_blank">
 										<motion.div variants={socialIconMotion}>
 											<LinkedIn className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 										</motion.div>
@@ -63,8 +64,8 @@ function About({ experiences }: Props): ReactElement {
 								whileHover="hover"
 								animate="rest"
 							>
-								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-									<a>
+								<Link href="https://twitter.com/sarthakahuja07">
+									<a target="_blank">
 										<motion.div variants={socialIconMotion}>
 											<Twitter className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 										</motion.div>
@@ -76,8 +77,8 @@ function About({ experiences }: Props): ReactElement {
 								whileHover="hover"
 								animate="rest"
 							>
-								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-									<a>
+								<Link href="https://github.com/sarthakahuja07/">
+									<a target="_blank">
 										<motion.div variants={socialIconMotion}>
 											<GitHub className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />
 										</motion.div>
@@ -89,7 +90,7 @@ function About({ experiences }: Props): ReactElement {
 								whileHover="hover"
 								animate="rest"
 							>
-								<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
+								<Link href="mailto:sarthak.ahuja0007@gmail.com">
 									<a>
 										<motion.div variants={socialIconMotion}>
 											<Mail className="w-[22.24px] h-[22.24px] sm:w-[26.85px] sm:h-[26.85px] xl:w-[31px] xl:h-[31px]" />

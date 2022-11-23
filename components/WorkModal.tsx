@@ -101,44 +101,52 @@ const WorkModal = ({ isModalOpen, setIsModalOpen, project }: Props) => {
 							<div className="xxl:w-[312px] xl:w-[312px] sm:w-[312px] w-full max-w-[312px] mx-auto lg:mx-0">
 								<div className="w-full flex flex-row items-center justify-between text-black">
 									<Link href={project.website}>
-										<motion.button
-											whileHover={{
-												boxShadow:
-													"0px 4px 4px rgba(255, 255, 255, 0.5)",
-												transform: "translateY(-0.25em)"
-											}}
-											whileFocus={{
-												boxShadow:
-													"0px 4px 4px rgba(255, 255, 255, 0.5)",
-												transform: "translateY(-0.25em)"
-											}}
-											className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center"
-										>
-											<Globe className="h-[20px] w-[20px] mr-4" />
-											<p className="font-clash sm:text-xxsm text-phoneXxl">
-												Website
-											</p>
-										</motion.button>
+										<a target="_blank">
+											<motion.button
+												whileHover={{
+													boxShadow:
+														"0px 4px 4px rgba(255, 255, 255, 0.5)",
+													transform:
+														"translateY(-0.25em)"
+												}}
+												whileFocus={{
+													boxShadow:
+														"0px 4px 4px rgba(255, 255, 255, 0.5)",
+													transform:
+														"translateY(-0.25em)"
+												}}
+												className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center"
+											>
+												<Globe className="h-[20px] w-[20px] mr-4" />
+												<p className="font-clash sm:text-xxsm text-phoneXxl">
+													Website
+												</p>
+											</motion.button>
+										</a>
 									</Link>
 									<Link href={project.github}>
-										<motion.button
-											whileHover={{
-												boxShadow:
-													"0px 4px 4px rgba(255, 255, 255, 0.5)",
-												transform: "translateY(-0.25em)"
-											}}
-											whileFocus={{
-												boxShadow:
-													"0px 4px 4px rgba(255, 255, 255, 0.5)",
-												transform: "translateY(-0.25em)"
-											}}
-											className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center"
-										>
-											<GitHub className="h-[20px] w-[20px] mr-4" />
-											<p className="font-clash sm:text-xxsm text-phoneXxl">
-												GitHub
-											</p>
-										</motion.button>
+										<a target="_blank">
+											<motion.button
+												whileHover={{
+													boxShadow:
+														"0px 4px 4px rgba(255, 255, 255, 0.5)",
+													transform:
+														"translateY(-0.25em)"
+												}}
+												whileFocus={{
+													boxShadow:
+														"0px 4px 4px rgba(255, 255, 255, 0.5)",
+													transform:
+														"translateY(-0.25em)"
+												}}
+												className="py-[10px] px-[18px] bg-white border-[0.67px] border-solid border-grey rounded-lg flex items-center"
+											>
+												<GitHub className="h-[20px] w-[20px] mr-4" />
+												<p className="font-clash sm:text-xxsm text-phoneXxl">
+													GitHub
+												</p>
+											</motion.button>
+										</a>
 									</Link>
 								</div>
 							</div>

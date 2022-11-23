@@ -142,7 +142,7 @@ function Contact({}: Props): ReactElement {
 								src="/images/left-hand.png"
 								alt="left-hand"
 								layout="fill"
-                                loading="eager"
+								loading="eager"
 							/>
 						</motion.div>
 						<motion.div
@@ -153,7 +153,7 @@ function Contact({}: Props): ReactElement {
 								src="/images/right-hand.png"
 								alt="left-hand"
 								layout="fill"
-                                loading="eager"
+								loading="eager"
 							/>
 						</motion.div>
 					</div>
@@ -169,10 +169,9 @@ function Contact({}: Props): ReactElement {
 								let&apos;s talk
 							</p>
 							<p className="xl:text-sm sm:text-3xsm text-4xsm xl:pt-[5.2px]">
-								I&apos;m available for development-related work.
-								I am also open to opportunities for Spring 2021
-								& Summer 2021 open to opportunities for Spring
-								2021 &
+								I&apos;m available for development-related work and full time job opportunities.
+								Feel free to reach out to me via email or
+								socials below.
 							</p>
 						</motion.div>
 					</ScrollAnimation>
@@ -188,7 +187,7 @@ function Contact({}: Props): ReactElement {
 									animate="rest"
 								>
 									<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-										<a>
+										<a target="_blank">
 											<motion.div
 												variants={socialIconMotion}
 											>
@@ -202,8 +201,8 @@ function Contact({}: Props): ReactElement {
 									whileHover="hover"
 									animate="rest"
 								>
-									<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-										<a>
+									<Link href="https://twitter.com/sarthakahuja07">
+										<a target="_blank">
 											<motion.div
 												variants={socialIconMotion}
 											>
@@ -217,8 +216,8 @@ function Contact({}: Props): ReactElement {
 									whileHover="hover"
 									animate="rest"
 								>
-									<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
-										<a>
+									<Link href="https://github.com/sarthakahuja07/">
+										<a target="_blank">
 											<motion.div
 												variants={socialIconMotion}
 											>
@@ -232,7 +231,7 @@ function Contact({}: Props): ReactElement {
 									whileHover="hover"
 									animate="rest"
 								>
-									<Link href="https://www.linkedin.com/in/sarthak-ahuja07/">
+									<Link href="mailto:sarthak.ahuja0007@gmail.com">
 										<a>
 											<motion.div
 												variants={socialIconMotion}

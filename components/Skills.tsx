@@ -47,17 +47,18 @@ const Skills = ({ skillSet }: Props) => {
 								Skills
 							</h3>
 							<div>
-								<p className="font-clash text-4xsm sm:text-sm">
+								<p className="font-clash text-4xsm sm:text-sm mb-1">
 									An individual eager to learn and explore new
 									fields of life and technology, with good
-									listening skills and fast learning
+									problem solving skills and fast learning
 									abilities.
 								</p>
 								<p className="font-clash text-4xsm sm:text-sm">
-									An individual eager to learn and explore new
-									fields of life and technology, with good
-									listening skills and fast learning
-									abilities.
+									Particulary Interested in the field of web
+									development and technologies like NextJS,
+									NodeJS and MongoDB and not shy to learn
+									new things such as Machine Learning and
+									Blockchain development.
 								</p>
 							</div>
 						</motion.div>

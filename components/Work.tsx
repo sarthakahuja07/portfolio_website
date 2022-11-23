@@ -126,9 +126,16 @@ function Work({ projects }: Props): ReactElement {
 							</h2>
 							<div>
 								<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm">
-									Here is a showcase of some of my best
-									projects that i made. They can be found on
-									my github.
+									Here is a showcase of some of the best
+									projects that I made. You can find the
+									source code on my{" "}
+									<a
+										href="https://github.com/sarthakahuja07/"
+										className="hover-underline-animation cursor-pointer after:bg-active"
+									>
+										GitHub
+									</a>{" "}
+									:)
 								</p>
 							</div>
 						</motion.div>

@@ -251,7 +251,7 @@ function Hero({}: Props): ReactElement {
 														autoStart: true,
 														loop: true,
 														// @ts-ignore
-														pauseFor: 2500
+														pauseFor: 3000
 													}}
 												/>
 											</div>

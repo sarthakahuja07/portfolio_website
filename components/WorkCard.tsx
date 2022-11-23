@@ -33,12 +33,11 @@ const WorkCard = ({ open, project, index }: Props) => {
 								src={project.cover}
 								alt={project.name}
 								layout="fill"
-                                loading="eager"
+								loading="eager"
 								className=" xxl:rounded-[24px] lg:rounded-[18.39px] rounded-[12px] sm:rounded-[18.5px] w-[116px] h-[123px] sm:w-[176px] lg:w-[174px] lg:h-[187px] xxl:w-[228px] xxl:h-[244px] sm:h-[190px]"
 							/>
 						</div>
 
-						
 						<div className="font-clash w-[156px] sm:w-[240px] lg:w-[244px]">
 							<h3 className="text-phoneXl sm:text-xsm lg:text-md mb-1 sm:mb-2">
 								{project.name}
@@ -50,7 +49,10 @@ const WorkCard = ({ open, project, index }: Props) => {
 								<div className="flex flex-row items-center">
 									<Globe className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 mr-1 text-white" />
 									<Link href={`${project.website}`}>
-										<a className="hover-underline-animation cursor-pointer after:bg-active">
+										<a
+											target="_blank"
+											className="hover-underline-animation cursor-pointer after:bg-active"
+										>
 											<h4 className="text-phoneSm sm:text-4xsm lg:text-3xsm">
 												Website
 											</h4>
@@ -61,7 +63,10 @@ const WorkCard = ({ open, project, index }: Props) => {
 								<div className="flex flex-row items-center">
 									<GitHub className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 mr-1" />
 									<Link href={`${project.github}`}>
-										<a className="hover-underline-animation cursor-pointer after:bg-active">
+										<a
+											target="_blank"
+											className="hover-underline-animation cursor-pointer after:bg-active"
+										>
 											<h4 className="text-phoneSm sm:text-4xsm lg:text-3xsm">
 												Github
 											</h4>

@@ -36,10 +36,8 @@ const ProjectsPage = ({ projects }: Props) => {
 							</h2>
 						</div>
 						<p className="font-clash text-4xsm sm:text-3xsm xl:text-sm">
-							Here is a showcase of some of my best projects that
-							i made. They can be found on my guthub.Here is a
-							showcase of some of my best projects that i made.
-							They can be found on my guthub.
+							Here is a showcase of some of the best projects that
+							I made. You can Find the source code on my GitHub :)
 						</p>
 					</div>
 				</div>
