@@ -72,7 +72,6 @@ const ImageScroller = ({ project }: Props) => {
 					}}
 					className="h-full w-full rounded-xxl object-cover  bg-cover bg-center"
 				/>
-				
 				<div className="absolute top-[calc(50%-14px)] left-2 duration-300 hover:scale-[1.2]">
 					<button>
 						<Back
