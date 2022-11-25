@@ -29,13 +29,12 @@ const WorkCard = ({ open, project, index }: Props) => {
 				>
 					<div className="flex flex-row justify-between items-center">
 						<div className="w-[116px] h-[123px] sm:w-[176px] lg:w-[174px] lg:h-[187px] xxl:w-[228px] xxl:h-[244px] sm:h-[190px] relative">
-							<Image
-								src={project.cover}
-								alt={project.name}
-								layout="fill"
-								loading="eager"
-								className=" xxl:rounded-[24px] lg:rounded-[18.39px] rounded-[12px] sm:rounded-[18.5px] w-[116px] h-[123px] sm:w-[176px] lg:w-[174px] lg:h-[187px] xxl:w-[228px] xxl:h-[244px] sm:h-[190px]"
-							/>
+							<div
+								className={` xxl:rounded-[24px] lg:rounded-[18.39px] rounded-[12px] sm:rounded-[18.5px] w-[116px] h-[123px] sm:w-[176px] lg:w-[174px] lg:h-[187px] xxl:w-[228px] xxl:h-[244px] sm:h-[190px] bg-cover bg-center`}
+								style={{
+									backgroundImage: `url(${project.cover})`
+								}}
+							></div>
 						</div>
 
 						<div className="font-clash w-[156px] sm:w-[240px] lg:w-[244px]">
