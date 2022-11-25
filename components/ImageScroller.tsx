@@ -44,7 +44,7 @@ const ImageScroller = ({ project }: Props) => {
 	return (
 		<AnimatePresence initial={false} custom={direction}>
 			<div className="overflow-x-hidden xxl:w-[728px] xxl:h-[322px] xl:w-[79vh] xl:h-[35vh] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl ">
-				<motion.img
+				<motion.div
 					key={page}
 					custom={direction}
 					variants={variants}
@@ -67,10 +67,12 @@ const ImageScroller = ({ project }: Props) => {
 							paginate(-1)
 						}
 					}}
-					src={project.image[imageIndex]}
-					className="h-full w-full rounded-xxl object-cover"
-					alt="me"
+					style={{
+						backgroundImage: `url(${project.image[imageIndex]})`
+					}}
+					className="h-full w-full rounded-xxl object-cover  bg-cover bg-center"
 				/>
+				
 				<div className="absolute top-[calc(50%-14px)] left-2 duration-300 hover:scale-[1.2]">
 					<button>
 						<Back

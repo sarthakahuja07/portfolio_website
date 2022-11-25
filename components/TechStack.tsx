@@ -8,11 +8,15 @@ interface Props {
 const TechStack = ({ logo }: Props) => {
 	return (
 		<div className="w-[26px] h-[26px]">
-			<img
-				src={logo}
+			<div
 				className="w-[26px] h-[26px] "
-				alt="android"
-			/>
+				style={{
+					backgroundImage: `url(${logo})`,
+					backgroundPosition: "center",
+					backgroundSize: "cover"
+				}}
+			></div>
+			{/* <img src={logo} className="w-[26px] h-[26px] " alt="android" /> */}
 		</div>
 	)
 }
