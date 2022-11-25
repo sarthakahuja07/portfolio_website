@@ -43,7 +43,7 @@ const ImageScroller = ({ project }: Props) => {
 	}
 	return (
 		<AnimatePresence initial={false} custom={direction}>
-			<div className="overflow-x-hidden xxl:w-[728px] xxl:h-[322px] xl:w-[79vh] xl:h-[35vh] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl ">
+			<div className="overflow-x-hidden xxl:w-[728px] xxl:h-[322px] xl:w-[79vh] xl:h-[35vh] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl bg-red">
 				<motion.div
 					key={page}
 					custom={direction}

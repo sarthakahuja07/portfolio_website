@@ -60,7 +60,7 @@ const WorkModal = ({ isModalOpen, setIsModalOpen, project }: Props) => {
 								<Close className="h-[30px] w-[30px] " />
 							</motion.button>
 						</div>
-						<div className="xl:mb-[28px] lg:mb-[56px] sm:mb-[28px] mb-4 relative w-fit mx-auto">
+						<div className="xl:mb-[28px] lg:mb-[56px] sm:mb-[28px] mb-4 relative sm:w-fit w-full sm:mx-auto">
 							<ImageScroller project={project} />
 						</div>
 						<div className="flex flex-col xxl:gap-[60px] xl:gap-[30px] lg:gap-[50px] sm:gap-[32px] gap-[44px]">
