@@ -68,7 +68,6 @@ const ImageScroller = ({ project }: Props) => {
 							paginate(-1)
 						}
 					}}
-					
 					className="h-full w-full rounded-xxl object-cover  bg-cover bg-center "
 				>
 					<Image
@@ -76,7 +75,7 @@ const ImageScroller = ({ project }: Props) => {
 						className="rounded-xxl"
 						src={project.image[imageIndex]}
 						placeholder="blur"
-						blurDataURL={`/_next/image?url=${project.image[imageIndex]}&w=16&q=1`}
+						blurDataURL={project.image[imageIndex]}
 						layout="fill"
 						objectFit="cover"
 						loading="eager"
