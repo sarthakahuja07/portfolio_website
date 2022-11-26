@@ -101,19 +101,7 @@ const Navbar = (props: Props) => {
 								>
 									<a>
 										<LogoFull className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative" />
-										{/* <div className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px] relative">
-											<Image
-												src="/images/logo-full.svg"
-												alt="logo"
-												layout="fill"
-												loading="eager"
-											/>
-										</div> */}
-										{/* <img
-											src="images/logo.png"
-											className="xl:w-[140px] sm:w-[112px] w-[80px] sm:h-[16px] xl:h-[20px] h-[11px]"
-											alt="logo"
-										/> */}
+										
 									</a>
 								</ScrollLink>
 							</button>
