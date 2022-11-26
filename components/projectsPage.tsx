@@ -6,15 +6,21 @@ import { useRouter } from "next/router"
 import { projects } from "@prisma/client"
 
 interface Props {
-	projects: projects[]
+	projects: (projects & { placeholder: [] })[]
 }
+type projectWithPlaceholder = projects & { placeholder: [] }
 
 const ProjectsPage = ({ projects }: Props) => {
 	const router = useRouter()
 	const [isModalOpen, setIsModalOpen] = useState(false)
-	const [currProject, setCurrProject] = useState(projects[0])
+	const [currProject, setCurrProject] = useState<
+		projects & { placeholder: [] }
+	>({
+		...projects[0],
+		placeholder: []
+	})
 
-	const open = (project: projects) => {
+	const open = (project: projectWithPlaceholder) => {
 		setIsModalOpen(true)
 		setCurrProject(project)
 		document.body.style.overflow = "hidden"

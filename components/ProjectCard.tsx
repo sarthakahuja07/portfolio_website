@@ -6,8 +6,8 @@ import Globe from "../public/images/globe-white.svg"
 import { projects } from "@prisma/client"
 
 interface Props {
-	open: (project: projects) => void
-	project: projects
+	open: (project: projects & { placeholder: [] }) => void
+	project: projects & { placeholder: [] }
 	index: number
 }
 

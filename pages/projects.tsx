@@ -5,12 +5,13 @@ import { Footer } from "../components/Footer"
 
 import ProjectsPage from "../components/projectsPage"
 import { PrismaClient, projects } from "@prisma/client"
+import { getPlaiceholder } from 'plaiceholder';
 
 interface Props {
-	projects: projects[]
+	projectsWithPlaceholder: (projects & { placeholder: [] })[]
 }
 
-const Projects: NextPage<Props> = ({ projects }) => {
+const Projects: NextPage<Props> = ({ projectsWithPlaceholder }) => {
 	return (
 		<div>
 			<Head>
@@ -22,7 +23,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
 
-			<ProjectsPage projects={projects} />
+			<ProjectsPage projects={projectsWithPlaceholder} />
 			<Footer />
 		</div>
 	)
@@ -35,8 +36,19 @@ export const getStaticProps = async () => {
 	// get skillSet from prisma and include the skills associated with it
 
 	const projects: projects[] = await prisma.projects.findMany({})
-
+	const projectsWithPlaceholder = await Promise.all(
+		projects.map(async (project) => {
+			const images = project.image
+			const placeholder = await Promise.all(
+				images.map(async (image) => {
+					const { base64 } = await getPlaiceholder(image)
+					return base64
+				})
+			)
+			return { ...project, placeholder }
+		})
+	)
 	return {
-		props: { projects }
+		props: { projectsWithPlaceholder }
 	}
 }
