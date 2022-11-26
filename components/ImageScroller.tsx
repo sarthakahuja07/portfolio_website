@@ -5,6 +5,7 @@ import Back from "../public/images/carousel-back.svg"
 import Next from "../public/images/carousel-next.svg"
 import { wrap } from "popmotion"
 import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
 
 interface Props {
 	project: projects
@@ -43,7 +44,7 @@ const ImageScroller = ({ project }: Props) => {
 	}
 	return (
 		<AnimatePresence initial={false} custom={direction}>
-			<div className="overflow-x-hidden xxl:w-[728px] xxl:h-[322px] xl:w-[79vh] xl:h-[35vh] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl bg-red">
+			<div className="overflow-x-hidden xxl:w-[728px] xxl:h-[322px] xl:w-[79vh] xl:h-[35vh] lg:w-[884px] lg:h-[491px] md:w-[580px] md:h-[322px] sm:w-[569px] sm:h-[322px] w-[100%] h-[52vw] rounded-xxl ">
 				<motion.div
 					key={page}
 					custom={direction}
@@ -67,11 +68,25 @@ const ImageScroller = ({ project }: Props) => {
 							paginate(-1)
 						}
 					}}
-					style={{
-						backgroundImage: `url(${project.image[imageIndex]})`
-					}}
-					className="h-full w-full rounded-xxl object-cover  bg-cover bg-center"
-				/>
+					style={
+						{
+							// backgroundImage: `url(${project.image[imageIndex]})`
+						}
+					}
+					className="h-full w-full rounded-xxl object-cover  bg-cover bg-center "
+				>
+					<Image
+						alt="project image"
+						className="rounded-xxl"
+						src={project.image[imageIndex]}
+						placeholder="blur"
+						blurDataURL="LRM4{Z0.{v^iw@R*%2s:{v-6TKrq"
+						layout="fill"
+						objectFit="cover"
+						loading="eager"
+						priority={true}
+					/>
+				</motion.div>
 				<div className="absolute top-[calc(50%-14px)] left-2 duration-300 hover:scale-[1.2]">
 					<button>
 						<Back
