@@ -9,10 +9,11 @@ import bounceVariant from "../animation/bounceVariant"
 import Image from "next/image"
 
 interface Props {
-	open: (project: projects) => void
-	project: projects
+	open: (project: projects & { placeholder: [] }) => void
+	project: projects & { placeholder: [] }
 	index: number
 }
+type projectWithPlaceholder = projects & { placeholder: [] }
 
 const WorkCard = ({ open, project, index }: Props) => {
 	return (

@@ -14,7 +14,7 @@ import ImageScroller from "./ImageScroller"
 interface Props {
 	isModalOpen: boolean
 	setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
-	project: projects
+	project: projects & { placeholder: [] }
 }
 
 const WorkModal = ({ isModalOpen, setIsModalOpen, project }: Props) => {

@@ -16,16 +16,21 @@ import {
 } from "@prisma/client"
 import backgrounds from "../public/backgrounds"
 import { useEffect } from "react"
+import { getPlaiceholder } from "plaiceholder"
 
 type SkillsSetType = skills_set & { skills: skills[] }
 
 interface Props {
 	skillSet: SkillsSetType[]
 	experiences: experience[]
-	projects: projects[]
+	projectsWithPlaceholder: (projects & { placeholder: [] })[]
 }
 
-const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
+const Home: NextPage<Props> = ({
+	skillSet,
+	experiences,
+	projectsWithPlaceholder
+}) => {
 	const randomBackground = () => {
 		const randomindex = Math.floor(Math.random() * backgrounds.length)
 		return backgrounds[randomindex].url
@@ -33,7 +38,6 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 
 	useEffect(() => {
 		const background = randomBackground()
-		console.log(background)
 		document.getElementById(
 			"bg"
 		)!.style.backgroundImage = `url(${background})`
@@ -63,7 +67,7 @@ const Home: NextPage<Props> = ({ skillSet, experiences, projects }) => {
 
 				<Hero />
 				<About experiences={experiences} />
-				<Work projects={projects} />
+				<Work projects={projectsWithPlaceholder} />
 				<Skills skillSet={skillSet} />
 				<Contact />
 				<Footer />
@@ -76,7 +80,6 @@ export default Home
 
 export const getStaticProps = async () => {
 	const prisma = new PrismaClient()
-	// get skillSet from prisma and include the skills associated with it
 	const skillSet: SkillsSetType[] = await prisma.skills_set.findMany({
 		include: {
 			skills: true
@@ -86,7 +89,20 @@ export const getStaticProps = async () => {
 	const experiences: experience[] = await prisma.experience.findMany({})
 	const projects: projects[] = await prisma.projects.findMany({})
 
+	const projectsWithPlaceholder = await Promise.all(
+		projects.map(async (project) => {
+			const images = project.image
+			const placeholder = await Promise.all(
+				images.map(async (image) => {
+					const { base64 } = await getPlaiceholder(image)
+					return base64
+				})
+			)
+			return { ...project, placeholder }
+		})
+	)
+
 	return {
-		props: { skillSet, experiences, projects }
+		props: { skillSet, experiences, projectsWithPlaceholder }
 	}
 }

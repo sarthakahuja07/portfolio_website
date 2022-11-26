@@ -13,8 +13,10 @@ import Back from "../public/images/work-back.svg"
 import Next from "../public/images/work-next.svg"
 
 interface Props {
-	projects: projects[]
+	projects: (projects & { placeholder: [] })[]
 }
+
+type projectWithPlaceholder = projects & { placeholder: [] }
 
 var settings = {
 	className: "slider variable-width",
@@ -31,7 +33,10 @@ var settings = {
 
 function Work({ projects }: Props): ReactElement {
 	const [isModalOpen, setIsModalOpen] = useState(false)
-	const [currProject, setCurrProject] = useState(projects[0])
+	const [currProject, setCurrProject] = useState<projectWithPlaceholder>({
+		...projects[0],
+		placeholder: []
+	})
 	const [currBreakpoint, setCurrBreakpoint] = useState<string | undefined>(
 		getCurrentBreakpoint()
 	)
@@ -42,7 +47,7 @@ function Work({ projects }: Props): ReactElement {
 	const leftScrollIcon = useRef<HTMLDivElement>(null)
 	const rightScrollIcon = useRef<HTMLDivElement>(null)
 
-	const open = (project: projects) => {
+	const open = (project: projectWithPlaceholder) => {
 		setIsModalOpen(true)
 		setCurrProject(project)
 		document.body.style.overflow = "hidden"
@@ -143,7 +148,7 @@ function Work({ projects }: Props): ReactElement {
 				</div>
 			</div>
 
-			{/* TODO: */}
+			
 			<ScrollAnimation>
 				<motion.div
 					variants={bounceVariant}
@@ -180,7 +185,7 @@ function Work({ projects }: Props): ReactElement {
 						onMouseOver={toggleIcon}
 						onMouseOut={toggleIcon}
 					>
-						{projects.map((project: projects, i) => {
+						{projects.map((project: projectWithPlaceholder, i) => {
 							return (
 								<div key={project.id}>
 									<WorkCard
@@ -222,7 +227,7 @@ function Work({ projects }: Props): ReactElement {
 							</button>
 						</div>
 						<Slider {...settings} ref={sliderRef}>
-							{projects.map((project: projects, i) => {
+							{projects.map((project: projectWithPlaceholder, i) => {
 								return (
 									<div
 										key={project.id}

@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 
 interface Props {
-	project: projects
+	project: projects & { placeholder: [] }
 }
 const variants = {
 	enter: (direction: number) => {
@@ -75,7 +75,7 @@ const ImageScroller = ({ project }: Props) => {
 						className="rounded-xxl"
 						src={project.image[imageIndex]}
 						placeholder="blur"
-						blurDataURL={project.image[imageIndex]}
+						blurDataURL={project.placeholder[imageIndex]}
 						layout="fill"
 						objectFit="cover"
 						loading="eager"
