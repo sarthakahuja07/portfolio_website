@@ -1,17 +1,18 @@
 import "../styles/globals.css"
+import Head from "next/head"
 import type { AppProps } from "next/app"
 import { useEffect, useState } from "react"
 import backgrounds from "../public/backgrounds"
-import { motion } from "framer-motion"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import Head from "next/head"
+import * as gtag from "../lib/gtag"
 import { config } from "@fortawesome/fontawesome-svg-core"
-import "@fortawesome/fontawesome-svg-core/styles.css"
-config.autoAddCss = false
 import logos from "../public/skills_logos"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import { useRouter } from "next/router"
+config.autoAddCss = false
 
-// import { faFaceRelieved } from '@fortawesome/pro-solid-svg-icons'
+const isProduction = process.env.NODE_ENV === "production"
 
 const icon = {
 	hidden: {
@@ -28,6 +29,8 @@ const icon = {
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [loading, setLoading] = useState(true)
+	const router = useRouter()
+
 	const cacheImages = async () => {
 		setTimeout(() => {
 			setLoading(false)
@@ -66,6 +69,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 		cacheImages()
 	}, [])
 
+	useEffect(() => {
+		const handleRouteChange = (url: URL) => {
+			if (isProduction) gtag.pageview(url)
+		}
+		router.events.on("routeChangeComplete", handleRouteChange)
+		return () => {
+			router.events.off("routeChangeComplete", handleRouteChange)
+		}
+	}, [router.events, loading])
+    
 	return (
 		<>
 			{loading ? (

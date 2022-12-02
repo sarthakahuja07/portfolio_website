@@ -1,9 +1,32 @@
 import { Html, Head, Main, NextScript } from "next/document"
 
+const isProduction = process.env.NODE_ENV === "production"
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID
 export default function Document() {
 	return (
 		<Html>
 			<Head>
+				{isProduction && (
+					<>
+						<script
+							async
+							src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+						/>
+						<script
+							// eslint-disable-next-line react/no-danger
+							dangerouslySetInnerHTML={{
+								__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `
+							}}
+						/>
+					</>
+				)}
 				<link
 					href="https://api.fontshare.com/v2/css?f[]=array@400,600&display=swap"
 					rel="stylesheet"
