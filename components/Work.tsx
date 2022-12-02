@@ -3,6 +3,7 @@ import Modal from "./WorkModal"
 import WorkCard from "./WorkCard"
 import AllProjectsIcon from "../public/images/allProjects.svg"
 import Link from "next/link"
+import * as gtag from "../lib/gtag"
 import { projects } from "@prisma/client"
 import ScrollAnimation from "./ScrollAnimation"
 import bounceVariant from "../animation/bounceVariant"
@@ -51,6 +52,12 @@ function Work({ projects }: Props): ReactElement {
 		setIsModalOpen(true)
 		setCurrProject(project)
 		document.body.style.overflow = "hidden"
+		gtag.event({
+			action: "project_visit",
+			category: "project",
+			label: project.name,
+			value: Number(project.id)
+		})
 	}
 
 	useEffect(() => {
@@ -148,7 +155,6 @@ function Work({ projects }: Props): ReactElement {
 				</div>
 			</div>
 
-			
 			<ScrollAnimation>
 				<motion.div
 					variants={bounceVariant}
@@ -227,20 +233,22 @@ function Work({ projects }: Props): ReactElement {
 							</button>
 						</div>
 						<Slider {...settings} ref={sliderRef}>
-							{projects.map((project: projectWithPlaceholder, i) => {
-								return (
-									<div
-										key={project.id}
-										id={"card" + i.toString()}
-									>
-										<WorkCard
-											open={open}
-											project={project}
-											index={i}
-										/>
-									</div>
-								)
-							})}
+							{projects.map(
+								(project: projectWithPlaceholder, i) => {
+									return (
+										<div
+											key={project.id}
+											id={"card" + i.toString()}
+										>
+											<WorkCard
+												open={open}
+												project={project}
+												index={i}
+											/>
+										</div>
+									)
+								}
+							)}
 						</Slider>
 					</motion.div>
 				)}

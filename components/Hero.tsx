@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { ReactElement, useState, useRef } from "react"
-import Star from "../public/images/star.svg"
+import * as gtag from "../lib/gtag"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import Typewriter from "typewriter-effect"
 import ReactAudioPlayer from "react-audio-player"
+import { motion } from "framer-motion"
+import Star from "../public/images/star.svg"
 import backgrounds from "../public/backgrounds"
 
 interface Props {}
@@ -55,6 +56,13 @@ function Hero({}: Props): ReactElement {
 	const handleCodeChange = (
 		event: React.ChangeEvent<HTMLTextAreaElement>
 	) => {
+		gtag.event({
+			action: "code_change",
+			category: "code_window",
+			label: event.target.value.trim().replace(";", ""),
+			value: event.target.value.length
+		})
+
 		event.target.value
 			? event.target.classList.add("hide")
 			: event.target.classList.remove("hide")
